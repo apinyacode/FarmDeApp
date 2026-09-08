@@ -1,86 +1,82 @@
-# Business Plan: [Name TBD] Horse Sanctuary & Agritourism Farm
+# Business Plan: Angel Arms Horse Sanctuary
+### A program of มูลนิธิในอ้อมกอด (The Angel Arms Foundation)
 
 **Location:** Nakhon Nayok Province, Thailand (adjacent to Farm De Lek)
 **Land size:** 42 rai (≈ 67,200 sqm / 6.72 hectares / 16.6 acres)
 **Total budget:** ฿96,000,000 (land + development)
-**Model:** Hybrid rescue sanctuary + agritourism enterprise
+**Model:** Existing foundation's rescue + equine-therapy program, funded by an agritourism operating company
 **Prepared for:** Apinya
 **Date:** September 2026
 
-> All land prices, construction costs, and visitor/revenue figures in this plan are **planning-level estimates** based on general Thailand market ranges. Before finalizing, get: (1) a licensed land appraisal / broker quote for the specific parcel, (2) itemized contractor quotes for construction, (3) an accountant/lawyer to confirm the legal structure. See Section 11 "Assumptions to Verify."
+> All land prices, construction costs, and visitor/revenue figures in this plan are **planning-level estimates** based on general Thailand market ranges. Before finalizing, get: (1) a licensed land appraisal / broker quote for the specific parcel (title documents already exist — have a lawyer confirm title type and any road-access easement shown on the survey), (2) itemized contractor quotes for construction, (3) an accountant to confirm the foundation/company revenue-sharing structure.
 
 ---
 
 ## 1. Executive Summary
 
-This plan proposes acquiring 42 rai of land in Nakhon Nayok — directly adjacent to the established Farm De Lek attraction — to build a horse rescue sanctuary combined with an agritourism business (guided tours, riding lessons, farm-stay glamping, café, and events). The sanctuary rescues and rehabilitates retired, injured, or abandoned horses, funded partly by donations/sponsorship and partly by commercial tourism revenue, so the welfare mission doesn't depend entirely on charity.
+Angel Arms Horse Sanctuary extends the existing mission of **มูลนิธิในอ้อมกอด (The Angel Arms Foundation)** — which currently supports special-needs children and struggling families through therapy, education, and life-skills programs — into a dedicated home for **retired and injured horses used in equine-assisted therapy**, on 42 rai in Nakhon Nayok, directly adjacent to Farm De Lek.
 
-The location next to Farm De Lek is the plan's biggest advantage: it provides a built-in stream of visitors already traveling to the area, potential for cross-promotion and shared marketing, and validates that the area draws day-trippers and weekend visitors from Bangkok (~1.5–2 hours away) and the Khao Yai tourism corridor.
+The site combines four things already sketched into your own site plan: a **reconfigured multi-terrain pasture** for horse rehabilitation and turnout, a **stable/therapy/visitor building cluster** along the road frontage, an **EV camping area**, and **flood-proof floating villas** for overnight guests — alongside standard glamping. Because the Foundation already exists, there's no need to register a new charity; the recommended structure is to run the sanctuary as a **Foundation program** (therapy, rescue, welfare — donor and grant funded) alongside a **new operating company** that runs the commercial tourism side (tours, lessons, café, accommodation, events) and channels a share of profit back to the Foundation.
 
 **Key numbers:**
 - Total capital required: ฿96,000,000 (land ~37.5M / development ~58.5M)
-- Break-even: projected Year 3
-- Year 5 projected annual revenue: ~฿24.6M, net income ~฿11.1M
+- Break-even: projected **Year 2**
+- Year 5 projected annual revenue: **~฿31.1M**, net income **~฿16.0M**
 - Initial horse capacity: 15 rescues (Year 1), scaling to 35 by Year 5
+- Children served through the therapy program: ~120 in Year 1, growing to ~500/year by Year 5
 
 ---
 
 ## 2. Vision & Mission
 
-**Vision:** To become the leading horse welfare and equine agritourism destination in the Khao Yai–Nakhon Nayok region.
+**Vision:** To become the leading horse welfare, equine-therapy, and agritourism destination in the Khao Yai–Nakhon Nayok region — and the flagship program of The Angel Arms Foundation.
 
-**Mission:** Rescue and rehabilitate horses in need while creating a self-sustaining tourism and education business that funds ongoing welfare work and gives visitors meaningful animal encounters.
+**Mission (extending the Foundation's existing mission):**
+- Rescue, rehabilitate, and provide lifelong care to retired/injured horses.
+- Use those horses in **equine-assisted therapy** for special-needs children and families the Foundation already serves.
+- Build a self-sustaining tourism and hospitality business that funds the welfare and therapy work, rather than relying solely on donations.
+- Offer education, training, and career opportunities (as the Foundation's existing mission states) to young people and community members through the sanctuary's operations.
 
-**Core values:** Animal welfare first, financial sustainability, community/education, environmental stewardship of the land.
+**Core values:** Animal welfare first, children/family welfare, financial sustainability, community/education, environmental stewardship of the land.
 
 ---
 
-## 3. Business Concept & Legal Structure
+## 3. Business Concept & Structure
 
-Because this venture mixes charitable rescue work with commercial tourism, the recommended structure (common for this model in Thailand) is **two linked entities**:
+Since **The Angel Arms Foundation already exists**, no new charitable entity needs to be registered. The recommended structure:
 
-1. **A registered foundation (มูลนิธิ) or association** — owns/operates the rescue and welfare program, can accept tax-deductible donations and apply for animal-welfare grants, and holds the "sanctuary" brand and mission.
-2. **A private limited company (co., ltd.)** — owns/operates the commercial tourism side (tours, lessons, café, glamping, events) and pays a facility/service fee or donates a share of profit to the foundation.
+1. **The Angel Arms Foundation (existing)** — owns the sanctuary's welfare and therapy mission: horse rescue/rehab, the children's equine-therapy program, and donor/grant relationships. Continues to receive tax-deductible donations under its existing registration.
+2. **A new operating company (co., ltd.)** — leases the commercial-use portion of the land from the Foundation (or is granted a service agreement), and runs tours, riding lessons, the café/gift shop, glamping, EV camping, floating villas, and events. Pays the Foundation a facility fee and/or a share of profit, funding the horses' care and the therapy program.
 
-This separation protects donor trust (donations are visibly used for horse welfare, not commercial profit), gives the commercial side normal business flexibility, and is easier to get right from day one than to restructure later. **Confirm this structure with a Thai lawyer/accountant before registering** — the specific setup affects tax treatment and land ownership rules (foreign ownership restrictions on agricultural land, if relevant, should also be checked with the land office).
+This keeps donor trust intact (donations visibly fund horse welfare and children's therapy, not hotel operations) while giving the commercial side normal business flexibility. **Have your accountant/lawyer confirm the specific lease/fee arrangement between the Foundation and the new company** — this affects both entities' tax treatment.
 
 ---
 
 ## 4. Location & Land
 
-- **Province:** Nakhon Nayok — roughly 105 km / 1.5–2 hrs from Bangkok, on the edge of the Khao Yai tourism corridor (Khao Yai National Park draws over 1 million visitors/year to the wider area).
-- **Adjacency:** Directly next to **Farm De Lek**, an existing farm attraction — this means:
-  - Shared road access/visibility, easier signage and word-of-mouth.
-  - A potential combined-ticket or cross-referral arrangement (worth a direct conversation with Farm De Lek's owners early).
-  - Existing precedent that the area supports agritourism traffic.
-- **Land size:** 42 rai gives room for: stables/paddocks, riding arena, quarantine/vet area, visitor center, glamping units, staff housing, and pasture — with room to expand.
-- **Due diligence before purchase:**
-  - Confirm title type (Chanote/โฉนด is strongest; avoid Sor Kor 1 or other weak titles).
-  - Confirm current land-use zoning (agricultural vs. other) and whether commercial tourism structures (café, guest rooms) require zoning change or permits.
-  - Check water rights/access (well drilling permits, irrigation canal access) — horses and pasture need reliable water.
-  - Check flood history — Nakhon Nayok has river/canal flood risk in some low-lying areas; confirm the parcel's elevation and drainage.
-  - Environmental/EIA review is generally not required at this scale, but confirm with local authorities once accommodation unit count is finalized.
+- **Province:** Nakhon Nayok — roughly 105 km / 1.5–2 hrs from Bangkok, on the edge of the Khao Yai tourism corridor.
+- **Adjacency:** Directly next to **Farm De Lek**, an existing farm attraction — shared road visibility, cross-promotion potential, and proof the area draws agritourism traffic.
+- **Land shape:** Title documents show a narrow, elongated parcel with public-road frontage (as marked on the survey: "ถนนสาธารณะประโยชน์"). This shape suits your site-plan concept well: a compact facility cluster near the road, with the pasture/multi-terrain zones running back along the length of the plot.
+- **Confirm before purchase:**
+  - Exact area and boundaries with a licensed surveyor (photographed hand-marked survey sketches are a starting point, not a substitute for a formal re-survey).
+  - Title type (Chanote/โฉนด is strongest) and the legal status of the road-access easement.
+  - Water rights/access — critical both for pasture irrigation and for the pond feature in your site plan.
+  - Flood elevation data — this matters more here than in a typical plan, since your own site plan already calls for **flood-proof floating villas**, meaning part of the site is expected to experience seasonal flooding. Confirm exactly which zones flood and to what depth so the pasture, stable, and floating-villa placement are engineered correctly from day one.
 
 ---
 
-## 5. Market Analysis
+## 5. Site Master Plan (from your concept sketch)
 
-**Demand drivers:**
-- Thailand's domestic tourism has shifted toward nature/farm-stay experiences post-2020; agritourism and "unique animal encounter" venues (elephant sanctuaries, farm stays) have grown strongly and command premium pricing when positioned as ethical/rescue-focused rather than purely recreational.
-- There is a recognizable gap in Thailand for **horse-specific** welfare tourism — elephant sanctuaries are common, dedicated horse rescue/sanctuary tourism is rarer, which is a differentiation opportunity.
-- Weekend/holiday drive-market from Bangkok is large and price-insensitive relative to rural land costs — day-trip and overnight "escape the city" demand is well-established in Khao Yai/Nakhon Nayok/Kanchanaburi corridors.
+Your hand-drawn plan already lays out the logic; here it is translated into a buildable zoning plan across the 42 rai:
 
-**Competition:**
-- Direct: a small number of horse riding/boarding stables in the region (mostly commercial, not rescue-focused).
-- Indirect: Khao Yai farm stays, vineyards, and other agritourism venues competing for the same weekend visitor.
-- Positioning: lead with the rescue/welfare story (emotionally differentiating and press-friendly) rather than competing purely as "another riding stable."
-
-**Target customers:**
-1. Bangkok families/weekend travelers (day trip or 1-night stay)
-2. School groups / CSR corporate groups (education, volunteering days)
-3. Horse-sponsorship donors (local and international, ongoing giving)
-4. Wedding/event planners (rural venue market is strong in this corridor)
-5. Existing Farm De Lek visitors (cross-sell)
+- **Road-frontage cluster (~6 rai):** Visitor center, café, gift shop, main stable barn, quarantine/vet clinic, parking — matches the row of buildings drawn along the road in your sketch.
+- **Reconfigured multi-terrain pasture (~20 rai):** The numbered zones (1–9) in your sketch become distinct pasture/paddock cells with varied terrain (flat grazing, gentle slopes, sand/soft-footing areas) — useful both for rotational grazing and for varied-terrain therapy/rehab exercises with the horses.
+- **Pond & water feature (~2 rai):** As drawn, doubling as irrigation reserve and a scenic anchor for the visitor/therapy area.
+- **Covered riding/therapy arena (~4 rai):** For lessons, trail-ride staging, and equine-therapy sessions in any weather.
+- **Flood-proof floating villas (~2 rai, lower-elevation zone):** Positioned on the section of land your sketch marks for flood exposure — engineered as floating/stilted structures rather than fighting the flood risk.
+- **EV camping zone (~3 rai):** EV-friendly camping/RV pads with charging points, positioned near the road-frontage cluster for easy access and grid connection.
+- **Standard glamping (~2 rai):** Higher ground, near the visitor cluster.
+- **Staff housing + reserve (~3 rai):** Staff quarters and land held for Phase 3 expansion.
 
 ---
 
@@ -90,7 +86,10 @@ This separation protects donor trust (donations are visibly used for horse welfa
 |---|---|---|
 | Sanctuary tour / horse encounter | Guided walk, meet-the-horses, feeding | ฿200–400/person |
 | Riding lessons / trail rides | Beginner lessons, guided trail rides | ฿500–1,500/session |
-| Farm-stay glamping | 8 units, on-site overnight stay | ฿1,500–3,500/night |
+| **Equine-assisted therapy** | Foundation program for special-needs children/families; subsidized or free to families, funded by CSR/grants | Funded via sponsorship, not family fees |
+| Farm-stay glamping | 8 standard glamping units | ฿1,500–3,500/night |
+| **Flood-proof floating villas** | 3 premium overnight units on the site's low-lying zone | ฿3,500–5,500/night |
+| **EV camping** | 10 EV-friendly camping/RV pads with charging | ฿600–1,000/night |
 | Café & gift shop | On-site dining, merchandise | ฿100–250/visit avg |
 | Horse sponsorship/adoption | Monthly symbolic adoption of a rescued horse | ฿500–2,000/month |
 | Events & venue hire | Weddings, corporate retreats, school trips | ฿40,000–150,000/event |
@@ -98,64 +97,76 @@ This separation protects donor trust (donations are visibly used for horse welfa
 
 ---
 
-## 7. Site Master Plan (42 rai)
+## 7. Market Analysis
 
-Indicative land-use allocation (to refine with an architect once the exact parcel shape/access point is known):
+**Demand drivers:**
+- Thailand's domestic tourism has shifted toward nature/farm-stay experiences; agritourism and "unique animal encounter" venues command premium pricing when positioned as ethical/rescue-focused.
+- A dedicated **equine therapy + rescue** story is a strong differentiator — most Thai animal-welfare tourism is elephant-focused; a horse-sanctuary-with-a-children's-therapy-mission is distinctive and highly press/CSR-friendly.
+- EV camping and flood-adapted "floating villa" accommodation are both on-trend niches in Thai domestic tourism right now, giving the site two additional, differentiated revenue lines beyond standard glamping.
+- Weekend/holiday drive-market from Bangkok is large; the Khao Yai/Nakhon Nayok corridor is an established getaway destination.
 
-- **~18 rai** — pasture & paddocks (horse turnout, rotational grazing)
-- **~6 rai** — main stable barn, quarantine/vet clinic, feed storage
-- **~4 rai** — riding arena (covered) + trail loop
-- **~4 rai** — visitor center, café, gift shop, parking
-- **~3 rai** — glamping units + staff housing
-- **~4 rai** — internal roads, water infrastructure (wells/pond), buffer/landscaping
-- **~3 rai** — reserve for future expansion (Phase 3: second arena, more glamping, or event lawn)
+**Competition:** A small number of commercial riding/boarding stables in the region; broader competition from Khao Yai farm stays and agritourism venues. Positioning leads with the Foundation's existing welfare/therapy mission, not generic "riding stable" branding.
+
+**Target customers:**
+1. Bangkok families/weekend travelers (day trip or overnight)
+2. Corporate CSR partners and grant-making foundations (funding the therapy program)
+3. Schools and hospitals referring families for equine-assisted therapy
+4. Horse-sponsorship donors (existing Foundation donor base + new)
+5. EV-owning weekend campers (a fast-growing, under-served niche)
+6. Wedding/event planners
+7. Existing Farm De Lek visitors (cross-sell)
 
 ---
 
 ## 8. Operations Plan
 
-**Horse intake process:** Partner with provincial livestock offices, existing horse owners/riding schools, and welfare networks to identify horses needing rescue (retired racehorses, abandoned/neglected horses, injured horses). Each intake includes veterinary assessment, quarantine period (minimum 30 days), and a rehabilitation plan before integration with the herd or introduction to visitor programs.
+**Horse intake process:** Partner with provincial livestock offices, riding schools, and welfare networks to identify horses needing rescue. Each intake includes veterinary assessment, a minimum 30-day quarantine, and a rehabilitation plan before joining the herd or the therapy program.
 
-**Staffing (Year 1, ~18 people):**
+**Therapy program:** Run under Foundation staff/protocols (building on the Foundation's existing special-needs and family-support programs), with a certified equine-therapy specialist overseeing session design and horse suitability assessment — not every rescued horse is suited to therapy work, so the multi-terrain pasture and varied-exercise zones also double as an assessment/conditioning ground.
+
+**Staffing (Year 1, ~20 people):**
 
 | Role | Count |
 |---|---|
-| Farm/sanctuary manager | 1 |
+| Sanctuary/farm manager | 1 |
 | Grooms/horse handlers | 4 |
-| Veterinarian (part-time/on-call contract) + vet tech | 1 + 1 |
+| Veterinarian (contract/on-call) + vet tech | 1 + 1 |
+| Equine-therapy specialist | 1 |
 | Riding instructors/guides | 3 |
-| Hospitality (café, glamping housekeeping) | 4 |
+| Hospitality (café, glamping/villa/EV-site housekeeping) | 5 |
 | Admin/marketing/bookings | 2 |
 | Maintenance/grounds | 2 |
 
-**Veterinary care:** Retain a contracted equine vet (rather than full-time employee initially) plus an on-call arrangement with a regional equine hospital for emergencies/surgery.
-
-**Animal welfare compliance:** Register under Thailand's Animal Welfare Act (พ.ร.บ. ป้องกันการทารุณกรรมและการจัดสวัสดิภาพสัตว์) and follow best-practice welfare standards (space per horse, veterinary check frequency, retirement/end-of-life policy) — this also strengthens donor trust and marketing credibility.
+**Animal welfare compliance:** Register/operate under Thailand's Animal Welfare Act (พ.ร.บ. ป้องกันการทารุณกรรมและการจัดสวัสดิภาพสัตว์) — reinforces both donor trust and the therapy program's credibility with referring schools/hospitals.
 
 ---
 
 ## 9. Marketing Strategy
 
-1. **Farm De Lek synergy** — approach Farm De Lek directly about a combined ticket, shared signage, or cross-referral program before opening. This is the single highest-leverage, lowest-cost marketing action available.
-2. **Digital/social** — Instagram/TikTok/Facebook content centered on rescue stories (horse "before and after" narratives perform very well for animal welfare brands) and destination content targeting Bangkok weekend travelers.
-3. **Sponsorship/adoption program** — recurring donor revenue plus a built-in marketing engine (sponsors share and promote "their" horse).
-4. **School & CSR partnerships** — target Bangkok international/private schools and corporates for field trips and volunteer days — reliable weekday revenue that fills off-peak capacity.
-5. **Event/wedding market** — rural venues in this corridor are in active demand; a horse-sanctuary backdrop is a strong differentiator for planners.
+1. **Leverage the existing Angel Arms Foundation brand and donor base** — this is a major head start over building a new charity brand from zero; existing supporters of the children's programs are a natural audience for the horse-sponsorship program too.
+2. **Farm De Lek synergy** — a combined ticket, shared signage, or cross-referral program.
+3. **CSR/grant outreach** — the therapy program gives corporates a concrete, fundable CSR story ("sponsor a therapy horse," "fund 20 therapy sessions") distinct from generic donations.
+4. **School/hospital referral network** — for the therapy program specifically, plus separate school field-trip and volunteer-day outreach for revenue.
+5. **EV-owner community marketing** — Thai EV owner Facebook/LINE groups and EV manufacturer partnerships (charging-partner co-marketing) for the EV camping niche.
+6. **Digital/social** — rescue "before and after" stories and therapy-program impact stories for the Foundation's channels; destination content for Bangkok weekend travelers.
 
 ---
 
 ## 10. Legal & Regulatory Checklist
 
-- [ ] Land title verification (Chanote) and due diligence survey
-- [ ] Land-use/zoning confirmation for tourism structures (café, guest accommodation)
-- [ ] Foundation/association registration (for donations + tax-deductible receipts)
-- [ ] Company registration for commercial arm (co., ltd.)
-- [ ] Tourism business license (if required for accommodation — check Hotel Act exemption thresholds for small guest accommodations, or register under homestay regulations)
+- [ ] Formal land re-survey and title verification (confirm boundaries/easements beyond the hand-marked survey)
+- [ ] Flood-elevation study for the floating-villa zone
+- [ ] Land-use/zoning confirmation for tourism structures (café, guest accommodation, EV charging infrastructure)
+- [ ] Lease/service agreement between the Foundation and the new operating company (accountant + lawyer)
+- [ ] New company registration (co., ltd.) for the commercial arm
+- [ ] Confirm the Foundation's existing registration covers this new physical site/program, or file the required amendment
+- [ ] Tourism business license / homestay registration for accommodation units
 - [ ] Animal Welfare Act registration/compliance
-- [ ] Local district (อบต./เทศบาล) permits for construction
+- [ ] Local district (อบต./เทศบาล) construction permits
 - [ ] Water usage permit (well drilling)
+- [ ] EV charging installation — confirm electrical capacity/upgrade needs with the local provincial electricity authority
 - [ ] Food service license for café
-- [ ] Business insurance (liability — critical given horse-riding/visitor injury risk)
+- [ ] Business insurance (liability — critical given horse-riding, therapy sessions with children, and visitor injury risk)
 
 ---
 
@@ -167,19 +178,21 @@ Indicative land-use allocation (to refine with an architect once the exact parce
 |---|---:|---:|
 | Land purchase (42 rai @ ~850,000 THB/rai — **verify with local appraisal**) | 35,700,000 | 37.2% |
 | Land transfer/registration/legal fees | 1,800,000 | 1.9% |
-| Site prep, roads, drainage, water wells, electrical | 6,000,000 | 6.2% |
-| Perimeter & paddock fencing (horse-safe, ~5 km) | 4,500,000 | 4.7% |
-| Main stable barn (24 stalls + tack/feed room) | 15,500,000 | 16.1% |
-| Quarantine & veterinary clinic | 3,200,000 | 3.3% |
-| Pasture establishment & landscaping | 1,800,000 | 1.9% |
-| Covered riding arena | 7,000,000 | 7.3% |
-| Visitor center, café & gift shop | 6,500,000 | 6.8% |
+| Site prep, roads, drainage, water wells, electrical | 5,400,000 | 5.6% |
+| Perimeter & multi-terrain paddock fencing | 4,100,000 | 4.3% |
+| Main stable barn (22 stalls + tack/feed room) | 14,400,000 | 15.0% |
+| Quarantine & veterinary clinic | 2,900,000 | 3.0% |
+| Multi-terrain pasture establishment & landscaping | 1,600,000 | 1.7% |
+| Covered riding/therapy arena | 6,000,000 | 6.2% |
+| Visitor center, café & gift shop | 5,700,000 | 5.9% |
 | Farm-stay glamping units (8 units) | 4,500,000 | 4.7% |
-| Staff housing (2 units) | 1,500,000 | 1.6% |
-| Equipment & vehicles (tractor, trailer, feed truck, carts) | 2,500,000 | 2.6% |
-| Initial rescue horse intake (transport/vet/rehab, first 15 horses) | 2,500,000 | 2.6% |
-| Working capital reserve (partial Year 1 buffer) | 1,000,000 | 1.0% |
-| Contingency + professional/legal/foundation setup fees | 2,000,000 | 2.1% |
+| EV camping zone (10 sites + charging + amenities) | 1,800,000 | 1.9% |
+| Flood-proof floating villas (3 units) | 4,500,000 | 4.7% |
+| Staff housing | 1,100,000 | 1.1% |
+| Equipment & vehicles | 2,000,000 | 2.1% |
+| Initial rescue horse intake (first 15 horses) | 2,200,000 | 2.3% |
+| Working capital reserve | 800,000 | 0.8% |
+| Contingency + company registration/legal fees | 1,500,000 | 1.6% |
 | **TOTAL** | **96,000,000** | **100%** |
 
 ### 11.2 Five-Year Revenue & Operating Projection (฿)
@@ -188,31 +201,37 @@ Indicative land-use allocation (to refine with an architect once the exact parce
 |---|---:|---:|---:|---:|---:|
 | Visitors | 4,000 | 8,000 | 13,000 | 18,000 | 23,000 |
 | Horses (rescue population) | 15 | 22 | 28 | 32 | 35 |
+| Children in therapy program/yr | 120 | 220 | 340 | 420 | 500 |
 | Admissions/tours | 1,400,000 | 2,800,000 | 4,550,000 | 6,300,000 | 8,050,000 |
 | Riding lessons | 960,000 | 1,920,000 | 3,120,000 | 4,320,000 | 5,520,000 |
 | Glamping | 1,460,000 | 2,190,000 | 2,920,000 | 3,504,000 | 4,015,000 |
+| EV camping | 438,000 | 642,400 | 876,000 | 1,109,600 | 1,314,000 |
+| Floating villas | 985,500 | 1,478,250 | 1,971,000 | 2,365,200 | 2,710,125 |
 | Café/shop | 360,000 | 720,000 | 1,170,000 | 1,620,000 | 2,070,000 |
 | Sponsorship/adoption | 57,600 | 84,480 | 107,520 | 122,880 | 134,400 |
 | Events | 600,000 | 1,080,000 | 1,680,000 | 2,160,000 | 2,520,000 |
-| Donations/grants | 1,500,000 | 1,700,000 | 1,900,000 | 2,100,000 | 2,300,000 |
-| **Total revenue** | **6,337,600** | **10,494,480** | **15,447,520** | **20,126,880** | **24,609,400** |
+| Donations (general) | 1,500,000 | 1,700,000 | 1,900,000 | 2,100,000 | 2,300,000 |
+| Therapy program CSR/grants | 800,000 | 1,200,000 | 1,700,000 | 2,100,000 | 2,500,000 |
+| **Total revenue** | **8,561,100** | **13,815,130** | **19,994,520** | **25,701,680** | **31,133,525** |
 | Staff costs | 5,400,000 | 6,200,000 | 7,000,000 | 7,800,000 | 8,400,000 |
+| Therapy program staff/equipment | 600,000 | 900,000 | 1,200,000 | 1,400,000 | 1,600,000 |
 | Feed/veterinary | 810,000 | 1,188,000 | 1,512,000 | 1,728,000 | 1,890,000 |
 | Utilities/maintenance | 900,000 | 1,050,000 | 1,200,000 | 1,350,000 | 1,500,000 |
 | Marketing | 500,000 | 550,000 | 600,000 | 650,000 | 700,000 |
 | Admin/overhead | 800,000 | 850,000 | 900,000 | 950,000 | 1,000,000 |
-| **Total operating cost** | **8,410,000** | **9,838,000** | **11,212,000** | **12,478,000** | **13,490,000** |
-| **Net income** | **(2,072,400)** | **656,480** | **4,235,520** | **7,648,880** | **11,119,400** |
-| Cumulative | (2,072,400) | (1,415,920) | 2,819,600 | 10,468,480 | 21,587,880 |
+| **Total operating cost** | **9,010,000** | **10,738,000** | **12,412,000** | **13,878,000** | **15,090,000** |
+| **Net income** | **(448,900)** | **3,077,130** | **7,582,520** | **11,823,680** | **16,043,525** |
+| Cumulative | (448,900) | 2,628,230 | 10,210,750 | 22,034,430 | 38,077,955 |
 
-**Break-even: Year 3.** Year 1–2 operating losses (~฿1.4M cumulative) are covered by the ฿1M working capital reserve plus ongoing donation income — this gap should be explicitly planned for in fundraising, not left as a surprise.
+**Break-even: Year 2.** The small Year-1 operating loss (~฿449k) is comfortably covered by the ฿800k working capital reserve plus the Foundation's existing donor base. Adding the therapy-program CSR line and the EV camping/floating-villa revenue meaningfully improves on a tourism-only model — both because CSR sponsors fund a mission (not just a visit) and because the two new accommodation types add revenue without competing with the existing glamping units for the same guest.
 
 ### 11.3 Funding Structure (suggested)
 
 - **Owner equity/cash:** the portion you can fund directly.
-- **Bank/agricultural loan (SME or ธ.ก.ส. – BAAC agricultural bank):** land and buildings can serve as collateral; BAAC in particular offers agriculture-linked loans that may fit a farm/sanctuary use case — worth an early conversation.
-- **Founding donor campaign:** launch the sponsorship/adoption program and a capital campaign *before* opening, targeting animal-welfare donors (local and international) to fund the initial horse intake and part of construction.
-- **Grants:** explore Thai and international animal welfare foundations/NGOs for capital or program grants once the foundation entity is registered.
+- **Bank/agricultural loan (SME or ธ.ก.ส. – BAAC agricultural bank):** land and buildings as collateral.
+- **Foundation capital campaign:** since Angel Arms already has a donor base, launch a capital campaign to existing supporters specifically for "building the horses' new home" — likely faster and cheaper than building a donor list from scratch.
+- **CSR sponsorship packages for the therapy program:** structured sponsorship tiers (e.g., "sponsor a therapy horse," "fund a term of sessions") sold to corporates ahead of opening.
+- **Grants:** Thai and international animal-welfare and children's-welfare foundations/NGOs — the combined mission (horses + special-needs children) qualifies for both categories of grant funding.
 
 ---
 
@@ -220,13 +239,14 @@ Indicative land-use allocation (to refine with an architect once the exact parce
 
 | Risk | Mitigation |
 |---|---|
-| Visitor numbers below projection | Farm De Lek cross-promotion de-risks initial traffic; keep Year 1–2 marketing budget flexible to respond |
+| Visitor numbers below projection | Farm De Lek cross-promotion + existing Foundation donor base de-risk initial traffic |
 | Horse disease outbreak | Mandatory quarantine protocol, contracted vet, biosecurity procedures |
-| Flood/weather damage (Nakhon Nayok has flood-prone areas) | Confirm parcel elevation before purchase; design drainage into site plan |
+| Flood damage | Site plan already designs around it (floating villas); confirm flood-elevation data before finalizing pasture/stable placement |
+| Therapy session incident (child or horse safety) | Certified equine-therapy specialist, strict horse-suitability screening, liability insurance, safety protocols |
 | Visitor injury (riding/animal contact) | Liability insurance, waivers, trained staff, safety protocols |
-| Cost overruns on construction | 2.1% contingency built in; phase non-critical builds (arena, extra glamping) into Year 2 if needed |
-| Donor fatigue / donation revenue underperforms | Commercial revenue (tours, lessons, events) is designed to cover the majority of opex even without donations by Year 3 |
-| Land title/zoning issues | Complete full legal due diligence before signing purchase agreement |
+| Cost overruns on construction | 1.6% contingency built in; phase non-critical builds (arena, extra villas) into Year 2 if needed |
+| Donor/CSR fatigue | Commercial revenue (tours, lessons, accommodation, events) covers the large majority of opex even without donations by Year 2 |
+| Land title/easement issues | Complete formal legal re-survey and due diligence before signing purchase agreement |
 
 ---
 
@@ -234,24 +254,25 @@ Indicative land-use allocation (to refine with an architect once the exact parce
 
 | Phase | Timeframe | Milestones |
 |---|---|---|
-| Phase 0 — Due diligence | Months 1–3 | Land survey, title check, legal structure setup, architect engaged, Farm De Lek partnership discussion |
+| Phase 0 — Due diligence | Months 1–3 | Formal re-survey, flood-elevation study, Foundation/company legal structure set up, architect engaged, Farm De Lek partnership discussion |
 | Phase 1 — Acquisition & core build | Months 3–9 | Land purchase closes, site prep, fencing, main stable, quarantine clinic, water/power infrastructure |
-| Phase 2 — Visitor infrastructure | Months 9–14 | Riding arena, visitor center/café, glamping units, staff housing |
-| Phase 3 — Soft launch | Month 14–15 | First rescue horses arrive (post-quarantine), staff hired/trained, soft-launch tours for local community/press |
-| Phase 4 — Public launch & marketing push | Month 15–16 | Full public opening, sponsorship program launch, school/CSR outreach begins |
-| Phase 5 — Scale | Year 2–5 | Grow horse population, add events/glamping capacity, evaluate Phase 3 land reserve expansion |
+| Phase 2 — Visitor & accommodation infrastructure | Months 9–14 | Riding/therapy arena, visitor center/café, glamping units, floating villas, EV camping zone, staff housing |
+| Phase 3 — Soft launch | Month 14–15 | First rescue horses arrive (post-quarantine), therapy specialist hired, staff trained, soft-launch tours and first therapy sessions |
+| Phase 4 — Public launch & CSR outreach | Month 15–16 | Full public opening, sponsorship program and CSR/grant outreach launch, school/hospital referral network begins |
+| Phase 5 — Scale | Year 2–5 | Grow horse population and therapy caseload, add events/accommodation capacity, evaluate reserve-land expansion |
 
 ---
 
 ## 14. Assumptions to Verify (do this before committing capital)
 
-1. **Actual land price** for the specific 42-rai parcel next to Farm De Lek — this plan assumes ~฿850,000/rai; get a real quote/appraisal, as Nakhon Nayok land prices vary widely by road access and proximity to attractions.
-2. **Construction cost quotes** from 2–3 local contractors for the stable barn, arena, and visitor center — the figures here are planning estimates, not bids.
-3. **Water availability** — well yield test before finalizing pasture/paddock layout.
-4. **Farm De Lek partnership terms** — have a direct conversation with them early; the whole tourism-ramp assumption in this plan depends partly on this relationship.
-5. **Visitor demand** — consider a small market survey or soft-launch pilot (even before full construction, e.g., weekend open days) to validate visitor numbers before committing to Phase 2 spend.
-6. **Financing terms** — get actual loan quotes (rate, term, collateral requirements) from BAAC and SME banks to refine the funding structure in Section 11.3.
+1. **Actual land price** for the specific 42-rai parcel — this plan assumes ~฿850,000/rai; get a real quote/appraisal.
+2. **Formal re-survey** of the parcel — the photographed hand-marked survey establishes that title documents exist, but exact boundaries/easements need a licensed surveyor's confirmation.
+3. **Flood-elevation data** for the zone planned for floating villas — confirms design specs (float height, anchoring) and construction cost.
+4. **Construction cost quotes** from 2–3 local contractors, including quotes specifically for flood-proof floating structures (a specialized build type, likely to need a contractor with relevant experience).
+5. **Foundation/company legal structure** — confirm with an accountant/lawyer how the Foundation's existing registration extends to this new site and program, and how the lease/fee arrangement with the new operating company should be structured.
+6. **Farm De Lek partnership terms** — have a direct conversation with them early.
+7. **Financing terms** — get actual loan quotes from BAAC and SME banks.
 
 ---
 
-*This document is a planning tool, not a finished bank-ready business plan. The next concrete steps are: (1) get the land appraised and title-checked, (2) get 2–3 contractor quotes, (3) have the initial conversation with Farm De Lek, (4) engage a Thai lawyer/accountant to set up the foundation + company structure.*
+*This document is a planning tool, not a finished bank-ready business plan. Next concrete steps: (1) formal land re-survey + flood study, (2) 2–3 contractor quotes (including floating-structure specialists), (3) accountant/lawyer session on the Foundation/company structure, (4) the Farm De Lek conversation.*
