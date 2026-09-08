@@ -1,237 +1,287 @@
-# Business Plan: Angel Arms Horse Sanctuary
+# Business Plan: Angel Arms Horse Sanctuary & Equestrian Community
 ### A program of มูลนิธิในอ้อมกอด (The Angel Arms Foundation)
 
 **Location:** Nakhon Nayok Province, Thailand (adjacent to Farm De Lek)
-**Land size:** 42 rai (≈ 67,200 sqm / 6.72 hectares / 16.6 acres)
-**Total budget:** ฿96,000,000 (land + development)
-**Model:** Existing foundation's rescue + equine-therapy program, funded by an agritourism operating company
+**Land size:** 42 rai total — **10 rai retained as the sanctuary**, **32 rai subdivided and sold** to horse-owning families
+**Total land cost:** ฿96,600,000 (≈ stated ฿96M)
+**Model:** Foundation-owned rescue + equine-therapy sanctuary, surrounded by a resident horse-owner community whose land sale is structured to fund itself
 **Prepared for:** Apinya
 **Date:** September 2026
 
-> All land prices, construction costs, and visitor/revenue figures in this plan are **planning-level estimates** based on general Thailand market ranges. Before finalizing, get: (1) a licensed land appraisal / broker quote for the specific parcel (title documents already exist — have a lawyer confirm title type and any road-access easement shown on the survey), (2) itemized contractor quotes for construction, (3) an accountant to confirm the foundation/company revenue-sharing structure.
+> All land prices, construction costs, and revenue figures in this plan are **planning-level estimates**. Before finalizing, get: (1) a licensed land appraisal / formal re-survey of the specific parcel, (2) itemized contractor quotes, (3) an accountant to confirm the Foundation/company structure and the tax treatment of the 32-rai resale (see §11.2 — Specific Business Tax likely applies).
 
 ---
 
 ## 1. Executive Summary
 
-Angel Arms Horse Sanctuary extends the existing mission of **มูลนิธิในอ้อมกอด (The Angel Arms Foundation)** — which currently supports special-needs children and struggling families through therapy, education, and life-skills programs — into a dedicated home for **retired and injured horses used in equine-assisted therapy**, on 42 rai in Nakhon Nayok, directly adjacent to Farm De Lek.
+The 42-rai property splits into two purposes with two very different financial jobs:
 
-The site combines four things already sketched into your own site plan: a **reconfigured multi-terrain pasture** for horse rehabilitation and turnout, a **stable/therapy/visitor building cluster** along the road frontage, an **EV camping area**, and **flood-proof floating villas** for overnight guests — alongside standard glamping. Because the Foundation already exists, there's no need to register a new charity; the recommended structure is to run the sanctuary as a **Foundation program** (therapy, rescue, welfare — donor and grant funded) alongside a **new operating company** that runs the commercial tourism side (tours, lessons, café, accommodation, events) and channels a share of profit back to the Foundation.
+- **10 rai — Angel Arms Horse Sanctuary.** Owned and run by **The Angel Arms Foundation** (an existing foundation, currently serving special-needs children and struggling families). Rescue, rehabilitation, and equine-assisted therapy. This is a mission program, not a profit center — it runs on donations, CSR sponsorship, and grants, the way the rest of the Foundation's work already does. **This is the only piece that needs your own capital.**
+- **32 rai — a subdivided equestrian residential development, sold off-plan under a partnership with the land owner.** Split into 15–18 plots (1–5 rai each) and sold to horse-owning families at ฿3.5M/rai, with 5 rai kept as shared communal space (clubhouse, café, small shared glamping/EV camping/floating villa for residents, roads). Under the deal with the owner, **the owner keeps the deed and transfers title directly to each end-buyer, in step with the ฿73.6M payment plan** — so the ฿73.6M land cost is effectively vendor-financed against incoming plot sales, not capital you front. Your exposure here is the subdivision/infrastructure spend needed to make the plots sellable (~฿13–14M, see §11.3), ideally sequenced against buyer deposits.
+
+**The real capital ask is the sanctuary itself: ~฿56.4M** (฿23M land + ฿33.4M construction). The 32-rai land cost is not your capital — it passes through from plot-buyer payments to the owner. Your remaining exposure there is the ~฿13–14M of subdivision infrastructure (roads, utilities, communal amenities), which should be sequenced against buyer deposits wherever possible.
 
 **Key numbers:**
-- Total capital required: ฿96,000,000 (land ~37.5M / development ~58.5M)
-- Break-even: projected **Year 2**
-- Year 5 projected annual revenue: **~฿31.1M**, net income **~฿16.0M**
-- Initial horse capacity: 15 rescues (Year 1), scaling to 35 by Year 5
-- Children served through the therapy program: ~120 in Year 1, growing to ~500/year by Year 5
+- Sanctuary land payments (yours): ฿23M, **Oct 2026 deposit + Apr 2027 balance**
+- 32-rai land payments (owner-financed, pass-through against plot sales): ฿73.6M, quarterly Jul 2027 → Oct 2028 — **not your capital**, but the schedule your plot-sales pace needs to keep up with
+- Sanctuary capital need: **~฿56.4M** (land + construction) — this is what you actually need to raise
+- 32-rai subdivision infrastructure: **~฿13–14M**, ideally funded from buyer deposits as pre-sales land
+- Sanctuary operating reality: a **permanent modest deficit** (~฿2.3M in Year 1, narrowing to ~฿0.56M by Year 5 combined with community-amenity surplus) — typical for a rescue/therapy nonprofit, funded by ongoing donations/CSR
+- Horses in care: 15 (Year 1) → 35 (Year 5). Children served in therapy: 120 → 500/year.
 
 ---
 
 ## 2. Vision & Mission
 
-**Vision:** To become the leading horse welfare, equine-therapy, and agritourism destination in the Khao Yai–Nakhon Nayok region — and the flagship program of The Angel Arms Foundation.
+**Vision:** to become the leading horse welfare and equine-therapy program in the Khao Yai–Nakhon Nayok region, anchoring a small resident community of horse-owning families around it — and the flagship program of The Angel Arms Foundation.
 
 **Mission (extending the Foundation's existing mission):**
 - Rescue, rehabilitate, and provide lifelong care to retired/injured horses.
-- Use those horses in **equine-assisted therapy** for special-needs children and families the Foundation already serves.
-- Build a self-sustaining tourism and hospitality business that funds the welfare and therapy work, rather than relying solely on donations.
-- Offer education, training, and career opportunities (as the Foundation's existing mission states) to young people and community members through the sanctuary's operations.
+- Use those horses in **equine-assisted therapy** for the special-needs children and families the Foundation already serves.
+- Build a resident community of horse-owning families whose land purchase funds the sanctuary's founding and whose shared amenities help sustain it operationally.
+- Offer education, training, and career opportunities to young people and the community through the sanctuary's operations.
 
-**Core values:** Animal welfare first, children/family welfare, financial sustainability, community/education, environmental stewardship of the land.
+**Core values:** Animal welfare first, children/family welfare, financial sustainability, community, environmental stewardship of the land.
 
 ---
 
 ## 3. Business Concept & Structure
 
-Since **The Angel Arms Foundation already exists**, no new charitable entity needs to be registered. The recommended structure:
+Three linked pieces, each with a distinct financial job:
 
-1. **The Angel Arms Foundation (existing)** — owns the sanctuary's welfare and therapy mission: horse rescue/rehab, the children's equine-therapy program, and donor/grant relationships. Continues to receive tax-deductible donations under its existing registration.
-2. **A new operating company (co., ltd.)** — leases the commercial-use portion of the land from the Foundation (or is granted a service agreement), and runs tours, riding lessons, the café/gift shop, glamping, EV camping, floating villas, and events. Pays the Foundation a facility fee and/or a share of profit, funding the horses' care and the therapy program.
+1. **The Angel Arms Foundation (existing)** — owns the 10-rai sanctuary and its mission: horse rescue/rehab, the children's equine-therapy program, donor and grant relationships. No new charity registration needed.
+2. **A land-development/sales entity, operating as the owner's partner** — under the partnership deal, the original land owner retains legal title to the 32 rai and transfers the deed directly to each end-buyer, in step with the owner's own ฿73.6M payment plan. This entity's job is to subdivide, market, and sell the 15–18 plots, fund the subdivision infrastructure (roads, communal amenities), and collect buyer payments — passing the owner's share through per the agreed schedule and keeping the margin. **Get the partnership terms in writing**: exactly how buyer payments are split/sequenced between "owner's share" (against the ฿73.6M) and "your margin," what happens if a plot doesn't sell before a payment milestone, and who bears the subdivision infrastructure cost.
+3. **A community-amenities operating company** — runs the ongoing café, shared glamping/EV camping/floating villa, and collects a common-area (HOA-style) maintenance fee from plot owners. Its modest, growing surplus can be directed to subsidize the sanctuary's operating deficit.
 
-This keeps donor trust intact (donations visibly fund horse welfare and children's therapy, not hotel operations) while giving the commercial side normal business flexibility. **Have your accountant/lawyer confirm the specific lease/fee arrangement between the Foundation and the new company** — this affects both entities' tax treatment.
+**Confirm with counsel:** the exact legal form of the owner partnership (a JV, a sales/marketing agency agreement, or a conditional sale), how the Foundation's land (10 rai) is legally separated from the 32 rai still held by the owner, and the tax treatment of the resale (see §11.3 — Specific Business Tax on land sold within 5 years of acquisition likely applies to whichever party is the seller of record).
 
 ---
 
 ## 4. Location & Land
 
-- **Province:** Nakhon Nayok — roughly 105 km / 1.5–2 hrs from Bangkok, on the edge of the Khao Yai tourism corridor.
-- **Adjacency:** Directly next to **Farm De Lek**, an existing farm attraction — shared road visibility, cross-promotion potential, and proof the area draws agritourism traffic.
-- **Land shape:** Title documents show a narrow, elongated parcel with public-road frontage (as marked on the survey: "ถนนสาธารณะประโยชน์"). This shape suits your site-plan concept well: a compact facility cluster near the road, with the pasture/multi-terrain zones running back along the length of the plot.
+- **Province:** Nakhon Nayok — ~105 km / 1.5–2 hrs from Bangkok, on the edge of the Khao Yai tourism corridor.
+- **Adjacency:** directly next to **Farm De Lek**, an existing farm attraction.
+- **Land shape:** title documents show a narrow, elongated parcel with public-road frontage ("ถนนสาธารณะประโยชน์" on the survey).
 - **Confirm before purchase:**
-  - Exact area and boundaries with a licensed surveyor (photographed hand-marked survey sketches are a starting point, not a substitute for a formal re-survey).
-  - Title type (Chanote/โฉนด is strongest) and the legal status of the road-access easement.
-  - Water rights/access — critical both for pasture irrigation and for the pond feature in your site plan.
-  - Flood elevation data — this matters more here than in a typical plan, since your own site plan already calls for **flood-proof floating villas**, meaning part of the site is expected to experience seasonal flooding. Confirm exactly which zones flood and to what depth so the pasture, stable, and floating-villa placement are engineered correctly from day one.
+  - Exact area/boundaries with a licensed surveyor — a hand-marked survey photo is a starting point, not a legal substitute.
+  - Title type (Chanote/โฉนด is strongest) and the road-access easement's legal status.
+  - How the 10-rai sanctuary parcel and the 32-rai development parcel will be legally split (separate titles) before or at purchase — this affects both the Foundation's ownership and the subdivision process.
+  - Water rights/access for pasture irrigation and the pond feature.
+  - Flood elevation data — the site plan calls for flood-proof floating structures, so confirm exactly which zones flood and to what depth.
 
 ---
 
-## 5. Site Master Plan (from your concept sketch)
+## 5. Site Master Plan
 
-Your hand-drawn plan already lays out the logic; here it is translated into a buildable zoning plan across the 42 rai:
+### 5.1 — 10-rai Sanctuary (Foundation-owned)
 
-- **Road-frontage cluster (~6 rai):** Visitor center, café, gift shop, main stable barn, quarantine/vet clinic, parking — matches the row of buildings drawn along the road in your sketch.
-- **Reconfigured multi-terrain pasture (~20 rai):** The numbered zones (1–9) in your sketch become distinct pasture/paddock cells with varied terrain (flat grazing, gentle slopes, sand/soft-footing areas) — useful both for rotational grazing and for varied-terrain therapy/rehab exercises with the horses.
-- **Pond & water feature (~2 rai):** As drawn, doubling as irrigation reserve and a scenic anchor for the visitor/therapy area.
-- **Covered riding/therapy arena (~4 rai):** For lessons, trail-ride staging, and equine-therapy sessions in any weather.
-- **Flood-proof floating villas (~2 rai, lower-elevation zone):** Positioned on the section of land your sketch marks for flood exposure — engineered as floating/stilted structures rather than fighting the flood risk.
-- **EV camping zone (~3 rai):** EV-friendly camping/RV pads with charging points, positioned near the road-frontage cluster for easy access and grid connection.
-- **Standard glamping (~2 rai):** Higher ground, near the visitor cluster.
-- **Staff housing + reserve (~3 rai):** Staff quarters and land held for Phase 3 expansion.
+Scoped to what actually fits alongside stable, pasture, and arena on 10 rai — no tourism accommodation here:
+
+- **~1.5 rai** — Main stable barn (22 stalls), tack/feed room
+- **~1 rai** — Quarantine & veterinary clinic
+- **~1 rai** — Covered riding/therapy arena
+- **~5 rai** — Multi-terrain pasture/paddocks (the numbered zones 1–9 from your sketch, as distinct grazing/rehab cells)
+- **~1 rai** — Admin/reception/therapy office, parking, access road
+
+### 5.2 — 32-rai Residential Development
+
+- **~27 rai** — 15–18 titled plots (1–5 rai each) sold to horse-owning families
+- **~5 rai communal zone:**
+  - Clubhouse & café (shared, residents + occasional sanctuary visitors)
+  - Shared glamping (3 units) — for residents' guests
+  - Shared EV charging/camping (4 sites)
+  - 1 flood-proof floating villa — sited on the sketch's flood-exposed section, for guests
+  - Internal estate roads connecting to the sanctuary and the public road
 
 ---
 
 ## 6. Products & Services
 
+**Sanctuary (Foundation, mission-funded):**
+
+| Service | Description | Notes |
+|---|---|---|
+| Sanctuary tour / horse encounter | Small-scale donor, school, and community tours | ฿300/person |
+| Riding lessons | Limited public/resident lessons | ฿700/session |
+| Equine-assisted therapy | Core Foundation program for special-needs children/families | Sponsor/grant-funded, not family fees |
+| Horse sponsorship/adoption | Monthly symbolic adoption of a rescued horse | ฿500–2,000/month |
+
+**Community amenities (operating company, resident + occasional guest revenue):**
+
 | Service | Description | Indicative price |
 |---|---|---|
-| Sanctuary tour / horse encounter | Guided walk, meet-the-horses, feeding | ฿200–400/person |
-| Riding lessons / trail rides | Beginner lessons, guided trail rides | ฿500–1,500/session |
-| **Equine-assisted therapy** | Foundation program for special-needs children/families; subsidized or free to families, funded by CSR/grants | Funded via sponsorship, not family fees |
-| Farm-stay glamping | 8 standard glamping units | ฿1,500–3,500/night |
-| **Flood-proof floating villas** | 3 premium overnight units on the site's low-lying zone | ฿3,500–5,500/night |
-| **EV camping** | 10 EV-friendly camping/RV pads with charging | ฿600–1,000/night |
-| Café & gift shop | On-site dining, merchandise | ฿100–250/visit avg |
-| Horse sponsorship/adoption | Monthly symbolic adoption of a rescued horse | ฿500–2,000/month |
-| Events & venue hire | Weddings, corporate retreats, school trips | ฿40,000–150,000/event |
-| Volunteering/CSR days | Paid volunteer experience days for companies/schools | Custom pricing |
+| Café & clubhouse | Resident + visitor dining | modest, community-scale |
+| Shared glamping (3 units) | Guest accommodation for residents' visitors | ฿2,500/night |
+| Shared EV camping (4 sites) | EV-friendly camping/RV pads with charging | ฿800/night |
+| Flood-proof floating villa (1 unit) | Premium guest stay | ฿4,500/night |
+| Common-area (HOA) fee | Plot owners' contribution to roads/communal upkeep | ฿30,000/plot/year |
 
 ---
 
 ## 7. Market Analysis
 
 **Demand drivers:**
-- Thailand's domestic tourism has shifted toward nature/farm-stay experiences; agritourism and "unique animal encounter" venues command premium pricing when positioned as ethical/rescue-focused.
-- A dedicated **equine therapy + rescue** story is a strong differentiator — most Thai animal-welfare tourism is elephant-focused; a horse-sanctuary-with-a-children's-therapy-mission is distinctive and highly press/CSR-friendly.
-- EV camping and flood-adapted "floating villa" accommodation are both on-trend niches in Thai domestic tourism right now, giving the site two additional, differentiated revenue lines beyond standard glamping.
-- Weekend/holiday drive-market from Bangkok is large; the Khao Yai/Nakhon Nayok corridor is an established getaway destination.
+- A dedicated equine therapy + rescue story is distinctive in Thailand's mostly elephant-focused animal-welfare tourism.
+- There's real demand from Thai horse-owning families for land near an established equestrian facility — the sanctuary is the anchor amenity that makes the 32-rai plots more attractive than raw land.
+- The Bangkok weekend drive-market and Khao Yai/Nakhon Nayok corridor support both plot buyers (weekend/retirement property) and modest sanctuary visitation.
 
-**Competition:** A small number of commercial riding/boarding stables in the region; broader competition from Khao Yai farm stays and agritourism venues. Positioning leads with the Foundation's existing welfare/therapy mission, not generic "riding stable" branding.
-
-**Target customers:**
-1. Bangkok families/weekend travelers (day trip or overnight)
+**Target buyers/customers:**
+1. Horse-owning families looking for land with shared equestrian infrastructure nearby (32-rai plot buyers — the primary near-term transaction)
 2. Corporate CSR partners and grant-making foundations (funding the therapy program)
 3. Schools and hospitals referring families for equine-assisted therapy
-4. Horse-sponsorship donors (existing Foundation donor base + new)
-5. EV-owning weekend campers (a fast-growing, under-served niche)
-6. Wedding/event planners
-7. Existing Farm De Lek visitors (cross-sell)
+4. Existing Foundation donors (horse-sponsorship program)
+5. Farm De Lek's existing visitor base (modest cross-sell for sanctuary tours)
+
+**Competition:** other rural land subdivisions in the Khao Yai/Nakhon Nayok corridor compete for the same buyers — the sanctuary itself, not price, is the differentiator; make sure marketing to plot buyers leads with "live next to a working horse sanctuary," not generic land-for-sale messaging.
 
 ---
 
 ## 8. Operations Plan
 
-**Horse intake process:** Partner with provincial livestock offices, riding schools, and welfare networks to identify horses needing rescue. Each intake includes veterinary assessment, a minimum 30-day quarantine, and a rehabilitation plan before joining the herd or the therapy program.
+**Horse intake:** partner with provincial livestock offices, riding schools, and welfare networks. Each intake includes veterinary assessment, a minimum 30-day quarantine, and a rehabilitation plan.
 
-**Therapy program:** Run under Foundation staff/protocols (building on the Foundation's existing special-needs and family-support programs), with a certified equine-therapy specialist overseeing session design and horse suitability assessment — not every rescued horse is suited to therapy work, so the multi-terrain pasture and varied-exercise zones also double as an assessment/conditioning ground.
+**Therapy program:** run under Foundation staff/protocols, with a certified equine-therapy specialist assessing horse suitability.
 
-**Staffing (Year 1, ~20 people):**
+**Sanctuary staffing (Year 1, ~7 people):**
 
 | Role | Count |
 |---|---|
-| Sanctuary/farm manager | 1 |
-| Grooms/horse handlers | 4 |
-| Veterinarian (contract/on-call) + vet tech | 1 + 1 |
+| Sanctuary manager | 1 |
+| Grooms/horse handlers | 3 |
+| Veterinarian (contract/on-call) | 1 |
 | Equine-therapy specialist | 1 |
-| Riding instructors/guides | 3 |
-| Hospitality (café, glamping/villa/EV-site housekeeping) | 5 |
-| Admin/marketing/bookings | 2 |
-| Maintenance/grounds | 2 |
+| Admin | 1 |
 
-**Animal welfare compliance:** Register/operate under Thailand's Animal Welfare Act (พ.ร.บ. ป้องกันการทารุณกรรมและการจัดสวัสดิภาพสัตว์) — reinforces both donor trust and the therapy program's credibility with referring schools/hospitals.
+**Community amenities staffing (Year 1, ~3 people):** small hospitality/upkeep crew for café, shared glamping/EV/villa, and communal-area maintenance — separate budget line from the sanctuary (see §11.3).
+
+**Animal welfare compliance:** register/operate under Thailand's Animal Welfare Act (พ.ร.บ. ป้องกันการทารุณกรรมและการจัดสวัสดิภาพสัตว์).
 
 ---
 
 ## 9. Marketing Strategy
 
-1. **Leverage the existing Angel Arms Foundation brand and donor base** — this is a major head start over building a new charity brand from zero; existing supporters of the children's programs are a natural audience for the horse-sponsorship program too.
-2. **Farm De Lek synergy** — a combined ticket, shared signage, or cross-referral program.
-3. **CSR/grant outreach** — the therapy program gives corporates a concrete, fundable CSR story ("sponsor a therapy horse," "fund 20 therapy sessions") distinct from generic donations.
-4. **School/hospital referral network** — for the therapy program specifically, plus separate school field-trip and volunteer-day outreach for revenue.
-5. **EV-owner community marketing** — Thai EV owner Facebook/LINE groups and EV manufacturer partnerships (charging-partner co-marketing) for the EV camping niche.
-6. **Digital/social** — rescue "before and after" stories and therapy-program impact stories for the Foundation's channels; destination content for Bangkok weekend travelers.
+1. **Sell the 32-rai plots on the sanctuary story** — "live next to a working horse rescue and therapy center" is the differentiator against generic rural land listings. This is the single highest-priority near-term marketing effort, since plot sales are what funds the land purchase.
+2. **Leverage the existing Angel Arms Foundation brand and donor base** for the sanctuary side.
+3. **Farm De Lek synergy** — cross-referral for modest sanctuary tour traffic.
+4. **CSR/grant outreach** for the therapy program specifically.
+5. **School/hospital referral network** for therapy referrals.
+6. **Resident-community marketing** — once plots start selling, word-of-mouth among Thai horse-owner networks is likely the strongest channel for remaining plots.
 
 ---
 
 ## 10. Legal & Regulatory Checklist
 
-- [ ] Formal land re-survey and title verification (confirm boundaries/easements beyond the hand-marked survey)
+- [ ] Formal land re-survey and title verification, including the split between the 10-rai sanctuary parcel and the 32-rai development parcel
 - [ ] Flood-elevation study for the floating-villa zone
-- [ ] Land-use/zoning confirmation for tourism structures (café, guest accommodation, EV charging infrastructure)
-- [ ] Lease/service agreement between the Foundation and the new operating company (accountant + lawyer)
-- [ ] New company registration (co., ltd.) for the commercial arm
-- [ ] Confirm the Foundation's existing registration covers this new physical site/program, or file the required amendment
-- [ ] Tourism business license / homestay registration for accommodation units
+- [ ] Subdivision/title-splitting process for the 32 rai into 15–18 titled plots
+- [ ] Land-use/zoning confirmation for the communal structures (café, guest accommodation, EV charging)
+- [ ] Foundation ownership structure for the 10-rai sanctuary parcel
+- [ ] Company registration/structure for the land-development and community-amenities entities
+- [ ] **Specific Business Tax (SBT)** exposure on the 32-rai resale (applies to land sold within 5 years of acquisition) — confirm with an accountant; this plan estimates it at ~3.3% of sale price
+- [ ] Sale & purchase agreement terms for plot buyers — deposit/installment schedule (recommend structuring to mirror your own payment schedule to the original seller)
 - [ ] Animal Welfare Act registration/compliance
 - [ ] Local district (อบต./เทศบาล) construction permits
 - [ ] Water usage permit (well drilling)
-- [ ] EV charging installation — confirm electrical capacity/upgrade needs with the local provincial electricity authority
-- [ ] Food service license for café
-- [ ] Business insurance (liability — critical given horse-riding, therapy sessions with children, and visitor injury risk)
+- [ ] EV charging installation — confirm capacity with the provincial electricity authority
+- [ ] Food service license; business liability insurance
 
 ---
 
 ## 11. Financial Plan
 
-### 11.1 Capital Expenditure (Total: ฿96,000,000)
+### 11.1 Land Payment Schedule (Total: ฿96,600,000 — only ฿23M is your own capital)
 
-| Item | Amount (฿) | % of budget |
-|---|---:|---:|
-| Land purchase (42 rai @ ~850,000 THB/rai — **verify with local appraisal**) | 35,700,000 | 37.2% |
-| Land transfer/registration/legal fees | 1,800,000 | 1.9% |
-| Site prep, roads, drainage, water wells, electrical | 5,400,000 | 5.6% |
-| Perimeter & multi-terrain paddock fencing | 4,100,000 | 4.3% |
-| Main stable barn (22 stalls + tack/feed room) | 14,400,000 | 15.0% |
-| Quarantine & veterinary clinic | 2,900,000 | 3.0% |
-| Multi-terrain pasture establishment & landscaping | 1,600,000 | 1.7% |
-| Covered riding/therapy arena | 6,000,000 | 6.2% |
-| Visitor center, café & gift shop | 5,700,000 | 5.9% |
-| Farm-stay glamping units (8 units) | 4,500,000 | 4.7% |
-| EV camping zone (10 sites + charging + amenities) | 1,800,000 | 1.9% |
-| Flood-proof floating villas (3 units) | 4,500,000 | 4.7% |
-| Staff housing | 1,100,000 | 1.1% |
-| Equipment & vehicles | 2,000,000 | 2.1% |
-| Initial rescue horse intake (first 15 horses) | 2,200,000 | 2.3% |
-| Working capital reserve | 800,000 | 0.8% |
-| Contingency + company registration/legal fees | 1,500,000 | 1.6% |
-| **TOTAL** | **96,000,000** | **100%** |
+| Date | Payment | Amount (฿) | Who funds it |
+|---|---|---:|---|
+| Oct 2026 | Sanctuary land deposit (10 rai) | 6,000,000 | **You/Foundation** |
+| Apr 2027 | Sanctuary land balance (10 rai) | 17,000,000 | **You/Foundation** |
+| Jul 2027 | 32-rai development land, installment 1/6 | 12,266,667 | Owner-financed — paid from plot-buyer proceeds |
+| Oct 2027 | 32-rai development land, installment 2/6 | 12,266,667 | Owner-financed — paid from plot-buyer proceeds |
+| Jan 2028 | 32-rai development land, installment 3/6 | 12,266,667 | Owner-financed — paid from plot-buyer proceeds |
+| Apr 2028 | 32-rai development land, installment 4/6 | 12,266,667 | Owner-financed — paid from plot-buyer proceeds |
+| Jul 2028 | 32-rai development land, installment 5/6 | 12,266,667 | Owner-financed — paid from plot-buyer proceeds |
+| Oct 2028 | 32-rai development land, installment 6/6 | 12,266,667 | Owner-financed — paid from plot-buyer proceeds |
 
-### 11.2 Five-Year Revenue & Operating Projection (฿)
+*The 32-rai balance (฿73.6M) is modeled as 6 equal quarterly installments over 18 months — confirm the exact count/amounts against the actual partnership contract.*
 
-| | Year 1 | Year 2 | Year 3 | Year 4 | Year 5 |
+**What this really means:** your direct capital obligation for land is just the ฿23M sanctuary line. The 32-rai schedule is a pass-through — the owner transfers each plot's deed to its buyer once that buyer's payments (routed through you) satisfy the corresponding share of the ฿73.6M plan. The thing to manage isn't a cash gap anymore — it's **sales pace**: your plot sales need to keep up with the owner's quarterly milestones, or you (not the buyer) may be on the hook for a shortfall. Get explicit in the partnership contract about what happens if plots are unsold when a milestone is due.
+
+### 11.2 Sanctuary Capital Requirement (10 rai) — the real capital ask
+
+| Item | Amount (฿) |
+|---|---:|
+| Land (10 rai, part of the schedule above) | 23,000,000 |
+| Main stable barn (22 stalls + tack/feed room) | 13,000,000 |
+| Quarantine & veterinary clinic | 2,900,000 |
+| Covered riding/therapy arena | 4,500,000 |
+| Perimeter & paddock fencing | 1,500,000 |
+| Multi-terrain pasture establishment | 900,000 |
+| Admin/reception/therapy office | 1,800,000 |
+| Site prep, water well, electrical, access road | 2,500,000 |
+| Equipment & vehicles | 1,500,000 |
+| Initial rescue horse intake (first 15 horses) | 2,200,000 |
+| Staff housing (1 unit) | 600,000 |
+| Working capital reserve | 800,000 |
+| Contingency + legal | 1,200,000 |
+| **TOTAL SANCTUARY CAPITAL** | **56,400,000** |
+
+### 11.3 32-rai Development Economics (owner-financed land, your infrastructure spend)
+
+| | ฿ | Who bears it |
+|---|---:|---|
+| Sellable land (32 − 5 rai communal) | 27 rai | — |
+| Sale revenue (27 rai × ฿3.5M) | 94,500,000 | Collected by you from buyers |
+| − Owner's land share (passed through per §11.1) | (73,600,000) | **Pass-through, not your cost** |
+| **Your gross margin** | **20,900,000** | |
+| − Internal estate roads | (3,500,000) | **Your capital** |
+| − Utilities extension to plots | (2,000,000) | **Your capital** |
+| − Communal clubhouse/café | (3,500,000) | **Your capital** |
+| − Shared glamping (3 units) | (2,000,000) | **Your capital** |
+| − Shared EV charging area (4 sites) | (500,000) | **Your capital** |
+| − Flood-proof floating guest villa (1 unit) | (1,500,000) | **Your capital** |
+| − Subdivision survey/title-splitting (15–18 titles) | (800,000) | **Your capital** |
+| − Marketing & sales commission (~3%) | (2,835,000) | Deducted from proceeds at sale |
+| − Transfer fee + Specific Business Tax (~est.) | (4,063,500) | Deducted from proceeds at sale, or per contract |
+| **NET MARGIN** | **~201,500** | |
+
+Your real infrastructure exposure — the ~฿13.8M of physical build (roads, utilities, communal amenities, survey) — should be sequenced against buyer reservation deposits as much as possible, so you're not fronting it before sales revenue starts arriving. The ~3% margin (฿20.9M gross, ~฿0.2M net after all costs) means this piece is a **community-building tool, not a profit engine** — don't count on it to fund anything beyond itself.
+
+**Combined picture:** with the 32-rai land cost now correctly treated as owner-financed rather than your capital, **your total capital requirement is the sanctuary's ~฿56.4M plus the 32-rai's ~฿13.8M infrastructure spend (ideally funded from buyer deposits) — roughly ฿56–70M depending on how much of that infrastructure spend you can time against incoming deposits.**
+
+### 11.4 Post-Launch Operating Projections (฿)
+
+**(A) Sanctuary — mission-funded, permanent modest deficit is normal here:**
+
+| | Y1 | Y2 | Y3 | Y4 | Y5 |
 |---|---:|---:|---:|---:|---:|
-| Visitors | 4,000 | 8,000 | 13,000 | 18,000 | 23,000 |
-| Horses (rescue population) | 15 | 22 | 28 | 32 | 35 |
-| Children in therapy program/yr | 120 | 220 | 340 | 420 | 500 |
-| Admissions/tours | 1,400,000 | 2,800,000 | 4,550,000 | 6,300,000 | 8,050,000 |
-| Riding lessons | 960,000 | 1,920,000 | 3,120,000 | 4,320,000 | 5,520,000 |
-| Glamping | 1,460,000 | 2,190,000 | 2,920,000 | 3,504,000 | 4,015,000 |
-| EV camping | 438,000 | 642,400 | 876,000 | 1,109,600 | 1,314,000 |
-| Floating villas | 985,500 | 1,478,250 | 1,971,000 | 2,365,200 | 2,710,125 |
-| Café/shop | 360,000 | 720,000 | 1,170,000 | 1,620,000 | 2,070,000 |
-| Sponsorship/adoption | 57,600 | 84,480 | 107,520 | 122,880 | 134,400 |
-| Events | 600,000 | 1,080,000 | 1,680,000 | 2,160,000 | 2,520,000 |
-| Donations (general) | 1,500,000 | 1,700,000 | 1,900,000 | 2,100,000 | 2,300,000 |
-| Therapy program CSR/grants | 800,000 | 1,200,000 | 1,700,000 | 2,100,000 | 2,500,000 |
-| **Total revenue** | **8,561,100** | **13,815,130** | **19,994,520** | **25,701,680** | **31,133,525** |
-| Staff costs | 5,400,000 | 6,200,000 | 7,000,000 | 7,800,000 | 8,400,000 |
-| Therapy program staff/equipment | 600,000 | 900,000 | 1,200,000 | 1,400,000 | 1,600,000 |
-| Feed/veterinary | 810,000 | 1,188,000 | 1,512,000 | 1,728,000 | 1,890,000 |
-| Utilities/maintenance | 900,000 | 1,050,000 | 1,200,000 | 1,350,000 | 1,500,000 |
-| Marketing | 500,000 | 550,000 | 600,000 | 650,000 | 700,000 |
-| Admin/overhead | 800,000 | 850,000 | 900,000 | 950,000 | 1,000,000 |
-| **Total operating cost** | **9,010,000** | **10,738,000** | **12,412,000** | **13,878,000** | **15,090,000** |
-| **Net income** | **(448,900)** | **3,077,130** | **7,582,520** | **11,823,680** | **16,043,525** |
-| Cumulative | (448,900) | 2,628,230 | 10,210,750 | 22,034,430 | 38,077,955 |
+| Revenue (tours, lessons, sponsorship, donations, therapy CSR/grants) | 2,937,600 | 4,224,480 | 5,387,520 | 6,442,880 | 7,274,400 |
+| Operating cost (staff, therapy specialist, feed/vet, utilities, admin) | 5,260,000 | 6,408,000 | 7,502,000 | 8,268,000 | 8,970,000 |
+| **Net** | **(2,322,400)** | **(2,183,520)** | **(2,114,480)** | **(1,825,120)** | **(1,695,600)** |
 
-**Break-even: Year 2.** The small Year-1 operating loss (~฿449k) is comfortably covered by the ฿800k working capital reserve plus the Foundation's existing donor base. Adding the therapy-program CSR line and the EV camping/floating-villa revenue meaningfully improves on a tourism-only model — both because CSR sponsors fund a mission (not just a visit) and because the two new accommodation types add revenue without competing with the existing glamping units for the same guest.
+**(B) Community amenities — modest, growing surplus:**
 
-### 11.3 Funding Structure (suggested)
+| | Y1 | Y2 | Y3 | Y4 | Y5 |
+|---|---:|---:|---:|---:|---:|
+| Revenue (café, glamping, EV, villa, HOA fees) | 1,121,800 | 1,933,240 | 2,703,000 | 3,040,400 | 3,181,360 |
+| Operating cost | 1,100,000 | 1,450,000 | 1,800,000 | 1,950,000 | 2,050,000 |
+| **Net** | **21,800** | **483,240** | **903,000** | **1,090,400** | **1,131,360** |
 
-- **Owner equity/cash:** the portion you can fund directly.
-- **Bank/agricultural loan (SME or ธ.ก.ส. – BAAC agricultural bank):** land and buildings as collateral.
-- **Foundation capital campaign:** since Angel Arms already has a donor base, launch a capital campaign to existing supporters specifically for "building the horses' new home" — likely faster and cheaper than building a donor list from scratch.
-- **CSR sponsorship packages for the therapy program:** structured sponsorship tiers (e.g., "sponsor a therapy horse," "fund a term of sessions") sold to corporates ahead of opening.
-- **Grants:** Thai and international animal-welfare and children's-welfare foundations/NGOs — the combined mission (horses + special-needs children) qualifies for both categories of grant funding.
+**Combined net (A + B):**
+
+| Y1 | Y2 | Y3 | Y4 | Y5 |
+|---:|---:|---:|---:|---:|
+| (2,300,600) | (1,700,280) | (1,211,480) | (734,720) | (564,240) |
+
+Budget for **ongoing fundraising of ~฿1.5–2.3M/year** to cover the sanctuary's deficit — this is normal for a rescue/therapy nonprofit and narrows over time as the community amenities' surplus grows to help subsidize it. The sanctuary was never designed to fully self-fund; the 32-rai development's real contribution is enabling the community around it at roughly zero net cost to you, since the owner carries the land cost against plot-sale proceeds.
+
+### 11.5 Funding Structure (suggested)
+
+- **Owner equity/cash** for the sanctuary's ~฿56.4M capital need — this is the only piece that's really "yours" to raise.
+- **Bank/agricultural loan** (SME or BAAC) — sanctuary land/buildings as collateral.
+- **Buyer reservation deposits** to fund the 32-rai subdivision infrastructure (~฿13.8M) as sales come in, minimizing what you front yourself.
+- **Foundation capital campaign** to existing supporters — "building the horses' new home."
+- **CSR sponsorship packages** for the therapy program.
+- **Grants** — the combined mission (horses + special-needs children) qualifies for both animal-welfare and children's-welfare funding categories.
 
 ---
 
@@ -239,14 +289,14 @@ Your hand-drawn plan already lays out the logic; here it is translated into a bu
 
 | Risk | Mitigation |
 |---|---|
-| Visitor numbers below projection | Farm De Lek cross-promotion + existing Foundation donor base de-risk initial traffic |
-| Horse disease outbreak | Mandatory quarantine protocol, contracted vet, biosecurity procedures |
-| Flood damage | Site plan already designs around it (floating villas); confirm flood-elevation data before finalizing pasture/stable placement |
-| Therapy session incident (child or horse safety) | Certified equine-therapy specialist, strict horse-suitability screening, liability insurance, safety protocols |
-| Visitor injury (riding/animal contact) | Liability insurance, waivers, trained staff, safety protocols |
-| Cost overruns on construction | 1.6% contingency built in; phase non-critical builds (arena, extra villas) into Year 2 if needed |
-| Donor/CSR fatigue | Commercial revenue (tours, lessons, accommodation, events) covers the large majority of opex even without donations by Year 2 |
-| Land title/easement issues | Complete formal legal re-survey and due diligence before signing purchase agreement |
+| Plot sales don't keep pace with the owner's ฿73.6M quarterly milestones | Get explicit in the partnership contract about what happens on a shortfall (grace period, your liability, or the owner's recourse) — this is now the key risk on the 32-rai side, replacing the old cash-gap risk |
+| Subdivision infrastructure (~฿13.8M) has to be fronted before buyer deposits arrive | Sequence roads/utilities/communal builds against deposit milestones; phase the shared amenities (glamping/EV/villa) after core roads and a first tranche of sales |
+| Specific Business Tax / resale tax treatment worse than estimated, or falls on you rather than the owner | Confirm in writing, with an accountant, which party is the seller of record for SBT purposes under this partnership structure |
+| Sanctuary operating deficit larger than projected | Foundation fundraising capacity should be assessed against the ~฿1.5–2.3M/year gap before committing |
+| Horse disease outbreak | Mandatory quarantine, contracted vet, biosecurity procedures |
+| Flood damage | Confirm flood-elevation data before finalizing floating-villa and pasture placement |
+| Therapy session incident | Certified specialist, strict horse-suitability screening, liability insurance |
+| Land title/subdivision issues | Complete formal legal re-survey and subdivision planning before signing the purchase agreement |
 
 ---
 
@@ -254,25 +304,26 @@ Your hand-drawn plan already lays out the logic; here it is translated into a bu
 
 | Phase | Timeframe | Milestones |
 |---|---|---|
-| Phase 0 — Due diligence | Months 1–3 | Formal re-survey, flood-elevation study, Foundation/company legal structure set up, architect engaged, Farm De Lek partnership discussion |
-| Phase 1 — Acquisition & core build | Months 3–9 | Land purchase closes, site prep, fencing, main stable, quarantine clinic, water/power infrastructure |
-| Phase 2 — Visitor & accommodation infrastructure | Months 9–14 | Riding/therapy arena, visitor center/café, glamping units, floating villas, EV camping zone, staff housing |
-| Phase 3 — Soft launch | Month 14–15 | First rescue horses arrive (post-quarantine), therapy specialist hired, staff trained, soft-launch tours and first therapy sessions |
-| Phase 4 — Public launch & CSR outreach | Month 15–16 | Full public opening, sponsorship program and CSR/grant outreach launch, school/hospital referral network begins |
-| Phase 5 — Scale | Year 2–5 | Grow horse population and therapy caseload, add events/accommodation capacity, evaluate reserve-land expansion |
+| Phase 0 — Due diligence | Now – Sep 2026 | Formal re-survey, flood study, Foundation/company legal structure, plot-buyer deposit terms drafted |
+| Phase 1 — Sanctuary land | Oct 2026 – Apr 2027 | Sanctuary land deposit (Oct 2026) and balance (Apr 2027) paid; sanctuary construction begins |
+| Phase 2 — Development land + subdivision | Jul 2027 – Oct 2028 | Owner's 32-rai quarterly milestones satisfied from plot-buyer proceeds; subdivision/titling of 15–18 plots; communal infrastructure built (sequenced against deposits); plot marketing/sales begin as titles clear |
+| Phase 3 — Sanctuary soft launch | ~Month 14–15 of construction | First rescue horses arrive post-quarantine, therapy specialist hired, soft-launch tours and first therapy sessions |
+| Phase 4 — Community fills in | 2028–2029 | Plot sales close, residents move in, community amenities open, HOA fees begin |
+| Phase 5 — Steady state | Year 2–5 (of operations) | Grow horse population and therapy caseload; community-amenity surplus grows to subsidize sanctuary deficit |
 
 ---
 
 ## 14. Assumptions to Verify (do this before committing capital)
 
-1. **Actual land price** for the specific 42-rai parcel — this plan assumes ~฿850,000/rai; get a real quote/appraisal.
-2. **Formal re-survey** of the parcel — the photographed hand-marked survey establishes that title documents exist, but exact boundaries/easements need a licensed surveyor's confirmation.
-3. **Flood-elevation data** for the zone planned for floating villas — confirms design specs (float height, anchoring) and construction cost.
-4. **Construction cost quotes** from 2–3 local contractors, including quotes specifically for flood-proof floating structures (a specialized build type, likely to need a contractor with relevant experience).
-5. **Foundation/company legal structure** — confirm with an accountant/lawyer how the Foundation's existing registration extends to this new site and program, and how the lease/fee arrangement with the new operating company should be structured.
-6. **Farm De Lek partnership terms** — have a direct conversation with them early.
-7. **Financing terms** — get actual loan quotes from BAAC and SME banks.
+1. **The partnership contract's exact terms** — the 32-rai owner-financing arrangement (deed transfer in step with payments) needs to be in writing: the milestone schedule, what counts as satisfying each milestone, and what happens on a shortfall. This plan assumes 6 equal quarterly payments over 18 months; confirm the real contract terms.
+2. **Formal re-survey** of both parcels and the 10/32-rai split.
+3. **Specific Business Tax and transfer-fee treatment** on the 32-rai resale, and which party (you or the owner) is the seller of record for tax purposes — get a definitive answer from an accountant, not the ~3.3%/2% estimates used here.
+4. **Plot-buyer payment structure** — set deposit/installment terms that keep your sales pace ahead of the owner's milestone schedule in §11.1.
+5. **Flood-elevation data** for the floating-villa zone.
+6. **Construction cost quotes** from 2–3 local contractors for the sanctuary buildings.
+7. **Foundation/company legal structure** for the three-entity model in §3.
+8. **Realistic plot-sale absorption rate** — this plan assumes ~6 plots sold by Year 1 of operations, all 16 by Year 3; validate against actual buyer interest/marketing results.
 
 ---
 
-*This document is a planning tool, not a finished bank-ready business plan. Next concrete steps: (1) formal land re-survey + flood study, (2) 2–3 contractor quotes (including floating-structure specialists), (3) accountant/lawyer session on the Foundation/company structure, (4) the Farm De Lek conversation.*
+*This document is a planning tool, not a finished bank-ready business plan. Next concrete steps: (1) confirm the 32-rai payment schedule and SBT exposure with an accountant, (2) formal land re-survey + flood study + 10/32-rai split, (3) 2–3 contractor quotes for the sanctuary, (4) draft plot-buyer sale terms that mirror the land payment schedule.*
