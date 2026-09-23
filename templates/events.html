@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Events · {{ site.name }}{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div class="container">
+    <h1>Calendar &amp; events</h1>
+    <p class="lead">Come and meet us, join a session or help at an event.</p>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="cal-head">
+    <a class="btn btn-small" href="{{ url_for('events', year=prev_month.year, month=prev_month.month) }}" aria-label="Previous month">&larr;</a>
+    <h2>{{ month_label }}</h2>
+    <a class="btn btn-small" href="{{ url_for('events', year=next_month.year, month=next_month.month) }}" aria-label="Next month">&rarr;</a>
+  </div>
+  <div class="calendar" role="table" aria-label="{{ month_label }}">
+    <div class="cal-row cal-weekdays" role="row">
+      {% for d in ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"] %}<div role="columnheader">{{ d }}</div>{% endfor %}
+    </div>
+    {% for week in weeks %}
+    <div class="cal-row" role="row">
+      {% for day, day_events in week %}
+      <div role="cell" class="cal-cell{% if not day %} empty{% endif %}{% if day == today %} today{% endif %}">
+        {% if day %}
+          <span class="cal-num">{{ day.day }}</span>
+          {% for e in day_events %}
+            <span class="cal-event cat-{{ e.category }}" title="{{ e.title }}, {{ e.start }}">{{ e.title }}</span>
+          {% endfor %}
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+  <p class="legend">
+    <span class="cal-event cat-therapy">Therapy</span>
+    <span class="cal-event cat-horses">Horse care</span>
+    <span class="cal-event cat-community">Community</span>
+    <span class="cal-event cat-volunteer">Volunteer training</span>
+    <span class="cal-event cat-fundraising">Fundraising</span>
+  </p>
+</section>
+
+<section class="container section">
+  <h2 class="section-title">All upcoming events</h2>
+  {% if upcoming %}
+    <div class="event-list">
+      {% for e in upcoming %}{% include "_event_card.html" %}{% endfor %}
+    </div>
+  {% else %}
+    <p class="center">No upcoming events right now. Please check back soon.</p>
+  {% endif %}
+</section>
+{% endblock %}

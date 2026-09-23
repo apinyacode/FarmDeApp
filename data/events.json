@@ -1,0 +1,57 @@
+[
+  {
+    "id": "open-farm-day-oct",
+    "title": "Open Farm Day",
+    "date": "2026-10-10",
+    "start": "09:00",
+    "end": "15:00",
+    "location": "Angel Arms Farm",
+    "category": "community",
+    "summary": "Meet our horses, see a therapy demonstration and have a family picnic. Everyone welcome.",
+    "volunteers_needed": true
+  },
+  {
+    "id": "volunteer-orientation-oct",
+    "title": "New Volunteer Orientation",
+    "date": "2026-10-17",
+    "start": "10:00",
+    "end": "12:30",
+    "location": "Angel Arms Farm — classroom",
+    "category": "volunteer",
+    "summary": "Required for all new volunteers: safety around horses, working with children, and a farm tour.",
+    "volunteers_needed": false
+  },
+  {
+    "id": "therapy-saturdays",
+    "title": "Saturday Therapy Sessions",
+    "date": "2026-10-24",
+    "start": "08:30",
+    "end": "11:30",
+    "location": "Main arena",
+    "category": "therapy",
+    "summary": "Weekly therapeutic riding sessions. Side-walkers and horse leaders needed.",
+    "volunteers_needed": true
+  },
+  {
+    "id": "hoof-and-health-day",
+    "title": "Horse Health & Hoof Care Day",
+    "date": "2026-11-07",
+    "start": "08:00",
+    "end": "13:00",
+    "location": "Stables",
+    "category": "horses",
+    "summary": "Our vet and farrier visit the retired herd. Help with grooming, holding and cleaning.",
+    "volunteers_needed": true
+  },
+  {
+    "id": "fundraising-dinner",
+    "title": "Angel Arms Charity Dinner",
+    "date": "2026-11-28",
+    "start": "18:00",
+    "end": "21:30",
+    "location": "To be announced",
+    "category": "fundraising",
+    "summary": "An evening of stories from our families and horses, with an auction supporting both funds.",
+    "volunteers_needed": true
+  }
+]

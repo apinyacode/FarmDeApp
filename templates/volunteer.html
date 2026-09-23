@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Volunteer · {{ site.name }}{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div class="container">
+    <h1>Volunteer with us</h1>
+    <p class="lead">Our work depends on volunteers. No horse experience needed for most roles, because we train you.</p>
+  </div>
+</section>
+
+<section class="container section">
+  <h2 class="section-title">Opportunities</h2>
+  <div class="opp-grid">
+    {% for o in opportunities %}
+    <article class="card opp area-{{ o.area }}">
+      <p class="tag">{{ {"children": "Children's program", "horses": "Horse care", "community": "Community"}[o.area] }}</p>
+      <h3>{{ o.title }}</h3>
+      <p class="muted">{{ o.commitment }}</p>
+      <p>{{ o.description }}</p>
+      <ul>{% for r in o.requirements %}<li>{{ r }}</li>{% endfor %}</ul>
+      <a class="btn btn-small" href="{{ url_for('volunteer', role=o.id) }}#signup">I'm interested</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+{% if events %}
+<section class="section alt">
+  <div class="container">
+    <h2 class="section-title">Upcoming events that need helpers</h2>
+    <div class="event-list">
+      {% for e in events %}{% include "_event_card.html" %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="container section" id="signup">
+  <h2 class="section-title">Sign up</h2>
+  <form class="form card" method="post" action="{{ url_for('volunteer') }}#signup" novalidate>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label>Full name *
+      <input name="name" required value="{{ form.name or '' }}" autocomplete="name">
+      {% if errors.name %}<span class="error">{{ errors.name }}</span>{% endif %}
+    </label>
+    <label>Email *
+      <input name="email" type="email" required value="{{ form.email or '' }}" autocomplete="email">
+      {% if errors.email %}<span class="error">{{ errors.email }}</span>{% endif %}
+    </label>
+    <label>Phone
+      <input name="phone" type="tel" value="{{ form.phone or '' }}" autocomplete="tel">
+    </label>
+    <label>Which role interests you? *
+      <select name="role" required>
+        <option value="">Choose one…</option>
+        {% for o in opportunities %}
+          <option value="{{ o.id }}" {% if selected_role == o.id %}selected{% endif %}>{{ o.title }}</option>
+        {% endfor %}
+        <option value="any" {% if selected_role == 'any' %}selected{% endif %}>Not sure yet / anything helpful</option>
+      </select>
+      {% if errors.role %}<span class="error">{{ errors.role }}</span>{% endif %}
+    </label>
+    <label>When are you available?
+      <input name="availability" placeholder="e.g. Saturday mornings, school holidays" value="{{ form.availability or '' }}">
+    </label>
+    <label>Anything else we should know?
+      <textarea name="message" rows="4" placeholder="Experience, languages, questions…">{{ form.message or '' }}</textarea>
+    </label>
+    <button class="btn btn-donate" type="submit">Send my sign-up</button>
+  </form>
+</section>
+{% endblock %}

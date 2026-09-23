@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="container hero-inner">
+    <img class="hero-logo" src="{{ url_for('static', filename='img/logo.svg') }}" alt="{{ site.name }} logo" width="140" height="140">
+    <h1>{{ site.name }}</h1>
+    <p class="lead">{{ site.tagline }}</p>
+    <p class="hero-cta">
+      <a class="btn btn-donate" href="{{ url_for('donate') }}">Donate</a>
+      <a class="btn btn-outline" href="{{ url_for('volunteer') }}">Volunteer</a>
+    </p>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="mission-grid">
+    <div class="card">
+      <h2>Our mission</h2>
+      <p>{{ site.mission }}</p>
+    </div>
+    <div class="card">
+      <h2>Our vision</h2>
+      <p>{{ site.vision }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="section-title">What we do</h2>
+    <div class="program-grid">
+      {% for p in site.programs %}
+      <div class="program">
+        <div class="program-icon icon-{{ p.icon }}" aria-hidden="true"></div>
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="center"><a href="{{ url_for('about') }}">Read more about us &rarr;</a></p>
+  </div>
+</section>
+
+<section class="container section">
+  <h2 class="section-title">Upcoming events</h2>
+  {% if upcoming %}
+    <div class="event-list">
+      {% for e in upcoming %}{% include "_event_card.html" %}{% endfor %}
+    </div>
+    <p class="center"><a href="{{ url_for('events') }}">See the full calendar &rarr;</a></p>
+  {% else %}
+    <p class="center">New events are coming soon. Check back shortly!</p>
+  {% endif %}
+</section>
+
+<section class="section donate-band">
+  <div class="container">
+    <h2 class="section-title">Two ways your gift helps</h2>
+    <div class="fund-grid">
+      {% for f in site.donation.funds %}
+      <div class="fund-card">
+        <h3>{{ f.title }}</h3>
+        <p>{{ f.text }}</p>
+        <a class="btn btn-donate" href="{{ url_for('donate', fund=f.id) }}#fund-{{ f.id }}">Give to this fund</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

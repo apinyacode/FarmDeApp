@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Angel Arms Foundation logo (placeholder)">
+  <!-- PLACEHOLDER LOGO: replace this file with the real Angel Arms logo (logo.svg or logo.png) -->
+  <circle cx="60" cy="60" r="56" fill="#fdf7ee" stroke="#b8860b" stroke-width="4"/>
+  <!-- left wing -->
+  <path d="M58 62 C40 40, 20 38, 14 46 C24 48, 30 52, 34 58 C24 56, 18 60, 16 66 C28 64, 36 66, 42 70 C34 72, 30 78, 30 82 C42 76, 52 72, 58 62 Z" fill="#b8860b"/>
+  <!-- right wing -->
+  <path d="M62 62 C80 40, 100 38, 106 46 C96 48, 90 52, 86 58 C96 56, 102 60, 104 66 C92 64, 84 66, 78 70 C86 72, 90 78, 90 82 C78 76, 68 72, 62 62 Z" fill="#b8860b"/>
+  <!-- heart -->
+  <path d="M60 92 C46 82, 44 72, 50 68 C54 65, 58 67, 60 71 C62 67, 66 65, 70 68 C76 72, 74 82, 60 92 Z" fill="#8a4b3c"/>
+  <!-- halo -->
+  <ellipse cx="60" cy="30" rx="14" ry="5" fill="none" stroke="#b8860b" stroke-width="3"/>
+</svg>

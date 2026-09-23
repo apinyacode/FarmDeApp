@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Donate · {{ site.name }}{% endblock %}
+{% block content %}
+{% set d = site.donation %}
+<section class="page-head">
+  <div class="container">
+    <h1>Support our work</h1>
+    <p class="lead">Choose where your gift goes: to children with disabilities, to our injured and retired horses, or to both.</p>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="fund-grid">
+    {% for f in d.funds %}
+    <article class="fund-card{% if selected == f.id %} selected{% endif %}" id="fund-{{ f.id }}">
+      <div class="program-icon icon-{{ 'child' if f.id == 'children' else 'horse' }}" aria-hidden="true"></div>
+      <h2>{{ f.title }}</h2>
+      <p>{{ f.text }}</p>
+      <ul class="impact">
+        {% for ex in f.examples %}
+        <li><strong>{{ "{:,}".format(ex.amount) }} {{ d.currency }}</strong> {{ ex.label }}</li>
+        {% endfor %}
+      </ul>
+      {% if f.online_link %}
+        <a class="btn btn-donate" href="{{ f.online_link }}" target="_blank" rel="noopener">Donate online</a>
+      {% else %}
+        <p class="muted">Online card payments coming soon. Please use bank transfer below.</p>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="section-title">Bank transfer</h2>
+    <div class="card bank">
+      <dl>
+        <dt>Bank</dt><dd>{{ d.bank_transfer.bank }}</dd>
+        <dt>Account name</dt><dd>{{ d.bank_transfer.account_name }}</dd>
+        <dt>Account number</dt>
+        <dd>{{ d.bank_transfer.account_number }}
+          <button class="btn btn-small" type="button" data-copy="{{ d.bank_transfer.account_number }}">Copy</button></dd>
+        {% if d.bank_transfer.promptpay %}
+        <dt>PromptPay</dt>
+        <dd>{{ d.bank_transfer.promptpay }}
+          <button class="btn btn-small" type="button" data-copy="{{ d.bank_transfer.promptpay }}">Copy</button></dd>
+        {% endif %}
+      </dl>
+      <p>{{ d.bank_transfer.note }}</p>
+      <p>Send your transfer slip to <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a> and we will send you a receipt.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container section">
+  <h2 class="section-title">Other ways to give</h2>
+  <div class="mission-grid">
+    <div class="card">
+      <h3>Gifts in kind</h3>
+      <ul>{% for item in d.in_kind %}<li>{{ item }}</li>{% endfor %}</ul>
+    </div>
+    <div class="card">
+      <h3>Give your time</h3>
+      <p>Volunteers are just as important as donations. <a href="{{ url_for('volunteer') }}">See volunteer opportunities &rarr;</a></p>
+    </div>
+  </div>
+</section>
+{% endblock %}

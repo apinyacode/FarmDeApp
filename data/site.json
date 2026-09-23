@@ -1,0 +1,77 @@
+{
+  "name": "Angel Arms Foundation",
+  "tagline": "Healing together — children and horses, side by side.",
+  "contact": {
+    "email": "hello@angelarms.example",
+    "phone": "+00 000 000 000",
+    "address": "Angel Arms Farm (update with your real address)"
+  },
+  "mission": "To use the gentle power of horses to improve the lives of children with disabilities, while giving injured and retired horses the care, rehabilitation and lifelong home they deserve.",
+  "vision": "A community where every child, whatever their ability, can grow in confidence and joy, and where every horse that has served us is treated with dignity for life.",
+  "values": [
+    {"title": "Compassion", "text": "We meet every child, family and horse where they are."},
+    {"title": "Safety", "text": "Qualified instructors, trained volunteers and calm, well-cared-for horses."},
+    {"title": "Inclusion", "text": "Programs are open to children of all abilities and backgrounds."},
+    {"title": "Stewardship", "text": "Every donation is used carefully and reported openly."}
+  ],
+  "programs": [
+    {
+      "id": "children",
+      "title": "Equine-Assisted Therapy for Children",
+      "icon": "child",
+      "text": "Therapeutic riding and ground-based activities that help children with physical, sensory, developmental and emotional disabilities build strength, balance, communication and confidence."
+    },
+    {
+      "id": "horses",
+      "title": "Horse Rescue, Rehabilitation & Retirement",
+      "icon": "horse",
+      "text": "We take in injured and retired horses, give them veterinary care, hoof care, physiotherapy and good nutrition, and offer a peaceful home for life. Horses that are able may gently join our therapy program."
+    },
+    {
+      "id": "community",
+      "title": "Family & Community Days",
+      "icon": "heart",
+      "text": "Open farm days, workshops for parents and carers, and school visits that bring people together around the horses."
+    }
+  ],
+  "donation": {
+    "currency": "THB",
+    "funds": [
+      {
+        "id": "children",
+        "title": "Children's Therapy Fund",
+        "text": "Pays for therapy sessions, adaptive riding equipment, qualified instructors and scholarships for families who cannot afford sessions.",
+        "examples": [
+          {"amount": 500, "label": "Helmet and safety gear for one child"},
+          {"amount": 1500, "label": "One therapy session"},
+          {"amount": 6000, "label": "A month of weekly sessions"}
+        ],
+        "online_link": ""
+      },
+      {
+        "id": "horses",
+        "title": "Horse Care & Therapy Fund",
+        "text": "Pays for veterinary treatment, farrier visits, feed, physiotherapy and a safe retirement for injured and retired horses.",
+        "examples": [
+          {"amount": 800, "label": "A week of feed for one horse"},
+          {"amount": 2000, "label": "One farrier (hoof care) visit"},
+          {"amount": 5000, "label": "A veterinary check-up and treatment"}
+        ],
+        "online_link": ""
+      }
+    ],
+    "bank_transfer": {
+      "bank": "Your bank name",
+      "account_name": "Angel Arms Foundation",
+      "account_number": "000-0-00000-0",
+      "promptpay": "",
+      "note": "Please add 'CHILD' or 'HORSE' in the transfer reference so we can direct your gift, then email us your slip for a receipt."
+    },
+    "in_kind": [
+      "Hay, feed and horse treats",
+      "Saddles, helmets and grooming kits in good condition",
+      "Veterinary or farrier services",
+      "Sensory toys and therapy equipment"
+    ]
+  }
+}

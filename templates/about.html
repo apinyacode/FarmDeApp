@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}About us · {{ site.name }}{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div class="container">
+    <h1>About us</h1>
+    <p class="lead">Children and horses, helping each other heal.</p>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="mission-grid">
+    <div class="card"><h2>Mission</h2><p>{{ site.mission }}</p></div>
+    <div class="card"><h2>Vision</h2><p>{{ site.vision }}</p></div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="section-title">What we do</h2>
+    {% for p in site.programs %}
+    <div class="program-row">
+      <div class="program-icon icon-{{ p.icon }}" aria-hidden="true"></div>
+      <div>
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.text }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="container section">
+  <h2 class="section-title">Our values</h2>
+  <div class="values-grid">
+    {% for v in site["values"] %}
+    <div class="card"><h3>{{ v.title }}</h3><p>{{ v.text }}</p></div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
