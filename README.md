@@ -9,33 +9,24 @@ A simple website for the Angel Arms Foundation, built with **Python (Flask)**. I
 
 ---
 
-## 1. Run it on your computer (step by step)
+## 1. Start it: one command
 
-You need Python 3.10 or newer.
+You only need **Python 3.9 or newer** installed. Everything else is automatic.
 
-```bash
-# 1. Go into the project folder
-cd FarmDeApp
+| | macOS / Linux | Windows |
+|---|---|---|
+| **On your computer** (auto-reloads when you edit) | `./start.sh` | `start.bat` |
+| **On a server** (production) | `./start.sh prod` | `start.bat prod` |
 
-# 2. Create a "virtual environment" (a private box for this project's packages)
-python -m venv .venv
+Then open **http://127.0.0.1:5000**. Press `Ctrl+C` to stop.
 
-# 3. Turn it on
-#    macOS / Linux:
-source .venv/bin/activate
-#    Windows (PowerShell):
-.venv\Scripts\Activate.ps1
+What the script does for you:
+1. Creates a private Python environment (`.venv`) and installs the packages (first time only)
+2. Creates `instance/.env` with a random **secret key** and **admin password** (first time only)
+3. Runs the tests, so you know everything works
+4. Starts the website and prints the admin password
 
-# 4. Install Flask
-pip install -r requirements.txt
-
-# 5. Start the site
-python app.py
-```
-
-Open **http://127.0.0.1:5000** in your browser. Press `Ctrl+C` in the terminal to stop.
-
-Run the tests with `pytest`.
+Want a different port? `PORT=8080 ./start.sh prod` (Windows: `set PORT=8080` then `start.bat prod`).
 
 ---
 
@@ -101,36 +92,37 @@ Also fill in `bank_transfer` (bank, account number, and `promptpay` if you use i
 
 ## 4. See volunteer sign-ups
 
-Sign-ups are saved in `instance/angelarms.db`. To view them in the browser, set an admin password before starting:
+Go to **/admin/volunteers**, enter any username, and use the admin password.
+The start script prints the password, and it is stored in `instance/.env`. Edit that file to change it,
+then restart the site.
 
-```bash
-# macOS / Linux
-export ADMIN_PASSWORD="choose-a-strong-password"
-# Windows (PowerShell)
-$env:ADMIN_PASSWORD="choose-a-strong-password"
-
-python app.py
-```
-
-Then go to **/admin/volunteers**, enter any username and your password.
-(If no password is set, the admin page is switched off.)
+Sign-ups are saved in `instance/angelarms.db`. **Back up the `instance/` folder**, because it holds your sign-ups and secrets.
+It is never uploaded to GitHub.
 
 ---
 
 ## 5. Put it online
 
-Any host that runs Python works, for example PythonAnywhere, Render or Railway. For a live site:
+On any Linux server or VPS (for example DigitalOcean, Linode, AWS Lightsail):
 
-- Set the `SECRET_KEY` environment variable to a long random value (`python -c "import secrets; print(secrets.token_hex(32))"`).
-- Set `ADMIN_PASSWORD`.
-- Run with a production server, e.g. `pip install gunicorn` then `gunicorn app:app`.
-- Make sure the host keeps the `instance/` folder between restarts so sign-ups aren't lost.
+```bash
+git clone <this repo> angelarms && cd angelarms
+./start.sh prod                 # listens on port 5000
+```
+
+To keep it running after you log out, run it inside `tmux` or `screen`, or as a system service.
+Put a web server such as Caddy or Nginx in front of it to get a real domain and HTTPS.
+
+On a hosting platform (PythonAnywhere, Render, Railway), point it at `app:app`, and set `SECRET_KEY` and
+`ADMIN_PASSWORD` as environment variables in the platform's settings.
+Make sure `instance/` is on a persistent disk so sign-ups survive restarts.
 
 ---
 
 ## Project layout
 
 ```
+start.sh / start.bat    # one-command setup + start
 app.py                  # the Flask app (routes, calendar, sign-up form, admin page)
 data/                   # editable content (JSON)
 templates/              # HTML pages (Jinja templates)

@@ -1,2 +1,5 @@
 Flask>=3.0
 pytest>=8.0
+# Production web servers (start.sh prod / start.bat prod)
+gunicorn>=22.0; sys_platform != "win32"
+waitress>=3.0; sys_platform == "win32"

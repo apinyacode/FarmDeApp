@@ -6,7 +6,7 @@ touching Python code. Volunteer sign-ups are stored in a SQLite database
 in ``instance/``.
 
 Run locally:
-    python app.py
+    ./start.sh          (Windows: start.bat)
 """
 
 import calendar
@@ -124,8 +124,25 @@ def get_db():
 # App factory
 # ---------------------------------------------------------------------------
 
+def load_env_file(path):
+    """Read KEY=VALUE lines (written by start.sh / start.bat) into os.environ.
+
+    Values already set in the real environment win, so a hosting provider's
+    settings are never overridden.
+    """
+    if not os.path.exists(path):
+        return
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key, value = line.split("=", 1)
+                os.environ.setdefault(key.strip(), value.strip())
+
+
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
+    load_env_file(os.path.join(app.instance_path, ".env"))
     app.config.update(
         SECRET_KEY=os.environ.get("SECRET_KEY", "dev-change-me"),
         DATABASE=os.path.join(app.instance_path, "angelarms.db"),
