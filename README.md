@@ -30,6 +30,35 @@ Want a different port? `PORT=8080 ./start.sh prod` (Windows: `set PORT=8080` the
 
 ---
 
+### On a Chromebook (Ubuntu / Linux) — recommended
+
+Works the same way as AjanDB's `deploy.sh`. Open the **Terminal** app on your Chromebook, then:
+
+```bash
+# first time only: download the project
+git clone https://github.com/apinyacode/FarmDeApp.git
+cd FarmDeApp
+
+# every time: start (or restart after an edit)
+bash deploy.sh
+```
+
+Then open **http://localhost:5000** in Chrome. The site keeps running in the background, even after you close the terminal.
+
+| Command | What it does |
+|---|---|
+| `bash deploy.sh` | Pulls the latest code, installs anything missing, runs the tests and (re)starts the site |
+| `bash deploy.sh stop` | Stops the site |
+| `bash deploy.sh --tunnel` | Also gives you a public `https://….trycloudflare.com` link to show someone else (Ctrl+C closes it) |
+| `bash deploy.sh --no-pull` | Skips downloading the latest code from GitHub |
+
+It uses port **5000**, so it can run at the same time as AjanDB (port 8000).
+If something goes wrong, the server log is in `/tmp/angelarms_server.log`.
+
+> Don't see a Terminal app? Turn on Linux first: **Settings → About ChromeOS → Developers → Linux development environment → Turn on**.
+
+---
+
 ## 2. Edit the content (no coding needed)
 
 All the words live in the `data/` folder as JSON files. Edit one, save it and refresh the browser.
@@ -122,7 +151,8 @@ Make sure `instance/` is on a persistent disk so sign-ups survive restarts.
 ## Project layout
 
 ```
-start.sh / start.bat    # one-command setup + start
+deploy.sh               # Ubuntu / Chromebook: one-command deploy (background server)
+start.sh / start.bat    # one-command setup + start (foreground)
 app.py                  # the Flask app (routes, calendar, sign-up form, admin page)
 data/                   # editable content (JSON)
 templates/              # HTML pages (Jinja templates)
