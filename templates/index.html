@@ -2,8 +2,7 @@
 {% block content %}
 <section class="hero">
   <div class="container hero-inner">
-    <img class="hero-logo" src="{{ url_for('static', filename='img/logo.svg') }}" alt="{{ site.name }} logo" width="140" height="140">
-    <h1>{{ site.name }}</h1>
+    <img class="hero-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="{{ site.name_th }}, {{ site.name }}" width="240">
     <p class="lead">{{ site.tagline }}</p>
     <p class="hero-cta">
       <a class="btn btn-donate" href="{{ url_for('donate') }}">Donate</a>
@@ -15,12 +14,12 @@
 <section class="container section">
   <div class="mission-grid">
     <div class="card">
-      <h2>Our mission</h2>
-      <p>{{ site.mission }}</p>
-    </div>
-    <div class="card">
       <h2>Our vision</h2>
       <p>{{ site.vision }}</p>
+    </div>
+    <div class="card">
+      <h2>Our mission</h2>
+      <p>{{ site.mission }}</p>
     </div>
   </div>
 </section>
@@ -38,6 +37,27 @@
       {% endfor %}
     </div>
     <p class="center"><a href="{{ url_for('about') }}">Read more about us &rarr;</a></p>
+  </div>
+</section>
+
+<section class="container section">
+  <h2 class="section-title">Meet our Guardian Angels</h2>
+  <p class="center section-intro">{{ site.guardian_angels.intro }}</p>
+  <div class="angels-grid">
+    {% for photo in site.guardian_angels.photos %}
+      <img src="{{ url_for('static', filename='img/' ~ photo) }}" alt="One of our Guardian Angel horses" loading="lazy">
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="section-title">Dream &middot; Hope &middot; Friends &middot; Love</h2>
+    <div class="values-grid">
+      {% for v in site["values"] %}
+      <div class="card value value-{{ v.color }}"><h3>{{ v.title }}</h3><p>{{ v.text }}</p></div>
+      {% endfor %}
+    </div>
   </div>
 </section>
 

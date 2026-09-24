@@ -110,12 +110,14 @@ Also fill in `bank_transfer` (bank, account number, and `promptpay` if you use i
 
 ---
 
-## 3. Change the logo and colours
+## 3. Logo, photos and colours
 
-- **Logo:** replace `static/img/logo.svg` with the real Angel Arms logo.
-  If your logo is a PNG, save it as `static/img/logo.png`, then in `templates/base.html` and `templates/index.html`
-  change `img/logo.svg` to `img/logo.png`.
-- **Colours:** at the top of `static/css/style.css`, change the values under `:root` (for example `--brown` and `--gold`) to match the logo.
+- **Logo:** `static/img/logo.png` is the full logo (heart, Thai and English name). `static/img/logo-mark.png` is the heart only,
+  used in the header and browser tab. To update the logo, replace these files and keep the same names.
+- **Horse photos:** the "Meet our Guardian Angels" photos are in `static/img/horses/`. To add or change them, put the photo in that folder
+  and list it under `guardian_angels` → `photos` in `data/site.json`.
+- **Colours:** at the top of `static/css/style.css`, under `:root`. They come from the logo (`--pink`, `--rose`, `--ink`)
+  and from the Dream / Hope / Friends / Love booth colours.
 
 ---
 
@@ -158,6 +160,6 @@ data/                   # editable content (JSON)
 templates/              # HTML pages (Jinja templates)
 static/css/style.css    # all styling
 static/js/main.js       # mobile menu + "Copy" buttons
-static/img/logo.svg     # placeholder logo, replace with the real one
+static/img/logo.png     # Angel Arms logo (logo-mark.png = heart only, for header/favicon)
 tests/test_app.py       # automated tests (run: pytest)
 ```

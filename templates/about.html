@@ -4,38 +4,66 @@
 <section class="page-head">
   <div class="container">
     <h1>About us</h1>
-    <p class="lead">Children and horses, helping each other heal.</p>
+    <p class="lead"><span lang="th">{{ site.name_th }}</span> · {{ site.name }}</p>
   </div>
 </section>
 
 <section class="container section">
   <div class="mission-grid">
-    <div class="card"><h2>Mission</h2><p>{{ site.mission }}</p></div>
     <div class="card"><h2>Vision</h2><p>{{ site.vision }}</p></div>
+    <div class="card"><h2>Mission</h2><p>{{ site.mission }}</p></div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container narrow">
+    <h2 class="section-title">Our story</h2>
+    {% for para in site.background %}<p>{{ para }}</p>{% endfor %}
+    <figure class="photo">
+      <img src="{{ url_for('static', filename='img/community-day.jpg') }}" alt="Families making beads together at an Angel Arms community booth" loading="lazy">
+      <figcaption>Families making beads together at one of our community days.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="container section">
+  <h2 class="section-title">What we do</h2>
+  <div class="program-grid">
+    {% for p in site.programs %}
+    <div class="card">
+      <div class="program-icon icon-{{ p.icon }}" aria-hidden="true"></div>
+      <h3>{{ p.title }}</h3>
+      <ul>{% for pt in p.points %}<li>{{ pt }}</li>{% endfor %}</ul>
+    </div>
+    {% endfor %}
+  </div>
+  <p class="center muted">{{ site.method }}</p>
+</section>
+
+<section class="section alt">
+  <div class="container narrow">
+    <h2 class="section-title">Our objectives</h2>
+    <ol class="objectives">{% for o in site.objectives %}<li>{{ o }}</li>{% endfor %}</ol>
+  </div>
+</section>
+
+<section class="container section">
+  <h2 class="section-title">Dream &middot; Hope &middot; Friends &middot; Love</h2>
+  <div class="values-grid">
+    {% for v in site["values"] %}
+    <div class="card value value-{{ v.color }}"><h3>{{ v.title }}</h3><p>{{ v.text }}</p></div>
+    {% endfor %}
   </div>
 </section>
 
 <section class="section alt">
   <div class="container">
-    <h2 class="section-title">What we do</h2>
-    {% for p in site.programs %}
-    <div class="program-row">
-      <div class="program-icon icon-{{ p.icon }}" aria-hidden="true"></div>
-      <div>
-        <h3>{{ p.title }}</h3>
-        <p>{{ p.text }}</p>
-      </div>
+    <h2 class="section-title">Board &amp; management</h2>
+    <div class="board-grid">
+      {% for b in site.board %}
+      <div class="card board"><strong>{{ b.name }}</strong><span class="muted">{{ b.role }}</span></div>
+      {% endfor %}
     </div>
-    {% endfor %}
-  </div>
-</section>
-
-<section class="container section">
-  <h2 class="section-title">Our values</h2>
-  <div class="values-grid">
-    {% for v in site["values"] %}
-    <div class="card"><h3>{{ v.title }}</h3><p>{{ v.text }}</p></div>
-    {% endfor %}
   </div>
 </section>
 {% endblock %}

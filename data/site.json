@@ -1,37 +1,68 @@
 {
-  "name": "Angel Arms Foundation",
-  "tagline": "Healing together — children and horses, side by side.",
+  "name": "The Angel Arms Foundation",
+  "tagline": "Horse-assisted therapy, learning and care for children with special needs, and a new purpose for retired horses.",
   "contact": {
     "email": "hello@angelarms.example",
-    "phone": "+00 000 000 000",
-    "address": "Angel Arms Farm (update with your real address)"
+    "phone": "+66 00 000 0000",
+    "address": "Farm de Lek, Khlong 15, Rangsit–Nakhon Nayok Road, Ongkharak District, Nakhon Nayok, Thailand"
   },
-  "mission": "To use the gentle power of horses to improve the lives of children with disabilities, while giving injured and retired horses the care, rehabilitation and lifelong home they deserve.",
-  "vision": "A community where every child, whatever their ability, can grow in confidence and joy, and where every horse that has served us is treated with dignity for life.",
+  "mission": "To offer horse-assisted and movement-based therapy, learning opportunities, safer homes, and volunteer-led community programs for children and young people with special needs from families facing hardship, while giving retired and injured horses a new purpose as therapy partners.",
+  "vision": "To provide comprehensive, inclusive, and sustainable assistance and support to improve quality of life and well-being, while promoting holistic development and education for children, young people, and persons with special needs.",
   "values": [
-    {"title": "Compassion", "text": "We meet every child, family and horse where they are."},
-    {"title": "Safety", "text": "Qualified instructors, trained volunteers and calm, well-cared-for horses."},
-    {"title": "Inclusion", "text": "Programs are open to children of all abilities and backgrounds."},
-    {"title": "Stewardship", "text": "Every donation is used carefully and reported openly."}
+    {
+      "title": "Dream",
+      "color": "dream",
+      "text": "Fun, play and the joy of giving. Every child deserves to dream, including the dream to ride."
+    },
+    {
+      "title": "Hope",
+      "color": "hope",
+      "text": "Our Guardian Angels, the horses, bring hope to children and are given a second chance themselves."
+    },
+    {
+      "title": "Friends",
+      "color": "friends",
+      "text": "A community where parents, volunteers and friends can say “I can help” and “I need help”."
+    },
+    {
+      "title": "Love",
+      "color": "love",
+      "text": "Love without expectation: care, patience and time for families to talk, reflect and grow together."
+    }
   ],
   "programs": [
     {
       "id": "children",
-      "title": "Equine-Assisted Therapy for Children",
+      "title": "For children with special needs and families facing hardship",
       "icon": "child",
-      "text": "Therapeutic riding and ground-based activities that help children with physical, sensory, developmental and emotional disabilities build strength, balance, communication and confidence."
+      "text": "Horse-assisted and movement-based therapy, learning and education support, and safer, healthier homes.",
+      "points": [
+        "Restore and strengthen development through equine-assisted therapy",
+        "Create opportunities and enriching life experiences",
+        "Promote access to education and sustainable development",
+        "Add educational resources and specialist support for quality-of-life development",
+        "Improve living environments to be safe and hygienic"
+      ]
+    },
+    {
+      "id": "public",
+      "title": "For the general public",
+      "icon": "heart",
+      "text": "Volunteer programs, community activities and hands-on learning for students and anyone who wants to help.",
+      "points": [
+        "Share knowledge about the foundation's work",
+        "Open opportunities for training or work in multidisciplinary fields"
+      ]
     },
     {
       "id": "horses",
-      "title": "Horse Rescue, Rehabilitation & Retirement",
+      "title": "For retired horses",
       "icon": "horse",
-      "text": "We take in injured and retired horses, give them veterinary care, hoof care, physiotherapy and good nutrition, and offer a peaceful home for life. Horses that are able may gently join our therapy program."
-    },
-    {
-      "id": "community",
-      "title": "Family & Community Days",
-      "icon": "heart",
-      "text": "Open farm days, workshops for parents and carers, and school visits that bring people together around the horses."
+      "text": "A caring home and a new purpose for horses that have retired or been injured through work.",
+      "points": [
+        "Care for and rehabilitate horses injured from work",
+        "Give retired horses a role in activities that support children and society"
+      ]
     }
   ],
   "donation": {
@@ -40,22 +71,40 @@
       {
         "id": "children",
         "title": "Children's Therapy Fund",
-        "text": "Pays for therapy sessions, adaptive riding equipment, qualified instructors and scholarships for families who cannot afford sessions.",
+        "text": "Pays for horse-assisted and movement-based therapy sessions, learning activities, educational resources and safer homes for children with special needs from families facing hardship.",
         "examples": [
-          {"amount": 500, "label": "Helmet and safety gear for one child"},
-          {"amount": 1500, "label": "One therapy session"},
-          {"amount": 6000, "label": "A month of weekly sessions"}
+          {
+            "amount": 500,
+            "label": "Helmet and safety gear for one child"
+          },
+          {
+            "amount": 1500,
+            "label": "One therapy session"
+          },
+          {
+            "amount": 6000,
+            "label": "A month of weekly sessions"
+          }
         ],
         "online_link": ""
       },
       {
         "id": "horses",
         "title": "Horse Care & Therapy Fund",
-        "text": "Pays for veterinary treatment, farrier visits, feed, physiotherapy and a safe retirement for injured and retired horses.",
+        "text": "Pays for veterinary treatment, farrier visits, feed and rehabilitation so retired and injured horses can live well and become gentle therapy partners.",
         "examples": [
-          {"amount": 800, "label": "A week of feed for one horse"},
-          {"amount": 2000, "label": "One farrier (hoof care) visit"},
-          {"amount": 5000, "label": "A veterinary check-up and treatment"}
+          {
+            "amount": 800,
+            "label": "A week of feed for one horse"
+          },
+          {
+            "amount": 2000,
+            "label": "One farrier (hoof care) visit"
+          },
+          {
+            "amount": 5000,
+            "label": "A veterinary check-up and treatment"
+          }
         ],
         "online_link": ""
       }
@@ -73,5 +122,64 @@
       "Veterinary or farrier services",
       "Sensory toys and therapy equipment"
     ]
-  }
+  },
+  "name_th": "มูลนิธิในอ้อมกอด",
+  "background": [
+    "Farm de Lek has operated for more than 10 years to promote learning and development for children and young people. It is located at Khlong 15, Rangsit–Nakhon Nayok Road, Ongkharak District, Nakhon Nayok Province.",
+    "Mrs Premruedee Tantivejkul, an executive of Farm de Lek, found that many children and young people still do not have the opportunity to achieve a good quality of life or access high-quality support to develop their potential. This is especially true for learning spaces outside the classroom, due to limited financial resources and a lack of government support, particularly for children with special needs.",
+    "For 10 years Farm de Lek has supported learning activities and child-development programs for children with disabilities and special needs from the Maha Chakri Sirindhorn Special Education Centre, Nakhon Nayok, under the Ministry of Education. This has included early assistance, preparing children to enter early childhood centres, kindergartens, inclusive and specialised schools, training for caregivers, and rehabilitation services within families and communities.",
+    "After many years of this work, the team found that children with special needs, both those supported by special education centres and many who cannot reach their services, still need help to live with a good quality of life. So the Farm de Lek Learning Centre, led by Mrs Premruedee Tantivejkul, is establishing The Angel Arms Foundation."
+  ],
+  "method": "Our therapy follows the principles of the Horseboy Method and Movement Method developed by Mr Rupert Isaacson.",
+  "objectives": [
+    "Rehabilitate and enhance the development of children and young people with special needs through horses and movement, following the principles of the Horseboy Method and Movement Method by Mr Rupert Isaacson.",
+    "Create learning opportunities and enrich life experiences for children and young people with special needs whose families face hardship.",
+    "Promote and support access to education and sustainable developmental support for children and young people with special needs whose families face hardship.",
+    "Promote and support the development of educational resources and human resources to improve the quality of life of children and young people with special needs.",
+    "Support improvements to the environment and housing of children, young people, and persons with special needs and their families, so that living conditions are appropriate, safe, clean and hygienic.",
+    "Provide knowledge and encourage community participation through volunteer programs and activities for public benefit.",
+    "Promote learning and provide experience for school students, university students, young people, and members of the public who are interested in studying and working in multidisciplinary fields.",
+    "Take in, care for, and develop retired horses, and rehabilitate horses injured through work, so that they can be used in therapy for children and persons with special needs."
+  ],
+  "guardian_angels": {
+    "intro": "Retired and rescued horses who have found a new purpose as gentle therapy partners for children.",
+    "photos": [
+      "horses/horse1.jpg",
+      "horses/horse2.jpg",
+      "horses/horse3.jpg",
+      "horses/horse4.jpg",
+      "horses/horse5.jpg",
+      "horses/horse6.jpg"
+    ]
+  },
+  "board": [
+    {
+      "name": "Mrs Premruedee Tantivejkul",
+      "role": "Board Member / President of the Foundation"
+    },
+    {
+      "name": "Asst. Prof. Dr Jiraporn Arunakul",
+      "role": "Board Member"
+    },
+    {
+      "name": "Mrs Ploypan Wichakkhana",
+      "role": "Board Member"
+    },
+    {
+      "name": "Ms Apinya Chainapong",
+      "role": "Board Member"
+    },
+    {
+      "name": "Mrs Aphasara Tangkakulwiwit",
+      "role": "Advisor"
+    },
+    {
+      "name": "Mr Tat Pattanodom",
+      "role": "Foundation Director"
+    },
+    {
+      "name": "Ms Bonita Joan Susan Rendell",
+      "role": "Foundation Secretary"
+    }
+  ]
 }

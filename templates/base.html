@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{{ site.name }}{% endblock %}</title>
   <meta name="description" content="{{ site.mission }}">
-  <link rel="icon" href="{{ url_for('static', filename='img/logo.svg') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo-mark.png') }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600&family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
@@ -15,8 +15,8 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="{{ url_for('index') }}">
-        <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="" width="48" height="48">
-        <span>{{ site.name }}</span>
+        <img src="{{ url_for('static', filename='img/logo-mark.png') }}" alt="" width="46" height="46">
+        <span class="brand-text"><span class="brand-th" lang="th">{{ site.name_th }}</span>{{ site.name }}</span>
       </a>
       <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false">
         <span class="sr-only">Menu</span>&#9776;
@@ -45,8 +45,8 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="" width="56" height="56">
-        <p><strong>{{ site.name }}</strong><br>{{ site.tagline }}</p>
+        <img class="footer-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="{{ site.name }} logo" width="120">
+        <p><strong>{{ site.name }}</strong><br><span lang="th">{{ site.name_th }}</span></p>
       </div>
       <div>
         <h3>Contact</h3>

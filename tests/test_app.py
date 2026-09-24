@@ -24,12 +24,12 @@ def get_csrf(client):
 def test_pages_load(client, path):
     resp = client.get(path)
     assert resp.status_code == 200
-    assert "Angel Arms Foundation" in resp.get_data(as_text=True)
+    assert "The Angel Arms Foundation" in resp.get_data(as_text=True)
 
 
 def test_home_shows_mission_and_both_funds(client):
     html = client.get("/").get_data(as_text=True)
-    assert "Our mission" in html
+    assert "Our mission" in html and "Guardian Angels" in html
     assert "Children&#39;s Therapy Fund" in html or "Children's Therapy Fund" in html
     assert "Horse Care &amp; Therapy Fund" in html
 
@@ -80,3 +80,11 @@ def test_volunteer_validation_errors(client):
 def test_volunteer_rejects_missing_csrf(client):
     resp = client.post("/volunteer", data={"name": "x", "email": "a@b.co", "role": "any"})
     assert resp.status_code == 400
+
+
+def test_about_shows_story_objectives_and_board(client):
+    html = client.get("/about").get_data(as_text=True)
+    assert "Farm de Lek" in html
+    assert "Horseboy Method" in html
+    assert "Mrs Premruedee Tantivejkul" in html
+    assert "มูลนิธิในอ้อมกอด" in html
