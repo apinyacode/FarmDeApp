@@ -49,8 +49,21 @@ Then open **http://localhost:5000** in Chrome. The site keeps running in the bac
 |---|---|
 | `bash deploy.sh` | Pulls the latest code, installs anything missing, runs the tests and (re)starts the site |
 | `bash deploy.sh stop` | Stops the site |
-| `bash deploy.sh --tunnel` | Also gives you a public `https://….trycloudflare.com` link to show someone else (Ctrl+C closes it) |
+| `bash deploy.sh tunnel` | Also puts the site online with a public `https://….trycloudflare.com` link, shown in a box. Keep the terminal open; Ctrl+C takes it offline |
 | `bash deploy.sh --no-pull` | Skips downloading the latest code from GitHub |
+
+#### Sharing the site online with `bash deploy.sh tunnel`
+
+- The link is **new every time** you run it, and works only while the Chromebook is awake and the terminal is open.
+  That makes it good for showing the site to the board, volunteers or a sponsor, not as the permanent website.
+- Anyone with the link can see the site. The admin page is still protected by your password.
+- **Want a permanent address?** Create a free Cloudflare account, go to *Zero Trust → Networks → Tunnels → Create a tunnel*,
+  point it at `http://localhost:5000`, and copy the token. Then add these two lines to `instance/.env`:
+  ```
+  CLOUDFLARE_TUNNEL_TOKEN=eyJ...your-token...
+  PUBLIC_URL=https://www.your-domain.org
+  ```
+  From then on, `bash deploy.sh tunnel` uses that fixed address. It still only works while the computer running it is on.
 
 It uses port **5000**, so it can run at the same time as AjanDB (port 8000).
 If something goes wrong, the server log is in `/tmp/angelarms_server.log`.

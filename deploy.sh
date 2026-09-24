@@ -8,11 +8,20 @@
 #                                   #   the server in the background. Local
 #                                   #   only: open http://localhost:5000/ in
 #                                   #   Chrome.
-#   bash deploy.sh --tunnel        # same, then also opens a public
-#                                   #   cloudflared tunnel so you can share a
-#                                   #   https://....trycloudflare.com link
-#                                   #   (anyone with the link can see the site).
+#   bash deploy.sh tunnel          # same, then also opens a public
+#                                   #   cloudflared tunnel and prints a
+#                                   #   https://....trycloudflare.com link to
+#                                   #   share (anyone with the link can see the
+#                                   #   site). The link changes every run and
+#                                   #   works while this terminal stays open.
+#                                   #   (--tunnel does the same.)
 #   bash deploy.sh stop            # stops the background server.
+#
+# Permanent link (optional): create a free Cloudflare Tunnel in the
+# Cloudflare dashboard, then add to instance/.env:
+#   CLOUDFLARE_TUNNEL_TOKEN=eyJ...
+#   PUBLIC_URL=https://www.your-domain.org
+# and `bash deploy.sh tunnel` uses that fixed address instead.
 #
 # Flags: --no-pull skips `git pull`. --tunnel opens the public tunnel.
 # (--no-tunnel is accepted for AjanDB muscle memory; it is the default here.)
@@ -32,9 +41,9 @@ for arg in "$@"; do
   case "$arg" in
     local|stop) TARGET="$arg" ;;
     --no-pull) NO_PULL=1 ;;
-    --tunnel) TUNNEL=1 ;;
+    tunnel|--tunnel) TUNNEL=1 ;;
     --no-tunnel) TUNNEL=0 ;;
-    *) echo "Unknown option: $arg  (use: stop, --no-pull, --tunnel)" >&2; exit 1 ;;
+    *) echo "Unknown option: $arg  (use: tunnel, stop, --no-pull)" >&2; exit 1 ;;
   esac
 done
 
@@ -156,7 +165,7 @@ echo "                 (any username, password: $ADMIN_PASSWORD)"
 echo
 
 if [ "$TUNNEL" != "1" ]; then
-  echo "==> Local only (add --tunnel for a public link)."
+  echo "==> Local only (run: bash deploy.sh tunnel  for a public link)."
   echo "    Open http://localhost:$PORT/ in Chrome on this Chromebook."
   echo "    The server keeps running in the background after this script exits."
   echo "    Stop it with: bash deploy.sh stop"
@@ -168,7 +177,7 @@ case "$(uname -m)" in
   x86_64|amd64) CF_ARCH=amd64 ;;
   aarch64|arm64) CF_ARCH=arm64 ;;
   armv7l|armhf) CF_ARCH=arm ;;
-  *) echo "!! No cloudflared build for $(uname -m). Re-run without --tunnel."; exit 1 ;;
+  *) echo "!! No cloudflared build for $(uname -m). Re-run without tunnel."; exit 1 ;;
 esac
 CLOUDFLARED_BIN="$APP_DIR/cloudflared"
 if [ ! -x "$CLOUDFLARED_BIN" ]; then
@@ -176,7 +185,48 @@ if [ ! -x "$CLOUDFLARED_BIN" ]; then
   chmod +x "$CLOUDFLARED_BIN"
 fi
 
-echo "==> Opening tunnel - look for the https://....trycloudflare.com link below."
-echo "    Ctrl+C stops both the tunnel and the server."
-trap 'echo; echo "==> Stopping server (pid $SERVER_PID)..."; kill "$SERVER_PID" 2>/dev/null || true; rm -f "$PID_FILE"' INT TERM EXIT
-"$CLOUDFLARED_BIN" tunnel --url "http://localhost:$PORT"
+TUNNEL_LOG="/tmp/angelarms_tunnel.log"
+rm -f "$TUNNEL_LOG"
+if [ -n "${CLOUDFLARE_TUNNEL_TOKEN:-}" ]; then
+  echo "==> Opening your permanent Cloudflare tunnel..."
+  "$CLOUDFLARED_BIN" tunnel --no-autoupdate run --token "$CLOUDFLARE_TUNNEL_TOKEN" > "$TUNNEL_LOG" 2>&1 &
+else
+  echo "==> Opening a quick tunnel (takes a few seconds)..."
+  "$CLOUDFLARED_BIN" tunnel --no-autoupdate --url "http://localhost:$PORT" > "$TUNNEL_LOG" 2>&1 &
+fi
+TUNNEL_PID=$!
+trap 'echo; echo "==> Stopping tunnel and server..."; kill "$TUNNEL_PID" "$SERVER_PID" 2>/dev/null || true; rm -f "$PID_FILE"' INT TERM EXIT
+
+# Wait for the tunnel to come up and pull the public link out of its log.
+URL=""
+for _ in $(seq 1 30); do
+  if ! kill -0 "$TUNNEL_PID" 2>/dev/null; then
+    echo "!! The tunnel stopped. Last log lines:"
+    tail -n 20 "$TUNNEL_LOG"
+    exit 1
+  fi
+  if [ -n "${CLOUDFLARE_TUNNEL_TOKEN:-}" ]; then
+    grep -q "Registered tunnel connection" "$TUNNEL_LOG" && URL="${PUBLIC_URL:-(the address you set up in Cloudflare)}" && break
+  else
+    URL="$(grep -oE 'https://[a-z0-9-]+\.trycloudflare\.com' "$TUNNEL_LOG" | head -n 1 || true)"
+    [ -n "$URL" ] && break
+  fi
+  sleep 1
+done
+if [ -z "$URL" ]; then
+  echo "!! No public link after 30 seconds. Check your internet connection."
+  echo "   Tunnel log: $TUNNEL_LOG"
+  exit 1
+fi
+
+echo
+echo "  +--------------------------------------------------------------+"
+echo "    Your site is online at:"
+echo
+echo "      $URL"
+echo
+echo "    Share this link. Admin page: $URL/admin/volunteers"
+echo "    It works while this terminal stays open. Ctrl+C to stop."
+echo "  +--------------------------------------------------------------+"
+echo
+wait "$TUNNEL_PID"
