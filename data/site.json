@@ -111,18 +111,24 @@
       }
     ],
     "bank_transfer": {
-      "bank": "Your bank name",
-      "account_name": "Angel Arms Foundation",
-      "account_number": "000-0-00000-0",
+      "bank": "Kasikornbank",
+      "account_name": "มูลนิธิในอ้อมกอด (The Angel Arms Foundation)",
+      "account_number": "",
       "promptpay": "",
-      "note": "Please add 'CHILD' or 'HORSE' in the transfer reference so we can direct your gift, then email us your slip for a receipt."
+      "note": "After you donate, please send us your transfer slip and tell us which fund it is for: children or horses. If you don't say, we'll use it where it's needed most."
     },
     "in_kind": [
       "Hay, feed and horse treats",
       "Saddles, helmets and grooming kits in good condition",
       "Veterinary or farrier services",
       "Sensory toys and therapy equipment"
-    ]
+    ],
+    "qr": {
+      "image": "donate-qr.png",
+      "account_name": "มูลนิธิในอ้อมกอด (The Angel Arms Foundation)",
+      "bank": "Kasikornbank (K SHOP)",
+      "reference": "KPS004KB000002348447"
+    }
   },
   "name_th": "มูลนิธิในอ้อมกอด",
   "background": [

@@ -106,7 +106,14 @@ or your bank's online payment page. Create one link per fund, then paste each in
 
 A "Donate online" button then appears for that fund. Card details are handled by the provider, never by this website.
 
-Also fill in `bank_transfer` (bank, account number, and `promptpay` if you use it).
+### Thai QR donation code
+
+The "Scan to donate" section shows `static/img/donate-qr.png`, a sharp copy of the foundation's K SHOP Thai QR code.
+It contains exactly the same payment data as the original (the checksum was verified), so it pays into the same account.
+If the bank ever issues a new QR code, replace that file with the new one and keep the same name.
+The name, bank and reference shown next to it are under `donation` → `qr` in `data/site.json`.
+
+You can also fill in `bank_transfer` → `account_number` or `promptpay`. They only appear on the page once they're filled in.
 
 ---
 

@@ -94,3 +94,12 @@ def test_facebook_link_on_pages(client):
     fb = "https://www.facebook.com/profile.php?id=61583808935783"
     assert fb in client.get("/").get_data(as_text=True)
     assert fb in client.get("/events").get_data(as_text=True)
+
+
+def test_donate_shows_thai_qr(client):
+    html = client.get("/donate").get_data(as_text=True)
+    assert "img/donate-qr.png" in html
+    assert "Save QR code" in html
+    assert "000-0-00000-0" not in html  # no placeholder account number
+    resp = client.get("/static/img/donate-qr.png")
+    assert resp.status_code == 200 and resp.mimetype == "image/png"

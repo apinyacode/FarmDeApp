@@ -24,31 +24,51 @@
       {% if f.online_link %}
         <a class="btn btn-donate" href="{{ f.online_link }}" target="_blank" rel="noopener">Donate online</a>
       {% else %}
-        <p class="muted">Online card payments coming soon. Please use bank transfer below.</p>
+        <a class="btn btn-donate" href="#scan">Donate with Thai QR</a>
       {% endif %}
     </article>
     {% endfor %}
   </div>
 </section>
 
-<section class="section alt">
+<section class="section alt" id="scan">
   <div class="container">
-    <h2 class="section-title">Bank transfer</h2>
-    <div class="card bank">
-      <dl>
-        <dt>Bank</dt><dd>{{ d.bank_transfer.bank }}</dd>
-        <dt>Account name</dt><dd>{{ d.bank_transfer.account_name }}</dd>
-        <dt>Account number</dt>
-        <dd>{{ d.bank_transfer.account_number }}
-          <button class="btn btn-small" type="button" data-copy="{{ d.bank_transfer.account_number }}">Copy</button></dd>
-        {% if d.bank_transfer.promptpay %}
-        <dt>PromptPay</dt>
-        <dd>{{ d.bank_transfer.promptpay }}
-          <button class="btn btn-small" type="button" data-copy="{{ d.bank_transfer.promptpay }}">Copy</button></dd>
-        {% endif %}
-      </dl>
-      <p>{{ d.bank_transfer.note }}</p>
-      <p>Send your transfer slip to <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a> and we will send you a receipt.</p>
+    <h2 class="section-title">Scan to donate</h2>
+    <div class="card qr-card">
+      {% if d.qr %}
+      <div class="qr-code">
+        <img src="{{ url_for('static', filename='img/' ~ d.qr.image) }}" width="260" height="260"
+             alt="Thai QR Payment code for {{ d.qr.account_name }}">
+        <a class="btn btn-small" href="{{ url_for('static', filename='img/' ~ d.qr.image) }}" download="angel-arms-donate-qr.png">Save QR code</a>
+      </div>
+      {% endif %}
+      <div class="qr-info">
+        <ol class="qr-steps">
+          <li>Open any Thai banking app and choose <strong>Scan</strong>.</li>
+          <li>Scan the code, or on your phone tap <strong>Save QR code</strong> and choose it from your photos in the app.</li>
+          <li>Type the amount you'd like to give and confirm.</li>
+        </ol>
+        <dl>
+          <dt>Account name</dt><dd>{{ d.qr.account_name if d.qr else d.bank_transfer.account_name }}</dd>
+          <dt>Bank</dt><dd>{{ d.qr.bank if d.qr else d.bank_transfer.bank }}</dd>
+          {% if d.bank_transfer.account_number %}
+          <dt>Account number</dt>
+          <dd>{{ d.bank_transfer.account_number }}
+            <button class="btn btn-small" type="button" data-copy="{{ d.bank_transfer.account_number }}">Copy</button></dd>
+          {% endif %}
+          {% if d.bank_transfer.promptpay %}
+          <dt>PromptPay</dt>
+          <dd>{{ d.bank_transfer.promptpay }}
+            <button class="btn btn-small" type="button" data-copy="{{ d.bank_transfer.promptpay }}">Copy</button></dd>
+          {% endif %}
+          {% if d.qr and d.qr.reference %}
+          <dt>Reference</dt><dd>{{ d.qr.reference }}</dd>
+          {% endif %}
+        </dl>
+        <p>{{ d.bank_transfer.note }}</p>
+        <p>Send your slip to <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>{% if site.contact.facebook %}
+          or message us on <a href="{{ site.contact.facebook }}" target="_blank" rel="noopener">Facebook</a>{% endif %}, and we'll send you a receipt.</p>
+      </div>
     </div>
   </div>
 </section>
