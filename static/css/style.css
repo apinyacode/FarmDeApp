@@ -221,3 +221,7 @@ th { background: var(--sand); }
 .program-grid .card .program-icon { margin: 0 0 8px; }
 .board-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
 .board { display: flex; flex-direction: column; gap: 2px; padding: 16px 20px; }
+
+/* Facebook links */
+.fb-link, .fb-btn { display: inline-flex; align-items: center; gap: 8px; }
+.fb-icon { flex-shrink: 0; }
