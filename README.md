@@ -48,13 +48,27 @@ bash deploy.sh                  # on this Chromebook AND online with a public li
 |---|---|
 | `bash deploy.sh --no-tunnel` | **Local only.** Pulls the latest code, installs anything missing, (re)starts the site. Open **http://localhost:5000** in Chrome. The site keeps running in the background after the script finishes |
 | `bash deploy.sh` | **Local + tunnel.** Same, then opens a public cloudflared tunnel. Look for the `https://….trycloudflare.com` line in the output and share it. Keep the terminal open; **Ctrl+C** stops both the tunnel and the site |
-| `bash deploy.sh --no-pull` | Skips downloading the latest code from GitHub (combine with either of the above) |
-| `pkill -f 'gunicorn --bind 0.0.0.0:5000'` | Stops a site started with `--no-tunnel` (the script prints this too) |
+| `bash deploy.sh --docker` | **Fresh environment every time.** Rebuilds the site from scratch in a clean Docker container, runs the tests inside it, swaps out the old container, then opens the tunnel. Add `--no-tunnel` for local only |
+| `bash deploy.sh --kill` | **Stops everything:** the site (normal or Docker) and any tunnel. Your sign-ups and password are kept |
+| `bash deploy.sh --no-pull` | Skips downloading the latest code from GitHub (combine with any of the above) |
 
 About the tunnel link:
 - It is **new every time** you run it, and works only while the Chromebook is awake and the terminal is open.
   That makes it good for showing the site to the board, volunteers or a sponsor, not as the permanent website.
 - Anyone with the link can see the site. The admin page is still protected by your password.
+
+#### Docker mode (`--docker`)
+
+Every `bash deploy.sh --docker` starts from a clean slate. It gets the latest Python base image, installs everything fresh (no leftovers from
+earlier runs), runs the tests, and only then replaces the running site. **If the build or tests fail, the old site keeps running.**
+
+- The first run installs Docker (`docker.io`) if it's missing. It uses `sudo` until you log out and back in.
+- Volunteer sign-ups live in a Docker volume called `angelarms-data`, so they **survive every rebuild**.
+  Back it up with: `docker run --rm -v angelarms-data:/data -v "$PWD":/backup alpine tar czf /backup/angelarms-data.tgz -C /data .`
+- The container restarts on its own if the Chromebook's Linux restarts (until you run `--kill`).
+- Watch the logs: `docker logs -f angelarms-web`.
+- If Docker Hub can't be reached, it rebuilds from the base image already saved on your Chromebook.
+- Old images are cleaned up after each deploy so the disk doesn't fill up.
 
 It uses port **5000**, so it can run at the same time as AjanDB (port 8000).
 If something goes wrong, the server log is in `/tmp/angelarms_gunicorn.log`.
@@ -164,7 +178,8 @@ Make sure `instance/` is on a persistent disk so sign-ups survive restarts.
 ## Project layout
 
 ```
-deploy.sh               # Ubuntu / Chromebook: one-command deploy, local or tunnel (copied from AjanDB)
+deploy.sh               # Ubuntu / Chromebook: one-command deploy: local, tunnel, --docker, --kill
+Dockerfile              # clean image used by deploy.sh --docker
 start.sh / start.bat    # one-command setup + start (foreground)
 app.py                  # the Flask app (routes, calendar, sign-up form, admin page)
 data/                   # editable content (JSON)
