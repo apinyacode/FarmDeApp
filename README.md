@@ -32,7 +32,7 @@ Want a different port? `PORT=8080 ./start.sh prod` (Windows: `set PORT=8080` the
 
 ### On a Chromebook (Ubuntu / Linux) — recommended
 
-Works the same way as AjanDB's `deploy.sh`. Open the **Terminal** app on your Chromebook, then:
+`deploy.sh` is copied from AjanDB's `webapp/deploy.sh`, so it works the same way. Open the **Terminal** app on your Chromebook, then:
 
 ```bash
 # first time only: download the project
@@ -40,33 +40,24 @@ git clone https://github.com/apinyacode/FarmDeApp.git
 cd FarmDeApp
 
 # every time: start (or restart after an edit)
-bash deploy.sh
+bash deploy.sh --no-tunnel      # just on this Chromebook
+bash deploy.sh                  # on this Chromebook AND online with a public link
 ```
-
-Then open **http://localhost:5000** in Chrome. The site keeps running in the background, even after you close the terminal.
 
 | Command | What it does |
 |---|---|
-| `bash deploy.sh` | Pulls the latest code, installs anything missing, runs the tests and (re)starts the site |
-| `bash deploy.sh stop` | Stops the site |
-| `bash deploy.sh tunnel` | Also puts the site online with a public `https://….trycloudflare.com` link, shown in a box. Keep the terminal open; Ctrl+C takes it offline |
-| `bash deploy.sh --no-pull` | Skips downloading the latest code from GitHub |
+| `bash deploy.sh --no-tunnel` | **Local only.** Pulls the latest code, installs anything missing, (re)starts the site. Open **http://localhost:5000** in Chrome. The site keeps running in the background after the script finishes |
+| `bash deploy.sh` | **Local + tunnel.** Same, then opens a public cloudflared tunnel. Look for the `https://….trycloudflare.com` line in the output and share it. Keep the terminal open; **Ctrl+C** stops both the tunnel and the site |
+| `bash deploy.sh --no-pull` | Skips downloading the latest code from GitHub (combine with either of the above) |
+| `pkill -f 'gunicorn --bind 0.0.0.0:5000'` | Stops a site started with `--no-tunnel` (the script prints this too) |
 
-#### Sharing the site online with `bash deploy.sh tunnel`
-
-- The link is **new every time** you run it, and works only while the Chromebook is awake and the terminal is open.
+About the tunnel link:
+- It is **new every time** you run it, and works only while the Chromebook is awake and the terminal is open.
   That makes it good for showing the site to the board, volunteers or a sponsor, not as the permanent website.
 - Anyone with the link can see the site. The admin page is still protected by your password.
-- **Want a permanent address?** Create a free Cloudflare account, go to *Zero Trust → Networks → Tunnels → Create a tunnel*,
-  point it at `http://localhost:5000`, and copy the token. Then add these two lines to `instance/.env`:
-  ```
-  CLOUDFLARE_TUNNEL_TOKEN=eyJ...your-token...
-  PUBLIC_URL=https://www.your-domain.org
-  ```
-  From then on, `bash deploy.sh tunnel` uses that fixed address. It still only works while the computer running it is on.
 
 It uses port **5000**, so it can run at the same time as AjanDB (port 8000).
-If something goes wrong, the server log is in `/tmp/angelarms_server.log`.
+If something goes wrong, the server log is in `/tmp/angelarms_gunicorn.log`.
 
 > Don't see a Terminal app? Turn on Linux first: **Settings → About ChromeOS → Developers → Linux development environment → Turn on**.
 
@@ -173,7 +164,7 @@ Make sure `instance/` is on a persistent disk so sign-ups survive restarts.
 ## Project layout
 
 ```
-deploy.sh               # Ubuntu / Chromebook: one-command deploy (background server)
+deploy.sh               # Ubuntu / Chromebook: one-command deploy, local or tunnel (copied from AjanDB)
 start.sh / start.bat    # one-command setup + start (foreground)
 app.py                  # the Flask app (routes, calendar, sign-up form, admin page)
 data/                   # editable content (JSON)

@@ -1,232 +1,153 @@
 #!/usr/bin/env bash
-# One-command deploy/redeploy for the Angel Arms Foundation website, for
-# Ubuntu / Debian, including the Linux environment on a Chromebook.
-# Modelled on AjanDB's webapp/deploy.sh, with the same flags.
+# One-command deploy/redeploy for the Angel Arms Foundation website.
+# Copied from AjanDB's webapp/deploy.sh ("local" target) and adapted to this
+# Flask app. Two ways to run it:
 #
-#   bash deploy.sh                 # installs missing system deps, sets up
-#                                   #   the venv, runs the tests, (re)starts
-#                                   #   the server in the background. Local
-#                                   #   only: open http://localhost:5000/ in
-#                                   #   Chrome.
-#   bash deploy.sh tunnel          # same, then also opens a public
-#                                   #   cloudflared tunnel and prints a
-#                                   #   https://....trycloudflare.com link to
-#                                   #   share (anyone with the link can see the
-#                                   #   site). The link changes every run and
-#                                   #   works while this terminal stays open.
-#                                   #   (--tunnel does the same.)
-#   bash deploy.sh stop            # stops the background server.
+#   bash deploy.sh                 # installs missing system deps,
+#                                   #   sets up the venv, restarts the server,
+#                                   #   opens a public cloudflared tunnel.
+#                                   #   Look for the https://....trycloudflare.com
+#                                   #   link in the output and share it.
+#   bash deploy.sh --no-tunnel     # same as above but skips cloudflared -
+#                                   #   the server stays reachable only at
+#                                   #   http://localhost:5000/ on this
+#                                   #   machine. No tunnel flakiness to
+#                                   #   debug at all, at the cost of only
+#                                   #   this machine being able to reach it
+#                                   #   (no other device, no public URL to
+#                                   #   share). Good for local-only testing.
 #
-# Permanent link (optional): create a free Cloudflare Tunnel in the
-# Cloudflare dashboard, then add to instance/.env:
-#   CLOUDFLARE_TUNNEL_TOKEN=eyJ...
-#   PUBLIC_URL=https://www.your-domain.org
-# and `bash deploy.sh tunnel` uses that fixed address instead.
+# Flags: --no-pull skips `git pull`. --no-tunnel skips the cloudflared
+# tunnel - see above.
 #
-# Flags: --no-pull skips `git pull`. --tunnel opens the public tunnel.
-# (--no-tunnel is accepted for AjanDB muscle memory; it is the default here.)
-# PORT=8080 bash deploy.sh changes the port (default 5000, so it can run at
-# the same time as AjanDB on 8000).
+# Secrets: the first run creates instance/.env (gitignored) with a random
+# SECRET_KEY and ADMIN_PASSWORD (for /admin/volunteers). Edit that file to
+# change the password; it is loaded on every run.
 #
-# Secrets: the first run writes instance/.env (gitignored) with a random
-# SECRET_KEY and ADMIN_PASSWORD. Edit it to change the admin password.
+# Differences from AjanDB's script, all needed for this project:
+#   - port 5000 (AjanDB uses 8000, so both can run at the same time)
+#   - gunicorn app:app instead of uvicorn backend.main:app
+#   - no tesseract/ffmpeg (this site doesn't need them), no vercel target
+#   - downloads the right cloudflared for ARM Chromebooks as well as Intel/AMD
 set -euo pipefail
 
-# --- Parse args (before the re-exec; the same args are forwarded to the
-# re-exec'd copy of this script below). ---
-TARGET="local"
+# --- Parse args (before the re-exec, so we know whether to pull; the same
+# args are forwarded unchanged to the re-exec'd copy of this script below,
+# where they're parsed again for the real work). ---
 NO_PULL=0
-TUNNEL=0
+NO_TUNNEL=0
 for arg in "$@"; do
   case "$arg" in
-    local|stop) TARGET="$arg" ;;
     --no-pull) NO_PULL=1 ;;
-    tunnel|--tunnel) TUNNEL=1 ;;
-    --no-tunnel) TUNNEL=0 ;;
-    *) echo "Unknown option: $arg  (use: tunnel, stop, --no-pull)" >&2; exit 1 ;;
+    --no-tunnel) NO_TUNNEL=1 ;;
   esac
 done
 
-APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$APP_DIR"
-PORT="${PORT:-5000}"
-PID_FILE="$APP_DIR/instance/server.pid"
-LOG_FILE="/tmp/angelarms_server.log"
-
-stop_server() {
-  if [ -f "$PID_FILE" ] && kill -0 "$(cat "$PID_FILE")" 2>/dev/null; then
-    echo "==> Stopping previous server (pid $(cat "$PID_FILE"))..."
-    kill "$(cat "$PID_FILE")" 2>/dev/null || true
-    sleep 1
-  fi
-  rm -f "$PID_FILE"
-}
-
-if [ "$TARGET" = "stop" ]; then
-  stop_server
-  echo "    Stopped."
-  exit 0
-fi
-
 # --- Re-exec after a git pull so we always run the freshly-pulled version of
-# this very script, never a half-updated one. ---
+# this very script, never a half-updated one (bash doesn't guarantee reading
+# a script file atomically while it changes underneath itself). ---
 if [ "${ANGELARMS_REEXEC:-}" != "1" ]; then
+  REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+  cd "$REPO_DIR"
+
   if [ "$NO_PULL" = "1" ]; then
     echo "==> Skipping git pull (--no-pull)"
-  elif [ ! -d .git ]; then
-    echo "==> Not a git checkout - skipping git pull."
   elif [ -n "$(git status --porcelain)" ]; then
-    echo "==> Local changes detected in $APP_DIR - not auto-pulling."
+    echo "==> Local changes detected in $REPO_DIR - not auto-pulling."
     echo "    Review with 'git status'; commit or stash, then re-run."
   else
     echo "==> Pulling latest code..."
-    git pull || echo "    git pull failed - continuing with the code you have."
+    git pull
   fi
 
   export ANGELARMS_REEXEC=1
-  exec bash "$APP_DIR/deploy.sh" "$@"
+  exec bash "$REPO_DIR/deploy.sh" "$@"
 fi
 
-echo "==> Checking system dependencies..."
-NEED_APT=()
-command -v git >/dev/null 2>&1 || NEED_APT+=(git)
-command -v python3 >/dev/null 2>&1 || NEED_APT+=(python3)
-python3 -m venv --help >/dev/null 2>&1 || NEED_APT+=(python3-venv)
-command -v curl >/dev/null 2>&1 || NEED_APT+=(curl)
-if [ ${#NEED_APT[@]} -gt 0 ]; then
-  echo "    Installing: ${NEED_APT[*]}"
-  sudo apt-get update -qq
-  sudo apt-get install -y "${NEED_APT[@]}"
-else
-  echo "    All present."
-fi
+APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$APP_DIR"
+PORT=5000
 
-echo "==> Python environment..."
-# ensurepip is missing on some Ubuntu images even when venv imports fine;
-# a half-made .venv without pip is removed and rebuilt.
-if [ -d .venv ] && [ ! -x .venv/bin/pip ]; then
-  rm -rf .venv
-fi
-if [ ! -d .venv ]; then
-  if ! python3 -m venv .venv; then
-    rm -rf .venv
-    echo "    Installing python3-venv..."
+deploy_local() {
+  echo "==> Checking system dependencies..."
+  NEED_APT=()
+  command -v git >/dev/null 2>&1 || NEED_APT+=(git)
+  python3 -c "import venv" >/dev/null 2>&1 || NEED_APT+=(python3-venv)
+  command -v pip3 >/dev/null 2>&1 || NEED_APT+=(python3-pip)
+  command -v curl >/dev/null 2>&1 || NEED_APT+=(curl)
+
+  if [ ${#NEED_APT[@]} -gt 0 ]; then
+    echo "    Installing: ${NEED_APT[*]}"
     sudo apt-get update -qq
-    sudo apt-get install -y python3-venv
+    sudo apt-get install -y "${NEED_APT[@]}"
+  else
+    echo "    All present."
+  fi
+
+  echo "==> Python environment..."
+  if [ ! -d ".venv" ]; then
     python3 -m venv .venv
   fi
-fi
-# shellcheck disable=SC1091
-source .venv/bin/activate
-pip install --quiet --upgrade pip
-pip install --quiet -r requirements.txt
+  # shellcheck disable=SC1091
+  source .venv/bin/activate
+  pip install -r requirements.txt
 
-mkdir -p instance
-if [ ! -f instance/.env ]; then
-  echo "==> Creating instance/.env with a secret key and admin password"
-  {
-    echo "SECRET_KEY=$(python -c 'import secrets; print(secrets.token_hex(32))')"
-    echo "ADMIN_PASSWORD=$(python -c 'import secrets; print(secrets.token_urlsafe(12))')"
-  } > instance/.env
-  chmod 600 instance/.env
-fi
-echo "==> Loading instance/.env"
-set -a
-# shellcheck disable=SC1091
-source instance/.env
-set +a
+  mkdir -p instance
+  if [ ! -f "instance/.env" ]; then
+    echo "==> Creating instance/.env (secret key + admin password)"
+    {
+      echo "SECRET_KEY=$(python -c 'import secrets; print(secrets.token_hex(32))')"
+      echo "ADMIN_PASSWORD=$(python -c 'import secrets; print(secrets.token_urlsafe(12))')"
+    } > instance/.env
+    chmod 600 instance/.env
+  fi
+  echo "==> Loading instance/.env"
+  set -a
+  # shellcheck disable=SC1091
+  source instance/.env
+  set +a
 
-echo "==> Running tests..."
-if ! python -m pytest -q; then
-  echo "!! Tests failed - not starting the server. Fix the error above"
-  echo "   (often a typo in a data/*.json file) and re-run."
-  exit 1
-fi
+  echo "==> Stopping any previous server on port $PORT..."
+  pkill -9 -f "gunicorn --bind 0.0.0.0:$PORT" 2>/dev/null || true
+  sleep 1
 
-stop_server
-
-echo "==> Starting server..."
-rm -f "$LOG_FILE"
-nohup gunicorn --bind "0.0.0.0:$PORT" --workers 2 --access-logfile - app:app > "$LOG_FILE" 2>&1 &
-SERVER_PID=$!
-echo "$SERVER_PID" > "$PID_FILE"
-sleep 2
-if ! kill -0 "$SERVER_PID" 2>/dev/null; then
-  echo "!! Server failed to start. Last log lines:"
-  tail -n 30 "$LOG_FILE"
-  rm -f "$PID_FILE"
-  exit 1
-fi
-echo "    Running (pid $SERVER_PID). Logs: $LOG_FILE"
-echo
-echo "    Website:     http://localhost:$PORT/"
-echo "    Admin page:  http://localhost:$PORT/admin/volunteers"
-echo "                 (any username, password: $ADMIN_PASSWORD)"
-echo
-
-if [ "$TUNNEL" != "1" ]; then
-  echo "==> Local only (run: bash deploy.sh tunnel  for a public link)."
-  echo "    Open http://localhost:$PORT/ in Chrome on this Chromebook."
-  echo "    The server keeps running in the background after this script exits."
-  echo "    Stop it with: bash deploy.sh stop"
-  exit 0
-fi
-
-echo "==> Setting up cloudflared..."
-case "$(uname -m)" in
-  x86_64|amd64) CF_ARCH=amd64 ;;
-  aarch64|arm64) CF_ARCH=arm64 ;;
-  armv7l|armhf) CF_ARCH=arm ;;
-  *) echo "!! No cloudflared build for $(uname -m). Re-run without tunnel."; exit 1 ;;
-esac
-CLOUDFLARED_BIN="$APP_DIR/cloudflared"
-if [ ! -x "$CLOUDFLARED_BIN" ]; then
-  curl -fLo "$CLOUDFLARED_BIN" "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-$CF_ARCH"
-  chmod +x "$CLOUDFLARED_BIN"
-fi
-
-TUNNEL_LOG="/tmp/angelarms_tunnel.log"
-rm -f "$TUNNEL_LOG"
-if [ -n "${CLOUDFLARE_TUNNEL_TOKEN:-}" ]; then
-  echo "==> Opening your permanent Cloudflare tunnel..."
-  "$CLOUDFLARED_BIN" tunnel --no-autoupdate run --token "$CLOUDFLARE_TUNNEL_TOKEN" > "$TUNNEL_LOG" 2>&1 &
-else
-  echo "==> Opening a quick tunnel (takes a few seconds)..."
-  "$CLOUDFLARED_BIN" tunnel --no-autoupdate --url "http://localhost:$PORT" > "$TUNNEL_LOG" 2>&1 &
-fi
-TUNNEL_PID=$!
-trap 'echo; echo "==> Stopping tunnel and server..."; kill "$TUNNEL_PID" "$SERVER_PID" 2>/dev/null || true; rm -f "$PID_FILE"' INT TERM EXIT
-
-# Wait for the tunnel to come up and pull the public link out of its log.
-URL=""
-for _ in $(seq 1 30); do
-  if ! kill -0 "$TUNNEL_PID" 2>/dev/null; then
-    echo "!! The tunnel stopped. Last log lines:"
-    tail -n 20 "$TUNNEL_LOG"
+  echo "==> Starting server..."
+  rm -f /tmp/angelarms_gunicorn.log
+  nohup gunicorn --bind "0.0.0.0:$PORT" --workers 2 --access-logfile - app:app > /tmp/angelarms_gunicorn.log 2>&1 &
+  SERVER_PID=$!
+  sleep 2
+  if ! kill -0 "$SERVER_PID" 2>/dev/null; then
+    echo "!! Server failed to start. Last log lines:"
+    tail -n 30 /tmp/angelarms_gunicorn.log
     exit 1
   fi
-  if [ -n "${CLOUDFLARE_TUNNEL_TOKEN:-}" ]; then
-    grep -q "Registered tunnel connection" "$TUNNEL_LOG" && URL="${PUBLIC_URL:-(the address you set up in Cloudflare)}" && break
-  else
-    URL="$(grep -oE 'https://[a-z0-9-]+\.trycloudflare\.com' "$TUNNEL_LOG" | head -n 1 || true)"
-    [ -n "$URL" ] && break
-  fi
-  sleep 1
-done
-if [ -z "$URL" ]; then
-  echo "!! No public link after 30 seconds. Check your internet connection."
-  echo "   Tunnel log: $TUNNEL_LOG"
-  exit 1
-fi
+  echo "    Running (pid $SERVER_PID). Logs: /tmp/angelarms_gunicorn.log"
+  echo "    Admin page: /admin/volunteers  (any username, password: $ADMIN_PASSWORD)"
 
-echo
-echo "  +--------------------------------------------------------------+"
-echo "    Your site is online at:"
-echo
-echo "      $URL"
-echo
-echo "    Share this link. Admin page: $URL/admin/volunteers"
-echo "    It works while this terminal stays open. Ctrl+C to stop."
-echo "  +--------------------------------------------------------------+"
-echo
-wait "$TUNNEL_PID"
+  if [ "$NO_TUNNEL" = "1" ]; then
+    echo "==> Skipping tunnel (--no-tunnel)."
+    echo "    Open http://localhost:$PORT/ on this machine - no public URL,"
+    echo "    no tunnel to drop or debug."
+    echo "    Stop the server with: kill $SERVER_PID   (or: pkill -f 'gunicorn --bind 0.0.0.0:$PORT')"
+    return 0
+  fi
+
+  echo "==> Setting up cloudflared..."
+  CLOUDFLARED_BIN="$APP_DIR/cloudflared"
+  if [ ! -x "$CLOUDFLARED_BIN" ]; then
+    case "$(uname -m)" in
+      aarch64|arm64) CF_ARCH=arm64 ;;
+      armv7l|armhf) CF_ARCH=arm ;;
+      *) CF_ARCH=amd64 ;;
+    esac
+    curl -Lo "$CLOUDFLARED_BIN" "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-$CF_ARCH"
+    chmod +x "$CLOUDFLARED_BIN"
+  fi
+
+  echo "==> Opening tunnel - Ctrl+C stops both the tunnel and the server."
+  echo "    Your public link is the https://....trycloudflare.com line below."
+  trap 'echo; echo "==> Stopping server (pid $SERVER_PID)..."; kill "$SERVER_PID" 2>/dev/null || true' INT TERM EXIT
+  "$CLOUDFLARED_BIN" tunnel --url "http://localhost:$PORT"
+}
+
+deploy_local
