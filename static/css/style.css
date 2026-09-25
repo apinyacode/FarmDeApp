@@ -306,3 +306,4 @@ section[id], article[id] { scroll-margin-top: 84px; }
 .story-loop { text-align: center; margin: 32px auto 0; max-width: 640px; font-weight: 600; color: var(--rose);
   background: var(--pink-soft); border-radius: 999px; padding: 12px 20px; }
 .story-loop span { font-size: 1.3rem; margin-right: 6px; }
+.hero-sub { font-family: "Prompt", system-ui, sans-serif; font-size: clamp(1.2rem, 2.2vw, 1.6rem); font-weight: 500; color: var(--rose); margin: -4px 0 14px; }

@@ -8,7 +8,7 @@
   <!-- Link previews (Facebook, LINE, X, etc.) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{{ site.name }}">
-  <meta property="og:title" content="{{ site.name }} · {{ site.headline }}">
+  <meta property="og:title" content="{{ site.name }} · {{ site.headline }}{% if site.headline_sub %}: {{ site.headline_sub }}{% endif %}">
   <meta property="og:description" content="{{ site.tagline }}">
   <meta property="og:url" content="{{ request.url }}">
   <meta property="og:image" content="{{ url_for('static', filename='img/share.jpg', _external=True) }}">

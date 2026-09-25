@@ -189,7 +189,7 @@
       "role": "Foundation Secretary"
     }
   ],
-  "headline": "Horses and children, healing together",
+  "headline": "Happiness is to Share",
   "hero_photos": [
     {
       "file": "volunteer/farm-garden.jpg",
@@ -234,5 +234,6 @@
       }
     ],
     "loop": "Every gift and every volunteer day helps a child and a horse at the same time."
-  }
+  },
+  "headline_sub": "Horse and human thriving together"
 }

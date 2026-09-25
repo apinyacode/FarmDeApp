@@ -143,6 +143,9 @@ You can also fill in `bank_transfer` → `account_number` or `promptpay`. They o
   used in the header and browser tab. To update the logo, replace these files and keep the same names.
 - **Horse photos:** the "Meet our Guardian Angels" photos are in `static/img/horses/`. To add or change them, put the photo in that folder
   and list it under `guardian_angels` → `photos` in `data/site.json`.
+- **Share picture:** `static/img/share.jpg` is the image shown when the site's link is shared on Facebook or LINE.
+  It includes the headline, so after changing `headline` / `headline_sub` in `data/site.json`, rebuild it with
+  `pip install pillow` (once) and then `python scripts/make_share_image.py`.
 - **Colours:** at the top of `static/css/style.css`, under `:root`. They come from the logo (`--pink`, `--rose`, `--ink`)
   and from the Dream / Hope / Friends / Love booth colours.
 

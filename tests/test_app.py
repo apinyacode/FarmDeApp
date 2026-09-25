@@ -131,6 +131,8 @@ def test_apply_link_preselects_program(client):
 def test_landing_explains_foundation_and_has_share_preview(client):
     html = client.get("/").get_data(as_text=True)
     assert "How it works" in html
+    assert "Happiness is to Share" in html
+    assert "Horse and human thriving together" in html
     assert "Horses get a second chance" in html
     assert 'property="og:image" content="http://localhost/static/img/share.jpg"' in html
     assert client.get("/static/img/share.jpg").status_code == 200
