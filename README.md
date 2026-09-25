@@ -86,6 +86,7 @@ All the words live in the `data/` folder as JSON files. Edit one, save it and re
 | `data/site.json` | Name, tagline, contact details, mission, vision, values, programs, **donation funds, bank details and payment links** |
 | `data/events.json` | Calendar events |
 | `data/opportunities.json` | Volunteer roles |
+| `data/programs.json` | The 5-day volunteer programs (Helping Hands, Caretakers): goals, skills, activities, photos |
 
 **JSON tips:** keep the quotes `"..."`, put a comma between items and **no** comma after the last item.
 If the site shows an error after an edit, paste the file into https://jsonlint.com to find the mistake.

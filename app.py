@@ -246,6 +246,7 @@ def create_app(test_config=None):
     @app.route("/volunteer", methods=["GET", "POST"])
     def volunteer():
         opportunities = load_json("opportunities.json")
+        programs = load_json("programs.json")
         form = {}
         errors = {}
         if request.method == "POST":
@@ -256,7 +257,8 @@ def create_app(test_config=None):
                 errors["name"] = "Please tell us your name."
             if "@" not in form["email"] or "." not in form["email"]:
                 errors["email"] = "Please enter a valid email address."
-            valid_roles = {o["id"] for o in opportunities} | {"any"}
+            valid_roles = ({o["id"] for o in opportunities}
+                           | {p["id"] for p in programs["programs"]} | {"any"})
             if form["role"] not in valid_roles:
                 errors["role"] = "Please choose a role."
             if not errors:
@@ -274,6 +276,7 @@ def create_app(test_config=None):
         return render_template(
             "volunteer.html",
             opportunities=opportunities,
+            programs=programs,
             events=[e for e in load_events()
                     if e["volunteers_needed"] and e["day"] >= date.today()],
             form=form,

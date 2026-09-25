@@ -103,3 +103,26 @@ def test_donate_shows_thai_qr(client):
     assert "000-0-00000-0" not in html  # no placeholder account number
     resp = client.get("/static/img/donate-qr.png")
     assert resp.status_code == 200 and resp.mimetype == "image/png"
+
+
+def test_volunteer_page_shows_five_day_programs(client):
+    html = client.get("/volunteer").get_data(as_text=True)
+    assert "5-day volunteer programs" in html
+    assert "Helping Hands" in html and "Caretakers" in html
+    assert "Special Education Centre" in html
+
+
+def test_can_apply_for_a_five_day_program(client):
+    token = get_csrf(client)
+    resp = client.post("/volunteer", data={
+        "csrf_token": token, "name": "Mali", "email": "mali@example.com",
+        "role": "caretakers", "availability": "1-5 March",
+    }, follow_redirects=True)
+    assert "Thank you, Mali" in resp.get_data(as_text=True)
+    admin = client.get("/admin/volunteers", auth=("admin", "secret"))
+    assert "caretakers" in admin.get_data(as_text=True)
+
+
+def test_apply_link_preselects_program(client):
+    html = client.get("/volunteer?role=helping-hands").get_data(as_text=True)
+    assert '<option value="helping-hands" selected>' in html

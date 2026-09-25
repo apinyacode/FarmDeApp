@@ -4,12 +4,58 @@
 <section class="page-head">
   <div class="container">
     <h1>Volunteer with us</h1>
-    <p class="lead">Our work depends on volunteers. No horse experience needed for most roles, because we train you.</p>
+    <p class="lead">Our work depends on volunteers. Join a 5-day program on the farm, or help regularly. No horse experience needed, because we train you.</p>
+    <p><a class="btn btn-small" href="#programs">5-day programs</a> <a class="btn btn-small" href="#signup">Sign up</a></p>
   </div>
 </section>
 
-<section class="container section">
-  <h2 class="section-title">Opportunities</h2>
+<section class="container section" id="programs">
+  <h2 class="section-title">5-day volunteer programs</h2>
+  <p class="center section-intro">{{ programs.intro }}</p>
+
+  <div class="photo-strip">
+    {% for ph in programs.photos %}
+      <img src="{{ url_for('static', filename='img/' ~ ph.file) }}" alt="{{ ph.alt }}" loading="lazy">
+    {% endfor %}
+  </div>
+
+  <dl class="facts">
+    {% for f in programs.facts %}<div><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>{% endfor %}
+  </dl>
+
+  <div class="program-options">
+    {% for p in programs.programs %}
+    <article class="card program-option value-{{ p.color }}" id="program-{{ p.id }}">
+      <p class="tag">Option {{ p.number }}</p>
+      <h3>{{ p.title }}</h3>
+      <p class="lead-sm">{{ p.tagline }}</p>
+
+      <h4>Goals</h4>
+      <ul>{% for g in p.goals %}<li>{{ g }}</li>{% endfor %}</ul>
+
+      <h4>How it works</h4>
+      <p>{{ p.how }}</p>
+
+      <h4>What you'll develop</h4>
+      <dl class="skills">
+        {% for sk in p.skills %}<dt>{{ sk.title }}</dt><dd>{{ sk.text }}</dd>{% endfor %}
+      </dl>
+
+      <details>
+        <summary>What you might do ({{ p.activities|length }} activities)</summary>
+        <ul>{% for a in p.activities %}<li>{{ a }}</li>{% endfor %}</ul>
+      </details>
+
+      <a class="btn btn-donate" href="{{ url_for('volunteer', role=p.id) }}#signup">Apply for {{ p.title }}</a>
+    </article>
+    {% endfor %}
+  </div>
+  <p class="center muted closing">{{ programs.closing }}</p>
+</section>
+
+<section class="section alt">
+  <div class="container">
+  <h2 class="section-title">Regular volunteer roles</h2>
   <div class="opp-grid">
     {% for o in opportunities %}
     <article class="card opp area-{{ o.area }}">
@@ -22,10 +68,11 @@
     </article>
     {% endfor %}
   </div>
+  </div>
 </section>
 
 {% if events %}
-<section class="section alt">
+<section class="section">
   <div class="container">
     <h2 class="section-title">Upcoming events that need helpers</h2>
     <div class="event-list">
@@ -53,15 +100,22 @@
     <label>Which role interests you? *
       <select name="role" required>
         <option value="">Choose one…</option>
+        <optgroup label="5-day programs (live on the farm)">
+        {% for p in programs.programs %}
+          <option value="{{ p.id }}" {% if selected_role == p.id %}selected{% endif %}>{{ p.title }} (5-day program)</option>
+        {% endfor %}
+        </optgroup>
+        <optgroup label="Regular volunteer roles">
         {% for o in opportunities %}
           <option value="{{ o.id }}" {% if selected_role == o.id %}selected{% endif %}>{{ o.title }}</option>
         {% endfor %}
+        </optgroup>
         <option value="any" {% if selected_role == 'any' %}selected{% endif %}>Not sure yet / anything helpful</option>
       </select>
       {% if errors.role %}<span class="error">{{ errors.role }}</span>{% endif %}
     </label>
     <label>When are you available?
-      <input name="availability" placeholder="e.g. Saturday mornings, school holidays" value="{{ form.availability or '' }}">
+      <input name="availability" placeholder="e.g. Saturday mornings, or for a 5-day program: 1–5 March" value="{{ form.availability or '' }}">
     </label>
     <label>Anything else we should know?
       <textarea name="message" rows="4" placeholder="Experience, languages, questions…">{{ form.message or '' }}</textarea>

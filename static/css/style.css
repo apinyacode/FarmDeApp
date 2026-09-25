@@ -239,3 +239,27 @@ th { background: var(--sand); }
 @media (max-width: 700px) { .qr-card { grid-template-columns: 1fr; } }
 /* Keep in-page jump targets clear of the sticky header */
 section[id], article[id] { scroll-margin-top: 84px; }
+
+/* Volunteer: 5-day programs */
+.photo-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+.photo-strip img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); }
+@media (max-width: 700px) { .photo-strip { grid-template-columns: repeat(2, 1fr); gap: 8px; } }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 0 0 32px; }
+.facts div { background: var(--pink-soft); border-radius: 12px; padding: 12px 16px; }
+.facts dt { font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--rose); }
+.facts dd { margin: 4px 0 0; }
+.program-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.program-option { display: flex; flex-direction: column; }
+.program-option h3 { font-size: 1.6rem; margin: 0; color: var(--v); text-transform: none; letter-spacing: 0; }
+.program-option h4 { margin: 18px 0 6px; font-family: "Prompt", system-ui, sans-serif; }
+.program-option .tag { color: var(--v); margin-bottom: 4px; }
+.program-option ul { padding-left: 20px; margin: 0; }
+.lead-sm { color: var(--muted); margin: 6px 0 0; }
+.skills { margin: 0; }
+.skills dt { font-weight: 700; margin-top: 8px; }
+.skills dd { margin: 2px 0 0; }
+.program-option details { margin: 18px 0; background: var(--cream); border-radius: 10px; padding: 10px 14px; }
+.program-option summary { cursor: pointer; font-weight: 700; }
+.program-option details ul { margin-top: 8px; }
+.program-option .btn { margin-top: auto; align-self: flex-start; }
+.closing { max-width: 700px; margin: 24px auto 0; }
