@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{{ site.name }}{% endblock %}</title>
   <meta name="description" content="{{ site.mission }}">
-  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo-mark.png') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/logo-mark.png') }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600&family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -45,7 +46,7 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <img class="footer-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="{{ site.name }} logo" width="120">
+        <img class="footer-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="{{ site.name }} logo" width="140" height="127">
         <p><strong>{{ site.name }}</strong><br><span lang="th">{{ site.name_th }}</span></p>
       </div>
       <div>

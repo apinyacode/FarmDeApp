@@ -138,7 +138,8 @@ You can also fill in `bank_transfer` → `account_number` or `promptpay`. They o
 
 ## 3. Logo, photos and colours
 
-- **Logo:** `static/img/logo.png` is the full logo (heart, Thai and English name). `static/img/logo-mark.png` is the heart only,
+- **Logo:** `static/img/logo.png` is the full logo (heart, Thai and English name). `static/img/logo-mark.png` is the heart only
+  (`favicon.png` is a small copy for the browser tab),
   used in the header and browser tab. To update the logo, replace these files and keep the same names.
 - **Horse photos:** the "Meet our Guardian Angels" photos are in `static/img/horses/`. To add or change them, put the photo in that folder
   and list it under `guardian_angels` → `photos` in `data/site.json`.
