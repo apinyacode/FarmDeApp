@@ -126,3 +126,18 @@ def test_can_apply_for_a_five_day_program(client):
 def test_apply_link_preselects_program(client):
     html = client.get("/volunteer?role=helping-hands").get_data(as_text=True)
     assert '<option value="helping-hands" selected>' in html
+
+
+def test_landing_explains_foundation_and_has_share_preview(client):
+    html = client.get("/").get_data(as_text=True)
+    assert "How it works" in html
+    assert "Horses get a second chance" in html
+    assert 'property="og:image" content="http://localhost/static/img/share.jpg"' in html
+    assert client.get("/static/img/share.jpg").status_code == 200
+
+
+def test_share_image_uses_public_https_url_behind_tunnel(client):
+    html = client.get("/", headers={
+        "X-Forwarded-Proto": "https", "X-Forwarded-Host": "angelarms.example.org",
+    }).get_data(as_text=True)
+    assert 'content="https://angelarms.example.org/static/img/share.jpg"' in html

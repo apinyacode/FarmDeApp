@@ -188,5 +188,51 @@
       "name": "Ms Bonita Joan Susan Rendell",
       "role": "Foundation Secretary"
     }
-  ]
+  ],
+  "headline": "Horses and children, healing together",
+  "hero_photos": [
+    {
+      "file": "volunteer/farm-garden.jpg",
+      "alt": "Young people holding baskets of vegetables they picked on the farm"
+    },
+    {
+      "file": "volunteer/kayaking.jpg",
+      "alt": "Volunteers canoeing on the farm pond"
+    },
+    {
+      "file": "horses/horse2.jpg",
+      "alt": "One of our Guardian Angel horses looking into the camera"
+    },
+    {
+      "file": "horses/horse4.jpg",
+      "alt": "A retired horse grazing at sunset"
+    }
+  ],
+  "story": {
+    "title": "How it works",
+    "intro": "One circle of care: horses, children and people helping each other.",
+    "steps": [
+      {
+        "photo": "horses/horse1.jpg",
+        "title": "Horses get a second chance",
+        "text": "We take in retired horses and horses injured through work, and give them care, rehabilitation and a home for life."
+      },
+      {
+        "photo": "horses/horse5.jpg",
+        "title": "They become gentle therapy partners",
+        "text": "Calm, well-cared-for horses join our horse-assisted and movement-based therapy, following the Horseboy Method."
+      },
+      {
+        "photo": "volunteer/teaching.jpg",
+        "title": "Children with special needs grow",
+        "text": "Children from families facing hardship build strength, confidence and communication through therapy, learning and play."
+      },
+      {
+        "photo": "community-day.jpg",
+        "title": "Volunteers and community make it possible",
+        "text": "Donations, volunteers and families keep the circle going, for the children and for the horses."
+      }
+    ],
+    "loop": "Every gift and every volunteer day helps a child and a horse at the same time."
+  }
 }

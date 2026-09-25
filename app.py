@@ -30,6 +30,7 @@ from flask import (
     session,
     url_for,
 )
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
@@ -142,6 +143,9 @@ def load_env_file(path):
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
+    # Behind cloudflared (or another proxy) trust its X-Forwarded-Proto/Host,
+    # so generated absolute links (e.g. the share image) use the public https URL.
+    app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
     load_env_file(os.path.join(app.instance_path, ".env"))
     app.config.update(
         SECRET_KEY=os.environ.get("SECRET_KEY", "dev-change-me"),

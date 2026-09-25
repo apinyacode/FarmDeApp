@@ -1,13 +1,42 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="hero">
-  <div class="container hero-inner">
-    <img class="hero-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt="{{ site.name_th }}, {{ site.name }}" width="300" height="272">
-    <p class="lead">{{ site.tagline }}</p>
-    <p class="hero-cta">
-      <a class="btn btn-donate" href="{{ url_for('donate') }}">Donate</a>
-      <a class="btn btn-outline" href="{{ url_for('volunteer') }}">Volunteer</a>
-    </p>
+<section class="hero hero-split">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <img class="hero-logo-sm" src="{{ url_for('static', filename='img/logo.png') }}" alt="{{ site.name_th }}, {{ site.name }}" width="170" height="154">
+      <h1>{{ site.headline }}</h1>
+      <p class="lead">{{ site.tagline }}</p>
+      <p class="hero-cta">
+        <a class="btn btn-donate" href="{{ url_for('donate') }}">Donate</a>
+        <a class="btn btn-outline" href="{{ url_for('volunteer') }}">Volunteer</a>
+        <a class="btn btn-outline" href="#how-it-works">How it works</a>
+      </p>
+    </div>
+    <div class="hero-mosaic">
+      {% for ph in site.hero_photos %}
+        <img class="m{{ loop.index }}" src="{{ url_for('static', filename='img/' ~ ph.file) }}" alt="{{ ph.alt }}" {% if loop.index > 1 %}loading="lazy"{% endif %}>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section story" id="how-it-works">
+  <div class="container">
+    <h2 class="section-title">{{ site.story.title }}</h2>
+    <p class="center section-intro">{{ site.story.intro }}</p>
+    <ol class="story-steps">
+      {% for st in site.story.steps %}
+      <li class="story-step">
+        <div class="story-photo">
+          <img src="{{ url_for('static', filename='img/' ~ st.photo) }}" alt="" loading="lazy">
+          <span class="story-num" aria-hidden="true">{{ loop.index }}</span>
+        </div>
+        <h3>{{ st.title }}</h3>
+        <p>{{ st.text }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+    <p class="story-loop"><span aria-hidden="true">&#8635;</span> {{ site.story.loop }}</p>
   </div>
 </section>
 
