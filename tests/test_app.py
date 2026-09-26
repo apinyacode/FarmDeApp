@@ -199,13 +199,12 @@ def test_bad_style_values_are_ignored(client, monkeypatch):
     assert "<h1>" in html  # the headline can never be hidden
 
 
-def test_home_has_click_to_play_facebook_video(client):
+def test_home_shows_still_picture_linking_to_the_reel(client):
     html = client.get("/").get_data(as_text=True)
     assert 'id="video"' in html
-    # Facebook's player address, with the video link encoded inside it
-    assert "facebook.com/plugins/video.php?href=https%3A//www.facebook.com/share/r/1FnWMbqEZc/" in html
-    assert "<iframe" not in html  # nothing loads from Facebook until someone presses play
-    assert 'href="https://www.facebook.com/share/r/1FnWMbqEZc/"' in html  # "Watch on Facebook" fallback
+    assert "<iframe" not in html and "plugins/video.php" not in html  # no video player any more
+    assert 'class="video-frame vertical"' in html
+    assert 'href="https://www.facebook.com/reel/1612629857100248"' in html  # "Watch on Facebook"
 
 
 def test_video_section_can_be_hidden(client, monkeypatch):

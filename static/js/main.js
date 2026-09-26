@@ -22,15 +22,3 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Facebook video: swap the play button for Facebook's player only when pressed.
-document.addEventListener("click", (e) => {
-  const btn = e.target.closest(".video-play");
-  if (!btn) return;
-  const frame = document.createElement("iframe");
-  frame.src = btn.dataset.src;
-  frame.title = btn.dataset.title || "Video";
-  frame.allow = "autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share";
-  frame.allowFullscreen = true;
-  frame.setAttribute("scrolling", "no");
-  btn.replaceWith(frame);
-});

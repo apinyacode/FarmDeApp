@@ -253,8 +253,9 @@
   "video": {
     "title": "See us in action",
     "text": "Watch a short video from Farm de Lek, and follow our Facebook page for more stories from the children, volunteers and horses.",
-    "url": "https://www.facebook.com/share/r/1FnWMbqEZc/",
+    "image": "volunteer/gardening.jpg",
+    "image_alt": "A moment from Farm de Lek",
     "vertical": true,
-    "poster": "volunteer/gardening.jpg"
+    "url": "https://www.facebook.com/reel/1612629857100248"
   }
 }

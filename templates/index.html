@@ -34,27 +34,19 @@
   </div>
 </section>
 
-{% if site.video and site.video.url and 'section_video' not in hidden %}
+{% if site.video and site.video.image and 'section_video' not in hidden %}
 {% set v = site.video %}
 <section class="section video-section" id="video">
   <div class="container video-grid">
     <div class="video-frame{% if v.vertical %} vertical{% endif %}">
-      {# Facebook's player loads only when someone presses play: faster page, no Facebook tracking until then #}
-      <button class="video-play" type="button"
-              data-src="https://www.facebook.com/plugins/video.php?href={{ v.url | urlencode }}&show_text=false&autoplay=true"
-              data-title="{{ v.title }}" aria-label="Play video: {{ v.title }}">
-        {% if v.poster %}<img src="{{ url_for('static', filename='img/' ~ v.poster) }}" alt="" loading="lazy">{% endif %}
-        <span class="play-icon" aria-hidden="true"></span>
-        <span class="play-label">Play video</span>
-      </button>
+      <img src="{{ url_for('static', filename='img/' ~ v.image) }}" alt="{{ v.image_alt }}" loading="lazy">
     </div>
     <div class="video-text">
       {% if 'video_title' not in hidden %}<h2>{{ v.title }}</h2>{% endif %}
       {% if 'video_text' not in hidden %}<p>{{ v.text }}</p>{% endif %}
-      <p><a class="btn btn-outline fb-btn" href="{{ v.url }}" target="_blank" rel="noopener">
+      {% if v.url %}<p><a class="btn btn-outline fb-btn" href="{{ v.url }}" target="_blank" rel="noopener">
         <svg class="fb-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
-        Watch on Facebook</a></p>
-      <p class="video-note">The video plays from Facebook when you press play.</p>
+        Watch on Facebook</a></p>{% endif %}
     </div>
   </div>
 </section>
