@@ -197,24 +197,3 @@ def test_bad_style_values_are_ignored(client, monkeypatch):
     html = client.get("/").get_data(as_text=True)
     assert "display:none" not in html and "--fc-" not in html and "--fs-" not in html
     assert "<h1>" in html  # the headline can never be hidden
-
-
-def test_home_shows_still_picture_linking_to_the_reel(client):
-    html = client.get("/").get_data(as_text=True)
-    assert 'id="video"' in html
-    assert "<iframe" not in html and "plugins/video.php" not in html  # no video player any more
-    assert 'class="video-frame vertical"' in html
-    assert 'href="https://www.facebook.com/reel/1612629857100248"' in html  # "Watch on Facebook"
-
-
-def test_video_section_can_be_hidden(client, monkeypatch):
-    _with_site(monkeypatch, hidden=["section_video"])
-    assert 'id="video"' not in client.get("/").get_data(as_text=True)
-
-
-def test_picture_only_when_video_texts_hidden(client, monkeypatch):
-    _with_site(monkeypatch, hidden=["video_title", "video_text"])
-    html = client.get("/").get_data(as_text=True)
-    assert 'class="container video-grid solo"' in html
-    assert "See us in action" not in html
-    assert 'href="https://www.facebook.com/reel/1612629857100248"' in html

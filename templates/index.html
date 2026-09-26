@@ -34,24 +34,6 @@
   </div>
 </section>
 
-{% if site.video and site.video.image and 'section_video' not in hidden %}
-{% set v = site.video %}
-<section class="section video-section" id="video">
-  <div class="container video-grid{% if 'video_title' in hidden and 'video_text' in hidden %} solo{% endif %}">
-    <div class="video-frame{% if v.vertical %} vertical{% endif %}">
-      <img src="{{ url_for('static', filename='img/' ~ v.image) }}" alt="{{ v.image_alt }}" loading="lazy">
-    </div>
-    <div class="video-text">
-      {% if 'video_title' not in hidden %}<h2>{{ v.title }}</h2>{% endif %}
-      {% if 'video_text' not in hidden %}<p>{{ v.text }}</p>{% endif %}
-      {% if v.url %}<p><a class="btn btn-outline fb-btn" href="{{ v.url }}" target="_blank" rel="noopener">
-        <svg class="fb-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
-        Watch on Facebook</a></p>{% endif %}
-    </div>
-  </div>
-</section>
-{% endif %}
-
 {% if 'section_story' not in hidden %}
 <section class="section story" id="how-it-works">
   <div class="container">

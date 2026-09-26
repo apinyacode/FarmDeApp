@@ -146,9 +146,6 @@ You can also fill in `bank_transfer` → `account_number` or `promptpay`. They o
 - **Share picture:** `static/img/share.jpg` is the image shown when the site's link is shared on Facebook or LINE.
   It includes the headline, so after changing `headline` / `headline_sub` in `data/site.json`, rebuild it with
   `pip install pillow` (once) and then `python scripts/make_share_image.py`.
-- **"See us in action" picture:** set under `video` in `data/site.json`: `image` is the picture (put the file in
-  `static/img/`), `vertical` is true for a tall phone-shaped picture, and `url` is where "Watch on Facebook" goes
-  (leave it empty to hide that button).
 - **Colours:** at the top of `static/css/style.css`, under `:root`. They come from the logo (`--pink`, `--rose`, `--ink`)
   and from the Dream / Hope / Friends / Love booth colours.
 
