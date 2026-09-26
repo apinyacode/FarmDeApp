@@ -249,5 +249,12 @@
   "text_colors": {
     "headline": "#b0475a",
     "headline_sub": "#222222"
+  },
+  "video": {
+    "title": "See us in action",
+    "text": "Watch a short video from Farm de Lek, and follow our Facebook page for more stories from the children, volunteers and horses.",
+    "url": "https://www.facebook.com/share/r/1FnWMbqEZc/",
+    "vertical": true,
+    "poster": "volunteer/gardening.jpg"
   }
 }
