@@ -70,8 +70,19 @@ def wrap(draw, text, fnt, max_w):
     return lines
 
 
+def hex_rgb(value, default):
+    """'#b0475a' -> (176, 71, 90); anything else -> default."""
+    if isinstance(value, str) and len(value) == 7 and value.startswith("#"):
+        try:
+            return tuple(int(value[i:i + 2], 16) for i in (1, 3, 5))
+        except ValueError:
+            pass
+    return default
+
+
 def main():
     site = json.loads((ROOT / "data" / "site.json").read_text(encoding="utf-8"))
+    colors = site.get("text_colors") or {}  # same colours as the home page
     img = Image.new("RGB", (W, H), BG)
     draw = ImageDraw.Draw(img)
 
@@ -94,18 +105,18 @@ def main():
     while draw.textlength(headline, font=font(BOLD, size)) > TEXT_MAX_W and size > 30:
         size -= 1
     head_font = font(BOLD, size)
-    draw.text((48, y), headline, font=head_font, fill=INK)
+    draw.text((48, y), headline, font=head_font, fill=hex_rgb(colors.get("headline"), INK))
     y += int(size * 1.3)
 
     sub = site.get("headline_sub", "")
     if sub:
-        # One line if it fits at 24px or more, otherwise wrap at 30px
+        # One line if it fits at 22px or more, otherwise wrap
         sub_size = 30
-        while draw.textlength(sub, font=font(BOLD, sub_size)) > TEXT_MAX_W and sub_size > 24:
+        while draw.textlength(sub, font=font(BOLD, sub_size)) > TEXT_MAX_W and sub_size > 22:
             sub_size -= 1
         sub_font = font(BOLD, sub_size)
         for line in wrap(draw, sub, sub_font, TEXT_MAX_W):
-            draw.text((50, y), line, font=sub_font, fill=ROSE)
+            draw.text((50, y), line, font=sub_font, fill=hex_rgb(colors.get("headline_sub"), ROSE))
             y += int(sub_size * 1.35)
         y += 12
 
