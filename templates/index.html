@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-{% if site.text_sizes %}
+{% set hidden = site.hidden %}
+{% if site.text_sizes or site.text_colors %}
 <style>
-  /* Text sizes chosen in the wording editor (1 = normal) */
+  /* Text sizes (1 = normal) and colours chosen in the wording editor; checked in app.load_site() */
   :root {
     {%- for key, scale in site.text_sizes.items() %}
-    --fs-{{ key }}: {{ scale | float }};
+    --fs-{{ key }}: {{ scale }};
+    {%- endfor %}
+    {%- for key, color in site.text_colors.items() %}
+    --fc-{{ key }}: {{ color }};
     {%- endfor %}
   }
 </style>
@@ -15,12 +19,12 @@
     <div class="hero-text">
       <img class="hero-logo-sm" src="{{ url_for('static', filename='img/logo.png') }}" alt="{{ site.name_th }}, {{ site.name }}" width="170" height="154">
       <h1>{{ site.headline }}</h1>
-      {% if site.headline_sub %}<p class="hero-sub">{{ site.headline_sub }}</p>{% endif %}
-      <p class="lead">{{ site.tagline }}</p>
+      {% if site.headline_sub and 'headline_sub' not in hidden %}<p class="hero-sub">{{ site.headline_sub }}</p>{% endif %}
+      {% if 'tagline' not in hidden %}<p class="lead">{{ site.tagline }}</p>{% endif %}
       <p class="hero-cta">
         <a class="btn btn-donate" href="{{ url_for('donate') }}">Donate</a>
         <a class="btn btn-outline" href="{{ url_for('volunteer') }}">Volunteer</a>
-        <a class="btn btn-outline" href="#how-it-works">How it works</a>
+        {% if 'section_story' not in hidden %}<a class="btn btn-outline" href="#how-it-works">{{ site.story.title }}</a>{% endif %}
       </p>
     </div>
     <div class="hero-mosaic">
@@ -31,10 +35,11 @@
   </div>
 </section>
 
+{% if 'section_story' not in hidden %}
 <section class="section story" id="how-it-works">
   <div class="container">
-    <h2 class="section-title">{{ site.story.title }}</h2>
-    <p class="center section-intro">{{ site.story.intro }}</p>
+    {% if 'story_title' not in hidden %}<h2 class="section-title">{{ site.story.title }}</h2>{% endif %}
+    {% if 'story_intro' not in hidden %}<p class="center section-intro">{{ site.story.intro }}</p>{% endif %}
     <ol class="story-steps">
       {% for st in site.story.steps %}
       <li class="story-step">
@@ -42,15 +47,17 @@
           <img src="{{ url_for('static', filename='img/' ~ st.photo) }}" alt="" loading="lazy">
           <span class="story-num" aria-hidden="true">{{ loop.index }}</span>
         </div>
-        <h3>{{ st.title }}</h3>
-        <p>{{ st.text }}</p>
+        {% if 'step_title' not in hidden %}<h3>{{ st.title }}</h3>{% endif %}
+        {% if 'step_text' not in hidden %}<p>{{ st.text }}</p>{% endif %}
       </li>
       {% endfor %}
     </ol>
-    <p class="story-loop"><span aria-hidden="true">&#8635;</span> {{ site.story.loop }}</p>
+    {% if 'story_loop' not in hidden %}<p class="story-loop"><span aria-hidden="true">&#8635;</span> {{ site.story.loop }}</p>{% endif %}
   </div>
 </section>
+{% endif %}
 
+{% if 'section_cards' not in hidden and 'cards' not in hidden %}
 <section class="container section">
   <div class="mission-grid">
     <div class="card">
@@ -63,6 +70,7 @@
     </div>
   </div>
 </section>
+{% endif %}
 
 <section class="section alt">
   <div class="container">
@@ -80,15 +88,17 @@
   </div>
 </section>
 
+{% if 'section_angels' not in hidden %}
 <section class="container section">
   <h2 class="section-title">Meet our Guardian Angels</h2>
-  <p class="center section-intro angels-intro">{{ site.guardian_angels.intro }}</p>
+  {% if 'angels_intro' not in hidden %}<p class="center section-intro angels-intro">{{ site.guardian_angels.intro }}</p>{% endif %}
   <div class="angels-grid">
     {% for photo in site.guardian_angels.photos %}
       <img src="{{ url_for('static', filename='img/' ~ photo) }}" alt="One of our Guardian Angel horses" loading="lazy">
     {% endfor %}
   </div>
 </section>
+{% endif %}
 
 <section class="section alt">
   <div class="container">

@@ -12,6 +12,7 @@ Run locally:
 import calendar
 import json
 import os
+import re
 import secrets
 import sqlite3
 from datetime import date, datetime, timezone
@@ -43,6 +44,28 @@ DATA_DIR = BASE_DIR / "data"
 def load_json(name):
     with open(DATA_DIR / name, encoding="utf-8") as f:
         return json.load(f)
+
+
+# Home page text groups that the wording editor can resize, recolour or hide.
+TEXT_GROUPS = {"headline", "headline_sub", "tagline", "story_title", "story_intro",
+               "step_title", "step_text", "story_loop", "cards", "angels_intro"}
+HIDEABLE = (TEXT_GROUPS - {"headline"}) | {"section_story", "section_cards", "section_angels"}
+HEX_COLOR = re.compile(r"^#[0-9a-fA-F]{6}$")
+
+
+def load_site():
+    """site.json with the editor's style settings checked, so a typo (or bad
+    data pasted from the editor) can never inject CSS or break the page."""
+    site = load_json("site.json")
+    sizes = {}
+    for key, value in (site.get("text_sizes") or {}).items():
+        if key in TEXT_GROUPS and isinstance(value, (int, float)) and 0.5 <= value <= 2:
+            sizes[key] = round(float(value), 2)
+    site["text_sizes"] = sizes
+    site["text_colors"] = {k: v for k, v in (site.get("text_colors") or {}).items()
+                           if k in TEXT_GROUPS and isinstance(v, str) and HEX_COLOR.match(v)}
+    site["hidden"] = [k for k in (site.get("hidden") or []) if k in HIDEABLE]
+    return site
 
 
 def load_events():
@@ -170,7 +193,7 @@ def create_app(test_config=None):
     def _inject_globals():
         # Makes `site`, `csrf_token` and the current year available in every template.
         return {
-            "site": load_json("site.json"),
+            "site": load_site(),
             "csrf_token": _csrf_token,
             "current_year": date.today().year,
         }

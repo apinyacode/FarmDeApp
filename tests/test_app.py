@@ -159,3 +159,41 @@ def test_home_text_sizes_become_css_variables(client, monkeypatch):
     html = client.get("/").get_data(as_text=True)
     assert "--fs-headline: 1.2;" in html
     assert "--fs-step_text: 0.9;" in html
+
+
+def _with_site(monkeypatch, **changes):
+    import app as app_module
+    real = app_module.load_json
+
+    def fake(name):
+        data = real(name)
+        if name == "site.json":
+            data.update(changes)
+        return data
+
+    monkeypatch.setattr(app_module, "load_json", fake)
+
+
+def test_hidden_sections_and_texts_are_left_out(client, monkeypatch):
+    _with_site(monkeypatch, hidden=["section_story", "tagline", "angels_intro"])
+    html = client.get("/").get_data(as_text=True)
+    assert 'id="how-it-works"' not in html          # whole section gone
+    assert 'href="#how-it-works"' not in html        # and the button that jumps to it
+    assert 'class="lead"' not in html                # hero description hidden
+    assert "Meet our Guardian Angels" in html        # section stays...
+    assert 'angels-intro' not in html                # ...without its intro line
+
+
+def test_text_colours_become_css_variables(client, monkeypatch):
+    _with_site(monkeypatch, text_colors={"headline": "#5a7f97"})
+    assert "--fc-headline: #5a7f97;" in client.get("/").get_data(as_text=True)
+
+
+def test_bad_style_values_are_ignored(client, monkeypatch):
+    _with_site(monkeypatch,
+               text_colors={"headline": "red; } body { display:none", "nope": "#000000"},
+               text_sizes={"headline": 9, "tagline": "big"},
+               hidden=["headline", "footer"])
+    html = client.get("/").get_data(as_text=True)
+    assert "display:none" not in html and "--fc-" not in html and "--fs-" not in html
+    assert "<h1>" in html  # the headline can never be hidden

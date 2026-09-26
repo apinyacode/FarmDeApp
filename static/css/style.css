@@ -314,3 +314,15 @@ section[id], article[id] { scroll-margin-top: 84px; }
 .story-loop { font-size: calc(1em * var(--fs-story_loop, 1)); }
 .mission-grid .card p { font-size: calc(1em * var(--fs-cards, 1)); }
 .angels-intro { font-size: calc(1em * var(--fs-angels_intro, 1)); }
+
+/* Home page text colours set from the wording editor (fallback = normal colour) */
+.hero-text h1 { color: var(--fc-headline, var(--ink)); }
+.hero-sub { color: var(--fc-headline_sub, var(--rose)); }
+.hero-text .lead { color: var(--fc-tagline, var(--muted)); }
+.story .section-title { color: var(--fc-story_title, var(--ink)); }
+.story .section-intro { color: var(--fc-story_intro, var(--muted)); }
+.story-step h3 { color: var(--fc-step_title, var(--ink)); }
+.story-step p { color: var(--fc-step_text, var(--muted)); }
+.story-loop { color: var(--fc-story_loop, var(--rose)); }
+.mission-grid .card p { color: var(--fc-cards, var(--ink)); }
+.angels-intro { color: var(--fc-angels_intro, var(--muted)); }
