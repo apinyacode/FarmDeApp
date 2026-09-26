@@ -196,8 +196,8 @@
       "alt": "Young people holding baskets of vegetables they picked on the farm"
     },
     {
-      "file": "volunteer/kayaking.jpg",
-      "alt": "Volunteers canoeing on the farm pond"
+      "file": "volunteer/teaching.jpg",
+      "alt": "Volunteers helping children with a learning activity"
     },
     {
       "file": "horses/horse2.jpg",
@@ -206,6 +206,10 @@
     {
       "file": "horses/horse4.jpg",
       "alt": "A retired horse grazing at sunset"
+    },
+    {
+      "file": "volunteer/kayaking.jpg",
+      "alt": "Volunteers canoeing on the farm pond"
     }
   ],
   "story": {

@@ -269,15 +269,15 @@ section[id], article[id] { scroll-margin-top: 84px; }
 .hero-text h1 { font-size: calc(clamp(2rem, 4.2vw, 3rem) * var(--fs-headline, 1)); margin: 0 0 12px; }
 .hero-text .lead { margin: 0 0 8px; font-size: calc(1.2rem * var(--fs-tagline, 1)); }
 .hero-split .hero-cta { justify-content: flex-start; }
-.hero-mosaic { display: grid; grid-template-columns: 1.2fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; aspect-ratio: 5 / 4; }
-.hero-mosaic img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); min-height: 0; }
-.hero-mosaic .m1 { grid-row: span 2; }
-.hero-mosaic .m4 { display: none; }
-@media (min-width: 1000px) {
-  .hero-mosaic { grid-template-columns: 1.2fr 1fr 1fr; grid-template-rows: 1fr 1fr; aspect-ratio: 16 / 11; }
-  .hero-mosaic .m2 { grid-column: span 2; }
-  .hero-mosaic .m4 { display: block; }
-}
+/* Same arrangement as the share picture: one tall photo on the left; on the right a wide
+   photo, two side by side, and another wide photo. */
+.hero-mosaic { display: grid; grid-template-columns: 1fr 0.5fr 0.5fr; grid-template-rows: 1fr 0.95fr 0.95fr; gap: 12px; aspect-ratio: 1 / 1; }
+.hero-mosaic img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); min-height: 0; min-width: 0; }
+.hero-mosaic .m1 { grid-column: 1; grid-row: 1 / 4; }
+.hero-mosaic .m2 { grid-column: 2 / 4; grid-row: 1; }
+.hero-mosaic .m3 { grid-column: 2; grid-row: 2; }
+.hero-mosaic .m4 { grid-column: 3; grid-row: 2; }
+.hero-mosaic .m5 { grid-column: 2 / 4; grid-row: 3; }
 @media (max-width: 800px) {
   .hero-grid { grid-template-columns: 1fr; gap: 28px; }
   .hero-split { text-align: center; padding-top: 32px; }
