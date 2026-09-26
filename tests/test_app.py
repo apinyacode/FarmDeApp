@@ -143,3 +143,19 @@ def test_share_image_uses_public_https_url_behind_tunnel(client):
         "X-Forwarded-Proto": "https", "X-Forwarded-Host": "angelarms.example.org",
     }).get_data(as_text=True)
     assert 'content="https://angelarms.example.org/static/img/share.jpg"' in html
+
+
+def test_home_text_sizes_become_css_variables(client, monkeypatch):
+    import app as app_module
+    real = app_module.load_json
+
+    def fake(name):
+        data = real(name)
+        if name == "site.json":
+            data["text_sizes"] = {"headline": 1.2, "step_text": 0.9}
+        return data
+
+    monkeypatch.setattr(app_module, "load_json", fake)
+    html = client.get("/").get_data(as_text=True)
+    assert "--fs-headline: 1.2;" in html
+    assert "--fs-step_text: 0.9;" in html

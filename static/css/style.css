@@ -267,8 +267,8 @@ section[id], article[id] { scroll-margin-top: 84px; }
 /* Landing: photo hero */
 .hero-split { text-align: left; padding: 48px 0 56px; }
 .hero-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: center; }
-.hero-text h1 { font-size: clamp(2rem, 4.2vw, 3rem); margin: 16px 0 12px; }
-.hero-text .lead { margin: 0 0 8px; }
+.hero-text h1 { font-size: calc(clamp(2rem, 4.2vw, 3rem) * var(--fs-headline, 1)); margin: 16px 0 12px; }
+.hero-text .lead { margin: 0 0 8px; font-size: calc(1.2rem * var(--fs-tagline, 1)); }
 .hero-split .hero-cta { justify-content: flex-start; }
 .hero-logo-sm { width: 170px; height: auto; background: var(--white); border-radius: 18px; padding: 10px; box-shadow: var(--shadow); }
 .hero-mosaic { display: grid; grid-template-columns: 1.2fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; aspect-ratio: 5 / 4; }
@@ -291,8 +291,8 @@ section[id], article[id] { scroll-margin-top: 84px; }
 .story { background: var(--white); }
 .story-steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; counter-reset: none; }
 .story-step { text-align: center; position: relative; }
-.story-step h3 { margin: 14px 0 6px; font-size: 1.15rem; }
-.story-step p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+.story-step h3 { margin: 14px 0 6px; font-size: calc(1.15rem * var(--fs-step_title, 1)); }
+.story-step p { margin: 0; color: var(--muted); font-size: calc(0.97rem * var(--fs-step_text, 1)); }
 .story-photo { position: relative; width: min(190px, 70%); margin: 0 auto; }
 .story-photo img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 6px solid var(--pink-soft); box-shadow: var(--shadow); }
 .story-num { position: absolute; top: 4px; left: 4px; width: 38px; height: 38px; border-radius: 50%; background: var(--rose); color: var(--white);
@@ -306,4 +306,11 @@ section[id], article[id] { scroll-margin-top: 84px; }
 .story-loop { text-align: center; margin: 32px auto 0; max-width: 640px; font-weight: 600; color: var(--rose);
   background: var(--pink-soft); border-radius: 999px; padding: 12px 20px; }
 .story-loop span { font-size: 1.3rem; margin-right: 6px; }
-.hero-sub { font-family: "Prompt", system-ui, sans-serif; font-size: clamp(1.2rem, 2.2vw, 1.6rem); font-weight: 500; color: var(--rose); margin: -4px 0 14px; }
+.hero-sub { font-family: "Prompt", system-ui, sans-serif; font-size: calc(clamp(1.2rem, 2.2vw, 1.6rem) * var(--fs-headline_sub, 1)); font-weight: 500; color: var(--rose); margin: -4px 0 14px; }
+
+/* Home page text sizes set from the wording editor (var defaults to 1 = normal) */
+.story .section-title { font-size: calc(1.9rem * var(--fs-story_title, 1)); }
+.story .section-intro { font-size: calc(1em * var(--fs-story_intro, 1)); }
+.story-loop { font-size: calc(1em * var(--fs-story_loop, 1)); }
+.mission-grid .card p { font-size: calc(1em * var(--fs-cards, 1)); }
+.angels-intro { font-size: calc(1em * var(--fs-angels_intro, 1)); }

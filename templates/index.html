@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
+{% if site.text_sizes %}
+<style>
+  /* Text sizes chosen in the wording editor (1 = normal) */
+  :root {
+    {%- for key, scale in site.text_sizes.items() %}
+    --fs-{{ key }}: {{ scale | float }};
+    {%- endfor %}
+  }
+</style>
+{% endif %}
 <section class="hero hero-split">
   <div class="container hero-grid">
     <div class="hero-text">
@@ -72,7 +82,7 @@
 
 <section class="container section">
   <h2 class="section-title">Meet our Guardian Angels</h2>
-  <p class="center section-intro">{{ site.guardian_angels.intro }}</p>
+  <p class="center section-intro angels-intro">{{ site.guardian_angels.intro }}</p>
   <div class="angels-grid">
     {% for photo in site.guardian_angels.photos %}
       <img src="{{ url_for('static', filename='img/' ~ photo) }}" alt="One of our Guardian Angel horses" loading="lazy">
