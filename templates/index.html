@@ -17,7 +17,6 @@
 <section class="hero hero-split">
   <div class="container hero-grid">
     <div class="hero-text">
-      <img class="hero-logo-sm" src="{{ url_for('static', filename='img/logo.png') }}" alt="{{ site.name_th }}, {{ site.name }}" width="170" height="154">
       <h1>{{ site.headline }}</h1>
       {% if site.headline_sub and 'headline_sub' not in hidden %}<p class="hero-sub">{{ site.headline_sub }}</p>{% endif %}
       {% if 'tagline' not in hidden %}<p class="lead">{{ site.tagline }}</p>{% endif %}
@@ -29,7 +28,7 @@
     </div>
     <div class="hero-mosaic">
       {% for ph in site.hero_photos %}
-        <img class="m{{ loop.index }}" src="{{ url_for('static', filename='img/' ~ ph.file) }}" alt="{{ ph.alt }}" {% if loop.index > 1 %}loading="lazy"{% endif %}>
+        <img class="m{{ loop.index }}" src="{{ url_for('static', filename='img/' ~ ph.file) }}" alt="{{ ph.alt }}">
       {% endfor %}
     </div>
   </div>
