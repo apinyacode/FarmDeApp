@@ -244,7 +244,9 @@
     "headline": 0.9
   },
   "hidden": [
-    "tagline"
+    "tagline",
+    "video_title",
+    "video_text"
   ],
   "text_colors": {
     "headline": "#b0475a",

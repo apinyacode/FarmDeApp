@@ -210,3 +210,11 @@ def test_home_shows_still_picture_linking_to_the_reel(client):
 def test_video_section_can_be_hidden(client, monkeypatch):
     _with_site(monkeypatch, hidden=["section_video"])
     assert 'id="video"' not in client.get("/").get_data(as_text=True)
+
+
+def test_picture_only_when_video_texts_hidden(client, monkeypatch):
+    _with_site(monkeypatch, hidden=["video_title", "video_text"])
+    html = client.get("/").get_data(as_text=True)
+    assert 'class="container video-grid solo"' in html
+    assert "See us in action" not in html
+    assert 'href="https://www.facebook.com/reel/1612629857100248"' in html

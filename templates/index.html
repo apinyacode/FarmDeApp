@@ -37,7 +37,7 @@
 {% if site.video and site.video.image and 'section_video' not in hidden %}
 {% set v = site.video %}
 <section class="section video-section" id="video">
-  <div class="container video-grid">
+  <div class="container video-grid{% if 'video_title' in hidden and 'video_text' in hidden %} solo{% endif %}">
     <div class="video-frame{% if v.vertical %} vertical{% endif %}">
       <img src="{{ url_for('static', filename='img/' ~ v.image) }}" alt="{{ v.image_alt }}" loading="lazy">
     </div>
