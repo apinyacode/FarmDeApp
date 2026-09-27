@@ -180,6 +180,53 @@ Make sure `instance/` is on a persistent disk so sign-ups survive restarts.
 
 ---
 
+## 6. Chat helper (website + LINE)
+
+An "Ask us" bubble on every page answers visitors' questions in Thai or English, and the same helper can
+answer in LINE. It only uses what's on the site (the `data/*.json` files), so when you update the site the
+answers update too. It never stores chats, never asks for personal details, and won't give medical advice.
+
+### Turn it on (website)
+
+1. Create an account at **https://console.anthropic.com**, add a payment method, and create an **API key**.
+2. Add it to `instance/.env` on the computer that runs the site:
+   ```
+   ANTHROPIC_API_KEY=sk-ant-...your key...
+   ```
+3. Restart: `bash deploy.sh --kill && bash deploy.sh --no-tunnel`. The bubble appears bottom-right.
+   Without a key the bubble simply doesn't show.
+
+Cost: about 0.5 to 1 Thai baht per question (it uses Claude Opus 5 at a low "effort" setting, and the site
+information is cached so it isn't paid for in full every time). Set a monthly spending limit in the
+Anthropic console so there are no surprises. To try a cheaper model, add
+`CHATBOT_MODEL=claude-sonnet-5` to `instance/.env`. Each visitor can ask up to 20 questions per 10 minutes.
+
+### Turn it on in LINE
+
+1. Go to **https://developers.line.biz/console/**, log in with LINE, create a **Provider** (e.g. "Angel Arms
+   Foundation") and a **Messaging API channel** (this also creates a LINE Official Account).
+2. In the channel's **Basic settings** copy the **Channel secret**; in **Messaging API** issue a
+   **Channel access token (long-lived)**. Add both to `instance/.env`:
+   ```
+   LINE_CHANNEL_SECRET=...
+   LINE_CHANNEL_ACCESS_TOKEN=...
+   ```
+3. Start the site **with the tunnel**: `bash deploy.sh` and copy the `https://….trycloudflare.com` link.
+4. In **Messaging API → Webhook settings** set the webhook URL to `https://….trycloudflare.com/line/webhook`,
+   turn **Use webhook** on, and press **Verify** (it should say Success).
+5. In the LINE Official Account settings: turn **Auto-reply messages off**, and turn **"Allow bot to join group
+   chats" on**.
+6. Add the account as a friend (QR code in the console), then invite it to your group.
+
+How it behaves:
+- **Private chat** with the account: it answers every message.
+- **Group chat**: it answers only when you **@mention** it, or start the message with **"บอท"** or **"bot"**
+  (e.g. `บอท วันเปิดฟาร์มคือวันไหน`). Otherwise it stays quiet.
+
+> The quick tunnel link changes every time you run `deploy.sh`, so you'd have to paste the new webhook URL
+> into LINE each time. For a LINE bot that's always on, use a permanent address (a Cloudflare named tunnel
+> or a small server; see section 5).
+
 ## Project layout
 
 ```
@@ -187,6 +234,8 @@ deploy.sh               # Ubuntu / Chromebook: one-command deploy: local, tunnel
 Dockerfile              # clean image used by deploy.sh --docker
 start.sh / start.bat    # one-command setup + start (foreground)
 app.py                  # the Flask app (routes, calendar, sign-up form, admin page)
+chatbot.py              # the chat helper: builds its knowledge from data/*.json, asks Claude
+line_bot.py             # LINE webhook: signature check, group-chat rules, replies
 data/                   # editable content (JSON)
 templates/              # HTML pages (Jinja templates)
 static/css/style.css    # all styling

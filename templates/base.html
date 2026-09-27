@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{{ site.name }}{% endblock %}</title>
   <meta name="description" content="{{ site.mission }}">
+  {% if chat_enabled %}<meta name="csrf-token" content="{{ csrf_token() }}">{% endif %}
   <!-- Link previews (Facebook, LINE, X, etc.) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{{ site.name }}">
@@ -82,6 +83,37 @@
     </div>
     <p class="container copyright">&copy; {{ current_year }} {{ site.name }}</p>
   </footer>
+  {% if chat_enabled %}
+  <div class="chat" id="chat">
+    <section class="chat-panel" id="chat-panel" aria-label="Ask The Angel Arms" hidden>
+      <header class="chat-head">
+        <img src="{{ url_for('static', filename='img/logo-mark.png') }}" alt="" width="34" height="34">
+        <div><strong>Ask us</strong><small>ถามเราได้ · Thai or English</small></div>
+        <button type="button" class="chat-close" id="chat-close" aria-label="Close chat">&times;</button>
+      </header>
+      <div class="chat-log" id="chat-log" role="log" aria-live="polite">
+        <p class="bubble bot">Hi! I can answer questions about the foundation, volunteering, events and donating. สวัสดีค่ะ ถามได้เลยนะคะ</p>
+      </div>
+      <div class="chat-chips" id="chat-chips">
+        <button type="button">How can I volunteer?</button>
+        <button type="button">How do I donate?</button>
+        <button type="button">What is horse-assisted therapy?</button>
+        <button type="button">บริจาคได้อย่างไร</button>
+      </div>
+      <form class="chat-form" id="chat-form">
+        <label class="sr-only" for="chat-input">Your question</label>
+        <input id="chat-input" name="message" maxlength="1000" autocomplete="off" placeholder="Type your question…">
+        <button type="submit" class="btn btn-donate btn-small">Send</button>
+      </form>
+      <p class="chat-note">Answers come from an AI helper and may not be perfect. Please don't share personal details.</p>
+    </section>
+    <button type="button" class="chat-toggle" id="chat-toggle" aria-expanded="false" aria-controls="chat-panel">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+      <span>Ask us</span>
+    </button>
+  </div>
+  <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+  {% endif %}
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>

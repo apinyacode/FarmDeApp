@@ -33,6 +33,9 @@ from flask import (
 )
 from werkzeug.middleware.proxy_fix import ProxyFix
 
+import chatbot
+import line_bot
+
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
 
@@ -196,6 +199,7 @@ def create_app(test_config=None):
             "site": load_site(),
             "csrf_token": _csrf_token,
             "current_year": date.today().year,
+            "chat_enabled": chatbot.is_enabled(),
         }
 
     def _csrf_token():
@@ -310,6 +314,37 @@ def create_app(test_config=None):
             errors=errors,
             selected_role=request.args.get("role", form.get("role", "")),
         )
+
+    # -- Chat helper (website bubble + LINE) ----------------------------------
+
+    web_chat_limiter = chatbot.RateLimiter(limit=20, window=600)
+
+    @app.route("/api/chat", methods=["POST"])
+    def api_chat():
+        if not chatbot.is_enabled():
+            return {"error": "The chat helper is switched off."}, 503
+        # Same-site only: the page sends the session's CSRF token in a header.
+        token = request.headers.get("X-CSRF-Token", "")
+        if not token or not secrets.compare_digest(token, session.get("csrf", "")):
+            return {"error": "Please refresh the page and try again."}, 400
+        data = request.get_json(silent=True) or {}
+        question = data.get("message")
+        if not isinstance(question, str) or not question.strip():
+            return {"error": "Please type a question."}, 400
+        if not web_chat_limiter.allow(request.remote_addr or "?"):
+            return {"reply": "You've asked a lot of questions! Please wait a few minutes and try again."}
+        history = data.get("history") if isinstance(data.get("history"), list) else []
+        return {"reply": chatbot.ask(question, history)}
+
+    @app.route("/line/webhook", methods=["POST"])
+    def line_webhook():
+        if not line_bot.is_enabled():
+            abort(404)
+        body = request.get_data()
+        if not line_bot.signature_ok(body, request.headers.get("X-Line-Signature", "")):
+            abort(400)
+        line_bot.handle_body(body, run_in_background=not app.testing)
+        return "OK"
 
     @app.route("/donate")
     def donate():
