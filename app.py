@@ -51,8 +51,10 @@ def load_json(name):
 
 # Home page text groups that the wording editor can resize, recolour or hide.
 TEXT_GROUPS = {"headline", "headline_sub", "tagline", "story_title", "story_intro",
-               "step_title", "step_text", "story_loop", "cards", "angels_intro"}
-HIDEABLE = (TEXT_GROUPS - {"headline"}) | {"section_story", "section_cards", "section_angels"}
+               "step_title", "step_text", "story_loop", "cards", "angels_intro",
+               "sponsor_title", "sponsor_text"}
+HIDEABLE = (TEXT_GROUPS - {"headline"}) | {"section_story", "section_sponsor", "section_cards",
+                                           "section_angels"}
 HEX_COLOR = re.compile(r"^#[0-9a-fA-F]{6}$")
 
 

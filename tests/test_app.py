@@ -197,3 +197,22 @@ def test_bad_style_values_are_ignored(client, monkeypatch):
     html = client.get("/").get_data(as_text=True)
     assert "display:none" not in html and "--fc-" not in html and "--fs-" not in html
     assert "<h1>" in html  # the headline can never be hidden
+
+
+def test_home_has_big_sibling_section_with_bank_account(client):
+    html = client.get("/").get_data(as_text=True)
+    assert 'id="sponsor"' in html
+    assert "พี่บุญธรรม" in html
+    assert "218-3-69769-5" in html
+    assert html.count("img/sponsor/") >= 4
+    # the real child-and-horse photo is now used in How it works too
+    assert "sponsor/riding-helpers.jpg" in html
+
+
+def test_donate_page_shows_account_number(client):
+    assert "218-3-69769-5" in client.get("/donate").get_data(as_text=True)
+
+
+def test_big_sibling_section_can_be_hidden(client, monkeypatch):
+    _with_site(monkeypatch, hidden=["section_sponsor"])
+    assert 'id="sponsor"' not in client.get("/").get_data(as_text=True)

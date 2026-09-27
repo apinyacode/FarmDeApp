@@ -177,3 +177,8 @@ def test_line_webhook_off_without_keys(client, monkeypatch, replies):
     monkeypatch.delenv("LINE_CHANNEL_SECRET")
     body = b'{"events": []}'
     assert client.post("/line/webhook", data=body, headers={"X-Line-Signature": sign(body)}).status_code == 404
+
+
+def test_knowledge_has_bank_account_and_big_sibling_campaign():
+    k = chatbot.build_knowledge(today=date(2026, 9, 1))
+    assert "218-3-69769-5" in k and "พี่บุญธรรม" in k

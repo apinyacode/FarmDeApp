@@ -111,6 +111,9 @@ def build_knowledge(today=None):
     if bt.get("note"):
         add(f"- {bt['note']}")
     add("- Gifts in kind we welcome: " + "; ".join(d.get("in_kind", [])))
+    sp = site.get("sponsor")
+    if sp:
+        add(f"- Campaign '{sp['title']}' ({sp['title_th']}): {sp['text_th']} {sp['text']}")
 
     add("VOLUNTEERING (page /volunteer, sign-up form at /volunteer#signup):")
     add(programs.get("intro", ""))

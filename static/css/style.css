@@ -350,3 +350,26 @@ section[id], article[id] { scroll-margin-top: 84px; }
 .chat-form input { flex: 1; min-width: 0; font: inherit; padding: 9px 12px; border: 1.5px solid #e6d3d5; border-radius: 999px; }
 .chat-form input:focus { outline: 3px solid rgba(246, 124, 136, 0.35); border-color: var(--pink); }
 .chat-note { margin: 0; padding: 0 14px 10px; font-size: 0.75rem; color: var(--muted); }
+
+/* Home page: "Become a big brother or sister" (พี่บุญธรรม) */
+.sponsor { background: var(--pink-soft); }
+.sponsor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; }
+.sponsor-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.sponsor-photos img { width: 100%; aspect-ratio: 1 / 1.05; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); display: block; }
+.sponsor-photos img:nth-child(2) { transform: translateY(18px); }   /* gentle stagger, like a photo pinboard */
+.sponsor-photos img:nth-child(4) { transform: translateY(18px); }
+.sponsor-th { font-family: "Prompt", system-ui, sans-serif; color: var(--rose); font-weight: 500; font-size: 1.15rem; margin: 0 0 4px; }
+.sponsor-text h2 { font-size: calc(clamp(1.7rem, 3vw, 2.2rem) * var(--fs-sponsor_title, 1)); color: var(--fc-sponsor_title, var(--ink)); margin: 0 0 14px; }
+.sponsor-quote { font-size: 1.1rem; color: var(--ink); border-left: 4px solid var(--pink); padding-left: 14px; margin: 0 0 12px; }
+.sponsor-text p { color: var(--fc-sponsor_text, var(--muted)); font-size: calc(1em * var(--fs-sponsor_text, 1)); }
+.sponsor-text .sponsor-quote { color: var(--fc-sponsor_text, var(--ink)); font-size: calc(1.1rem * var(--fs-sponsor_text, 1)); }
+.sponsor-text .sponsor-cta { font-size: 1rem; }
+.sponsor-text .sponsor-th { color: var(--fc-sponsor_title, var(--rose)); font-size: calc(1.15rem * var(--fs-sponsor_title, 1)); }
+.sponsor-bank { display: flex; flex-direction: column; gap: 2px; background: var(--white); border-radius: var(--radius); padding: 14px 18px; box-shadow: var(--shadow); margin: 18px 0; }
+.sponsor-bank-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--rose); }
+.sponsor-acct { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-family: "Prompt", system-ui, sans-serif; font-size: 1.35rem; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--ink); }
+.sponsor-cta { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; }
+@media (max-width: 860px) {
+  .sponsor-grid { grid-template-columns: 1fr; gap: 32px; }
+  .sponsor-photos { max-width: 520px; margin: 0 auto; width: 100%; }
+}

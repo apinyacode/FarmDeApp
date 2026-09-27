@@ -56,6 +56,39 @@
 </section>
 {% endif %}
 
+{% if site.sponsor and 'section_sponsor' not in hidden %}
+{% set sp = site.sponsor %}
+{% set bt = site.donation.bank_transfer %}
+<section class="section sponsor" id="sponsor">
+  <div class="container sponsor-grid">
+    <div class="sponsor-photos">
+      {% for ph in sp.photos %}
+        <img src="{{ url_for('static', filename='img/' ~ ph.file) }}" alt="{{ ph.alt }}" loading="lazy">
+      {% endfor %}
+    </div>
+    <div class="sponsor-text">
+      <p class="sponsor-th" lang="th">{{ sp.title_th }}</p>
+      <h2>{{ sp.title }}</h2>
+      <p class="sponsor-quote" lang="th">{{ sp.text_th }}</p>
+      <p>{{ sp.text }}</p>
+      {% if bt.account_number %}
+      <div class="sponsor-bank">
+        <span class="sponsor-bank-label">Donate by bank transfer</span>
+        <span>{{ bt.bank }}</span>
+        <span>{{ bt.account_name }}</span>
+        <span class="sponsor-acct">{{ bt.account_number }}
+          <button class="btn btn-small" type="button" data-copy="{{ bt.account_number }}">Copy</button></span>
+      </div>
+      {% endif %}
+      <p class="sponsor-cta">
+        <a class="btn btn-donate" href="{{ url_for('donate') }}#scan">Donate with Thai QR</a>
+        <a class="btn btn-outline" href="{{ url_for('volunteer') }}">Volunteer with us</a>
+      </p>
+    </div>
+  </div>
+</section>
+{% endif %}
+
 {% if 'section_cards' not in hidden and 'cards' not in hidden %}
 <section class="container section">
   <div class="mission-grid">

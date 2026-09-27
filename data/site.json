@@ -111,9 +111,9 @@
       }
     ],
     "bank_transfer": {
-      "bank": "Kasikornbank",
+      "bank": "Kasikornbank (ธนาคารกสิกรไทย)",
       "account_name": "มูลนิธิในอ้อมกอด (The Angel Arms Foundation)",
-      "account_number": "",
+      "account_number": "218-3-69769-5",
       "promptpay": "",
       "note": "After you donate, please send us your transfer slip and tell us which fund it is for: children or horses. If you don't say, we'll use it where it's needed most."
     },
@@ -222,7 +222,7 @@
         "text": "We take in retired horses and horses injured through work, and give them care, rehabilitation and a home for life."
       },
       {
-        "photo": "horses/horse5.jpg",
+        "photo": "sponsor/riding-helpers.jpg",
         "title": "They become gentle therapy partners",
         "text": "Calm, well-cared-for horses join our horse-assisted and movement-based therapy, following the Horseboy Method."
       },
@@ -249,5 +249,29 @@
   "text_colors": {
     "headline": "#b0475a",
     "headline_sub": "#222222"
+  },
+  "sponsor": {
+    "title": "Become a big brother or sister",
+    "title_th": "มาเป็น “พี่บุญธรรม” กันนะ",
+    "text_th": "มูลนิธิในอ้อมกอด อยากชวนเพื่อนๆ มาเป็น “พี่บุญธรรม” ช่วยดูแลน้องๆ ไปด้วยกัน",
+    "text": "The Angel Arms Foundation invites you to become a พี่บุญธรรม (phi bunyatham), a big brother or sister who helps care for the children. Your gift supports therapy sessions with our horses, learning activities and many happy days on the farm.",
+    "photos": [
+      {
+        "file": "sponsor/laughing.jpg",
+        "alt": "A boy laughing with volunteers on a farm trailer ride"
+      },
+      {
+        "file": "sponsor/riding-helpers.jpg",
+        "alt": "A child riding a pony, supported by volunteers on both sides"
+      },
+      {
+        "file": "sponsor/learning.jpg",
+        "alt": "A boy playing with building blocks and a toy cash register"
+      },
+      {
+        "file": "sponsor/riding-walk.jpg",
+        "alt": "A child in a riding helmet on a pony, led by a volunteer"
+      }
+    ]
   }
 }
