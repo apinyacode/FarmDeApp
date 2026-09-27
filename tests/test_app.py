@@ -227,3 +227,8 @@ def test_home_shows_ways_to_care_for_horses(client):
     assert 'href="/volunteer?role=stable-care#signup"' in html
     # children's section comes before the horses' section
     assert html.index('id="sponsor"') < html.index('id="horses"')
+
+
+def test_healthz(client):
+    resp = client.get("/healthz")
+    assert resp.status_code == 200 and resp.get_json() == {"status": "ok"}

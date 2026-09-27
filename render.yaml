@@ -1,0 +1,36 @@
+# Render Blueprint: the live website at https://angelarmsfoundation.org
+#
+# In the Render dashboard: New + > Blueprint > pick the FarmDeApp repository.
+# Render reads this file and creates everything below. After that, every merge
+# into the `main` branch on GitHub rebuilds and publishes the site automatically.
+# The Docker build runs the test suite, so a change that breaks the tests never
+# goes live (the previous version keeps running).
+services:
+  - type: web
+    name: angelarms-web
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    region: singapore        # closest Render region to Thailand
+    plan: starter            # smallest paid plan; needed for the persistent disk
+    branch: main
+    autoDeploy: true
+    healthCheckPath: /healthz
+    numInstances: 1          # the site keeps its data in one SQLite file: keep this at 1
+    disk:
+      name: angelarms-data   # volunteer sign-ups (angelarms.db) live here, across deploys
+      mountPath: /app/instance
+      sizeGB: 1
+    domains:
+      - angelarmsfoundation.org
+      - www.angelarmsfoundation.org
+    envVars:
+      - key: SECRET_KEY          # signs login/session cookies; Render generates it once
+        generateValue: true
+      - key: ADMIN_PASSWORD      # for /admin/volunteers; you type it in the dashboard
+        sync: false
+      - key: ANTHROPIC_API_KEY   # chat helper; leave empty to keep the chat switched off
+        sync: false
+      - key: LINE_CHANNEL_SECRET        # LINE bot; leave empty until you set LINE up
+        sync: false
+      - key: LINE_CHANNEL_ACCESS_TOKEN
+        sync: false

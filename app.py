@@ -180,6 +180,8 @@ def create_app(test_config=None):
         DATABASE=os.path.join(app.instance_path, "angelarms.db"),
         ADMIN_PASSWORD=os.environ.get("ADMIN_PASSWORD", ""),
     )
+    if os.environ.get("RENDER"):  # set by Render: the live site is always served over HTTPS
+        app.config.update(SESSION_COOKIE_SECURE=True)
     if test_config:
         app.config.update(test_config)
     os.makedirs(app.instance_path, exist_ok=True)
@@ -230,6 +232,11 @@ def create_app(test_config=None):
         return wrapped
 
     # -- Pages ---------------------------------------------------------------
+
+    @app.route("/healthz")
+    def healthz():
+        """Quick "am I up?" check for the host (Render, Docker); touches no data."""
+        return {"status": "ok"}
 
     @app.route("/")
     def index():

@@ -93,6 +93,8 @@ def build_knowledge(today=None):
     for label, key in (("Email", "email"), ("Phone", "phone")):
         if not _is_placeholder(c.get(key)):
             add(f"- {label}: {c[key]}")
+    if c.get("website"):
+        add(f"- Website: {c['website']}")
     if c.get("facebook"):
         add(f"- Facebook page: {c['facebook']}")
 
