@@ -1,0 +1,78 @@
+{
+  "intro": "Live on the farm for 5 days and become part of our team. Choose one of two programs at Farm de Lek, The Angel Arms Foundation and our partner Special Education Centre.",
+  "facts": [
+    {"label": "Length", "value": "5 days, about 6 hours a day"},
+    {"label": "Daily hours", "value": "About 8:30 to 15:30, with a one-hour lunch break"},
+    {"label": "Where", "value": "You stay at Farm de Lek, Nakhon Nayok"},
+    {"label": "Dates", "value": "Flexible: set by the farm or agreed with you"},
+    {"label": "Free time", "value": "Enjoy the music room, playgrounds and ponds"},
+    {"label": "Language", "value": "Work alongside Thai- and English-speaking staff"}
+  ],
+  "photos": [
+    {"file": "volunteer/farm-garden.jpg", "alt": "Young volunteers holding baskets of vegetables they picked"},
+    {"file": "volunteer/kayaking.jpg", "alt": "Volunteers paddling a canoe on the farm pond"},
+    {"file": "volunteer/teaching.jpg", "alt": "Volunteers helping children with a learning activity"},
+    {"file": "volunteer/gardening.jpg", "alt": "A volunteer preparing plants in the garden"}
+  ],
+  "programs": [
+    {
+      "id": "helping-hands",
+      "number": "01",
+      "title": "Helping Hands",
+      "tagline": "Farm life, hands-on skills and a community recycling project.",
+      "color": "hope",
+      "goals": [
+        "Develop practical skills by helping with daily farm duties",
+        "Develop communication, advocacy, leadership and resourcefulness by helping run our recycling project"
+      ],
+      "how": "Each day you help with a different task: gardening, maintenance, cleaning, caring for our animals, the farm shop, or whatever the team needs. At least one hour every afternoon goes to improving our recycling project and sharing it with the nearby community. Our staff explain and supervise every task, and your fresh ideas are always welcome.",
+      "skills": [
+        {"title": "Effective communication", "text": "Work with Thai- and English-speaking staff and share your thoughts and ideas."},
+        {"title": "Resourcefulness", "text": "Do daily farm chores, notice problems and suggest solutions."},
+        {"title": "Advocacy & leadership", "text": "Help move our recycling project forward and find ways to get the community involved."},
+        {"title": "Take action", "text": "More than thinkers, we need doers. By the end you'll help us make real improvements at Farm de Lek."}
+      ],
+      "activities": [
+        "Care for our vegetable and herb garden",
+        "Care for our animals (cleaning the coops, collecting their food)",
+        "Help the kitchen prepare meals for visiting groups",
+        "Organise storage spaces",
+        "Unload deliveries for our farm shop",
+        "Help with administrative tasks",
+        "Cleaning and small maintenance jobs",
+        "Discuss and help present our recycling project",
+        "If needed, help run activities for school groups"
+      ]
+    },
+    {
+      "id": "caretakers",
+      "number": "02",
+      "title": "Caretakers",
+      "tagline": "Spend time with children with disabilities, on the farm and at a Special Education Centre.",
+      "color": "dream",
+      "goals": [
+        "Develop hard and soft skills by helping care for children with disabilities and by supporting our recycling project",
+        "Grow in communication, empathy, creativity, teaching, curiosity and ethical awareness"
+      ],
+      "how": "Two days are spent with children with disabilities who visit the farm regularly to learn and have fun. Two days are spent at a Special Education Centre that supports children with disabilities and autistic children (be ready at 8:00 for a ride to the centre). On the remaining day you help our staff with the recycling project. Staff explain and supervise every task, and your fresh ideas are always welcome.",
+      "skills": [
+        {"title": "Effective communication", "text": "Work with Thai- and English-speaking staff and share your thoughts and ideas."},
+        {"title": "Creativity & teaching", "text": "Prepare games, lessons and learning materials, and share knowledge and a good time with the children."},
+        {"title": "Curiosity", "text": "Meet people with different abilities, backgrounds and neurodiversity, and learn how to connect with them."},
+        {"title": "Empathy & ethical awareness", "text": "Learn why and how to care for our planet and for those in need. Simple actions make a big difference."}
+      ],
+      "activities": [
+        "Prepare learning materials and games for children with disabilities: share a talent or a subject you love",
+        "Help children with disabilities move around the farm",
+        "Help with activities at the Special Education Centre",
+        "Help our staff organise donations for the foundation",
+        "Help staff support children with disabilities in water activities",
+        "Help with administrative tasks",
+        "Cleaning and small maintenance jobs",
+        "Discuss and help present our recycling project",
+        "If needed, help run activities for school groups"
+      ]
+    }
+  ],
+  "closing": "At the end of the program we'll ask for your feedback and for one idea to improve the farm, our work with the children or the recycling project. If you'd like to say thank you, a donation to the foundation is warmly welcomed."
+}

@@ -1,0 +1,316 @@
+{
+  "name": "The Angel Arms Foundation",
+  "tagline": "Horse-assisted therapy, learning and care for children with special needs, and a new purpose for retired horses.",
+  "contact": {
+    "email": "hello@angelarms.example",
+    "phone": "+66 00 000 0000",
+    "address": "Farm de Lek, No. 43, Moo 3, Khlong Yai Subdistrict, Ongkharak District, Nakhon Nayok 26120, Thailand",
+    "facebook": "https://www.facebook.com/profile.php?id=61583808935783",
+    "website": "https://angelarmsfoundation.org"
+  },
+  "mission": "To offer horse-assisted and movement-based therapy, learning opportunities, safer homes, and volunteer-led community programs for children and young people with special needs from families facing hardship, while giving retired and injured horses a new purpose as therapy partners.",
+  "vision": "To provide comprehensive, inclusive, and sustainable assistance and support to improve quality of life and well-being, while promoting holistic development and education for children, young people, and persons with special needs.",
+  "values": [
+    {
+      "title": "Dream",
+      "color": "dream",
+      "text": "Fun, play and the joy of giving. Every child deserves to dream, including the dream to ride."
+    },
+    {
+      "title": "Hope",
+      "color": "hope",
+      "text": "Our Guardian Angels, the horses, bring hope to children and are given a second chance themselves."
+    },
+    {
+      "title": "Friends",
+      "color": "friends",
+      "text": "A community where parents, volunteers and friends can say “I can help” and “I need help”."
+    },
+    {
+      "title": "Love",
+      "color": "love",
+      "text": "Love without expectation: care, patience and time for families to talk, reflect and grow together."
+    }
+  ],
+  "programs": [
+    {
+      "id": "children",
+      "title": "For children with special needs and families facing hardship",
+      "icon": "child",
+      "text": "Horse-assisted and movement-based therapy, learning and education support, and safer, healthier homes.",
+      "points": [
+        "Restore and strengthen development through equine-assisted therapy",
+        "Create opportunities and enriching life experiences",
+        "Promote access to education and sustainable development",
+        "Add educational resources and specialist support for quality-of-life development",
+        "Improve living environments to be safe and hygienic"
+      ]
+    },
+    {
+      "id": "public",
+      "title": "For the general public",
+      "icon": "heart",
+      "text": "Volunteer programs, community activities and hands-on learning for students and anyone who wants to help.",
+      "points": [
+        "Share knowledge about the foundation's work",
+        "Open opportunities for training or work in multidisciplinary fields"
+      ]
+    },
+    {
+      "id": "horses",
+      "title": "For retired horses",
+      "icon": "horse",
+      "text": "A caring home and a new purpose for horses that have retired or been injured through work.",
+      "points": [
+        "Care for and rehabilitate horses injured from work",
+        "Give retired horses a role in activities that support children and society"
+      ]
+    }
+  ],
+  "donation": {
+    "currency": "THB",
+    "funds": [
+      {
+        "id": "children",
+        "title": "Children's Therapy Fund",
+        "text": "Pays for horse-assisted and movement-based therapy sessions, learning activities, educational resources and safer homes for children with special needs from families facing hardship.",
+        "examples": [
+          {
+            "amount": 500,
+            "label": "Helmet and safety gear for one child"
+          },
+          {
+            "amount": 1500,
+            "label": "One therapy session"
+          },
+          {
+            "amount": 6000,
+            "label": "A month of weekly sessions"
+          }
+        ],
+        "online_link": ""
+      },
+      {
+        "id": "horses",
+        "title": "Horse Care & Therapy Fund",
+        "text": "Pays for veterinary treatment, farrier visits, feed and rehabilitation so retired and injured horses can live well and become gentle therapy partners.",
+        "examples": [
+          {
+            "amount": 800,
+            "label": "A week of feed for one horse"
+          },
+          {
+            "amount": 2000,
+            "label": "One farrier (hoof care) visit"
+          },
+          {
+            "amount": 5000,
+            "label": "A veterinary check-up and treatment"
+          }
+        ],
+        "online_link": ""
+      }
+    ],
+    "bank_transfer": {
+      "bank": "Kasikornbank (ธนาคารกสิกรไทย)",
+      "account_name": "มูลนิธิในอ้อมกอด (The Angel Arms Foundation)",
+      "account_number": "218-3-69769-5",
+      "promptpay": "",
+      "note": "After you donate, please send us your transfer slip and tell us which fund it is for: children or horses. If you don't say, we'll use it where it's needed most."
+    },
+    "in_kind": [
+      "Hay, feed and horse treats",
+      "Saddles, helmets and grooming kits in good condition",
+      "Veterinary or farrier services",
+      "Sensory toys and therapy equipment"
+    ],
+    "qr": {
+      "image": "donate-qr.png",
+      "account_name": "มูลนิธิในอ้อมกอด (The Angel Arms Foundation)",
+      "bank": "Kasikornbank (K SHOP)",
+      "reference": "KPS004KB000002348447"
+    }
+  },
+  "name_th": "มูลนิธิในอ้อมกอด",
+  "background": [
+    "Farm de Lek has operated for more than 10 years to promote learning and development for children and young people. It is located at Khlong 15, Rangsit–Nakhon Nayok Road, Ongkharak District, Nakhon Nayok Province.",
+    "Mrs Premruedee Tantivejkul, an executive of Farm de Lek, found that many children and young people still do not have the opportunity to achieve a good quality of life or access high-quality support to develop their potential. This is especially true for learning spaces outside the classroom, due to limited financial resources and a lack of government support, particularly for children with special needs.",
+    "For 10 years Farm de Lek has supported learning activities and child-development programs for children with disabilities and special needs from the Maha Chakri Sirindhorn Special Education Centre, Nakhon Nayok, under the Ministry of Education. This has included early assistance, preparing children to enter early childhood centres, kindergartens, inclusive and specialised schools, training for caregivers, and rehabilitation services within families and communities.",
+    "After many years of this work, the team found that children with special needs, both those supported by special education centres and many who cannot reach their services, still need help to live with a good quality of life. So the Farm de Lek Learning Centre, led by Mrs Premruedee Tantivejkul, is establishing The Angel Arms Foundation."
+  ],
+  "method": "Our therapy follows the principles of the Horseboy Method and Movement Method developed by Mr Rupert Isaacson.",
+  "objectives": [
+    "Rehabilitate and enhance the development of children and young people with special needs through horses and movement, following the principles of the Horseboy Method and Movement Method by Mr Rupert Isaacson.",
+    "Create learning opportunities and enrich life experiences for children and young people with special needs whose families face hardship.",
+    "Promote and support access to education and sustainable developmental support for children and young people with special needs whose families face hardship.",
+    "Promote and support the development of educational resources and human resources to improve the quality of life of children and young people with special needs.",
+    "Support improvements to the environment and housing of children, young people, and persons with special needs and their families, so that living conditions are appropriate, safe, clean and hygienic.",
+    "Provide knowledge and encourage community participation through volunteer programs and activities for public benefit.",
+    "Promote learning and provide experience for school students, university students, young people, and members of the public who are interested in studying and working in multidisciplinary fields.",
+    "Take in, care for, and develop retired horses, and rehabilitate horses injured through work, so that they can be used in therapy for children and persons with special needs."
+  ],
+  "guardian_angels": {
+    "intro": "Retired and rescued horses who have found a new purpose as gentle therapy partners for children.",
+    "photos": [
+      "horses/horse1.jpg",
+      "horses/horse2.jpg",
+      "horses/horse3.jpg",
+      "horses/horse4.jpg",
+      "horses/horse5.jpg",
+      "horses/horse6.jpg"
+    ]
+  },
+  "board": [
+    {
+      "name": "Mrs Premruedee Tantivejkul",
+      "role": "Board Member / President of the Foundation"
+    },
+    {
+      "name": "Asst. Prof. Dr Jiraporn Arunakul",
+      "role": "Board Member"
+    },
+    {
+      "name": "Mrs Ploypan Wichakkhana",
+      "role": "Board Member"
+    },
+    {
+      "name": "Ms Apinya Chainapong",
+      "role": "Board Member"
+    },
+    {
+      "name": "Mrs Aphasara Tangkakulwiwit",
+      "role": "Advisor"
+    },
+    {
+      "name": "Mr Tat Pattanodom",
+      "role": "Foundation Director"
+    },
+    {
+      "name": "Ms Bonita Joan Susan Rendell",
+      "role": "Foundation Secretary"
+    }
+  ],
+  "headline": "Happiness is to Share",
+  "hero_photos": [
+    {
+      "file": "volunteer/farm-garden.jpg",
+      "alt": "Young people holding baskets of vegetables they picked on the farm"
+    },
+    {
+      "file": "volunteer/teaching.jpg",
+      "alt": "Volunteers helping children with a learning activity"
+    },
+    {
+      "file": "horses/horse2.jpg",
+      "alt": "One of our Guardian Angel horses looking into the camera"
+    },
+    {
+      "file": "horses/horse4.jpg",
+      "alt": "A retired horse grazing at sunset"
+    },
+    {
+      "file": "volunteer/kayaking.jpg",
+      "alt": "Volunteers canoeing on the farm pond"
+    }
+  ],
+  "story": {
+    "title": "How it works",
+    "intro": "One circle of care: horses, children and people helping each other.",
+    "steps": [
+      {
+        "photo": "horses/horse1.jpg",
+        "title": "Horses get a second chance",
+        "text": "We take in retired horses and horses injured through work, and give them care, rehabilitation and a home for life."
+      },
+      {
+        "photo": "sponsor/riding-helpers.jpg",
+        "title": "They become gentle therapy partners",
+        "text": "Calm, well-cared-for horses join our horse-assisted and movement-based therapy, following the Horseboy Method."
+      },
+      {
+        "photo": "volunteer/teaching.jpg",
+        "title": "Children with special needs grow",
+        "text": "Children from families facing hardship build strength, confidence and communication through therapy, learning and play."
+      },
+      {
+        "photo": "community-day.jpg",
+        "title": "Volunteers and community make it possible",
+        "text": "Donations, volunteers and families keep the circle going, for the children and for the horses."
+      }
+    ],
+    "loop": "Every gift and every volunteer day helps a child and a horse at the same time."
+  },
+  "headline_sub": "Learning, caring and thriving together",
+  "text_sizes": {
+    "headline": 0.9
+  },
+  "hidden": [
+    "tagline"
+  ],
+  "text_colors": {
+    "headline": "#b0475a",
+    "headline_sub": "#222222"
+  },
+  "sponsor": {
+    "title": "Become a big brother or sister",
+    "title_th": "มาเป็น “พี่บุญธรรม” กันนะ",
+    "text_th": "มูลนิธิในอ้อมกอด อยากชวนเพื่อนๆ มาเป็น “พี่บุญธรรม” ช่วยดูแลน้องๆ ไปด้วยกัน",
+    "text": "The Angel Arms Foundation invites you to become a พี่บุญธรรม (phi bunyatham), a big brother or sister who helps care for the children. Your gift supports therapy sessions with our horses, learning activities and many happy days on the farm.",
+    "photos": [
+      {
+        "file": "sponsor/laughing.jpg",
+        "alt": "A boy laughing with volunteers on a farm trailer ride"
+      },
+      {
+        "file": "sponsor/riding-helpers.jpg",
+        "alt": "A child riding a pony, supported by volunteers on both sides"
+      },
+      {
+        "file": "sponsor/learning.jpg",
+        "alt": "A boy playing with building blocks and a toy cash register"
+      },
+      {
+        "file": "sponsor/riding-walk.jpg",
+        "alt": "A child in a riding helmet on a pony, led by a volunteer"
+      }
+    ]
+  },
+  "horse_care": {
+    "title": "Ways to care for our horses",
+    "title_th": "ร่วมดูแลม้าของเรา",
+    "ways": [
+      {
+        "icon": "horse",
+        "title": "Sponsor a horse",
+        "title_th": "อุปการะม้า",
+        "text": "Become a horse's sponsor with a regular monthly gift towards its feed, hoof care and vet visits. Message us to choose your horse.",
+        "button": "Choose a horse",
+        "link": "https://www.facebook.com/profile.php?id=61583808935783"
+      },
+      {
+        "icon": "heart",
+        "title": "Give to the Horse Care Fund",
+        "title_th": "บริจาคกองทุนดูแลม้า",
+        "text": "Make a one-off gift by Thai QR code or bank transfer. When you send us your slip, tell us it's for the horses.",
+        "button": "Donate",
+        "link": "/donate?fund=horses#fund-horses"
+      },
+      {
+        "icon": "gift",
+        "title": "Give feed and supplies",
+        "title_th": "บริจาคอาหารและอุปกรณ์",
+        "text": "Hay, feed and horse treats, grooming kits and saddles in good condition, or your time as a vet or farrier.",
+        "button": "Get in touch",
+        "link": "https://www.facebook.com/profile.php?id=61583808935783"
+      },
+      {
+        "icon": "hands",
+        "title": "Help at the stables",
+        "title_th": "อาสาดูแลม้า",
+        "text": "Feed, groom and spend quiet time with our retired horses as a Stable & Horse Care Helper, or join a Horse Health & Hoof Care Day.",
+        "button": "Volunteer",
+        "link": "/volunteer?role=stable-care#signup"
+      }
+    ]
+  }
+}

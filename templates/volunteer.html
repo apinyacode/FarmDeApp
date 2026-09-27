@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block title %}Volunteer · {{ site.name }}{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div class="container">
+    <h1>Volunteer with us</h1>
+    <p class="lead">Our work depends on volunteers. Join a 5-day program on the farm, or help regularly. No horse experience needed, because we train you.</p>
+    <p><a class="btn btn-small" href="#programs">5-day programs</a> <a class="btn btn-small" href="#signup">Sign up</a></p>
+  </div>
+</section>
+
+<section class="container section" id="programs">
+  <h2 class="section-title">5-day volunteer programs</h2>
+  <p class="center section-intro">{{ programs.intro }}</p>
+
+  <div class="photo-strip">
+    {% for ph in programs.photos %}
+      <img src="{{ url_for('static', filename='img/' ~ ph.file) }}" alt="{{ ph.alt }}" loading="lazy">
+    {% endfor %}
+  </div>
+
+  <dl class="facts">
+    {% for f in programs.facts %}<div><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>{% endfor %}
+  </dl>
+
+  <div class="program-options">
+    {% for p in programs.programs %}
+    <article class="card program-option value-{{ p.color }}" id="program-{{ p.id }}">
+      <p class="tag">Option {{ p.number }}</p>
+      <h3>{{ p.title }}</h3>
+      <p class="lead-sm">{{ p.tagline }}</p>
+
+      <h4>Goals</h4>
+      <ul>{% for g in p.goals %}<li>{{ g }}</li>{% endfor %}</ul>
+
+      <h4>How it works</h4>
+      <p>{{ p.how }}</p>
+
+      <h4>What you'll develop</h4>
+      <dl class="skills">
+        {% for sk in p.skills %}<dt>{{ sk.title }}</dt><dd>{{ sk.text }}</dd>{% endfor %}
+      </dl>
+
+      <details>
+        <summary>What you might do ({{ p.activities|length }} activities)</summary>
+        <ul>{% for a in p.activities %}<li>{{ a }}</li>{% endfor %}</ul>
+      </details>
+
+      <a class="btn btn-donate" href="{{ url_for('volunteer', role=p.id) }}#signup">Apply for {{ p.title }}</a>
+    </article>
+    {% endfor %}
+  </div>
+  <p class="center muted closing">{{ programs.closing }}</p>
+</section>
+
+<section class="section alt">
+  <div class="container">
+  <h2 class="section-title">Regular volunteer roles</h2>
+  <div class="opp-grid">
+    {% for o in opportunities %}
+    <article class="card opp area-{{ o.area }}">
+      <p class="tag">{{ {"children": "Children's program", "horses": "Horse care", "community": "Community"}[o.area] }}</p>
+      <h3>{{ o.title }}</h3>
+      <p class="muted">{{ o.commitment }}</p>
+      <p>{{ o.description }}</p>
+      <ul>{% for r in o.requirements %}<li>{{ r }}</li>{% endfor %}</ul>
+      <a class="btn btn-small" href="{{ url_for('volunteer', role=o.id) }}#signup">I'm interested</a>
+    </article>
+    {% endfor %}
+  </div>
+  </div>
+</section>
+
+{% if events %}
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Upcoming events that need helpers</h2>
+    <div class="event-list">
+      {% for e in events %}{% include "_event_card.html" %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="container section" id="signup">
+  <h2 class="section-title">Sign up</h2>
+  <form class="form card" method="post" action="{{ url_for('volunteer') }}#signup" novalidate>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label>Full name *
+      <input name="name" required value="{{ form.name or '' }}" autocomplete="name">
+      {% if errors.name %}<span class="error">{{ errors.name }}</span>{% endif %}
+    </label>
+    <label>Email *
+      <input name="email" type="email" required value="{{ form.email or '' }}" autocomplete="email">
+      {% if errors.email %}<span class="error">{{ errors.email }}</span>{% endif %}
+    </label>
+    <label>Phone
+      <input name="phone" type="tel" value="{{ form.phone or '' }}" autocomplete="tel">
+    </label>
+    <label>Which role interests you? *
+      <select name="role" required>
+        <option value="">Choose one…</option>
+        <optgroup label="5-day programs (live on the farm)">
+        {% for p in programs.programs %}
+          <option value="{{ p.id }}" {% if selected_role == p.id %}selected{% endif %}>{{ p.title }} (5-day program)</option>
+        {% endfor %}
+        </optgroup>
+        <optgroup label="Regular volunteer roles">
+        {% for o in opportunities %}
+          <option value="{{ o.id }}" {% if selected_role == o.id %}selected{% endif %}>{{ o.title }}</option>
+        {% endfor %}
+        </optgroup>
+        <option value="any" {% if selected_role == 'any' %}selected{% endif %}>Not sure yet / anything helpful</option>
+      </select>
+      {% if errors.role %}<span class="error">{{ errors.role }}</span>{% endif %}
+    </label>
+    <label>When are you available?
+      <input name="availability" placeholder="e.g. Saturday mornings, or for a 5-day program: 1–5 March" value="{{ form.availability or '' }}">
+    </label>
+    <label>Anything else we should know?
+      <textarea name="message" rows="4" placeholder="Experience, languages, questions…">{{ form.message or '' }}</textarea>
+    </label>
+    <button class="btn btn-donate" type="submit">Send my sign-up</button>
+  </form>
+</section>
+{% endblock %}

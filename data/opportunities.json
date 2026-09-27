@@ -1,0 +1,42 @@
+[
+  {
+    "id": "side-walker",
+    "title": "Therapy Side-Walker",
+    "area": "children",
+    "commitment": "2–3 hours a week (Saturday mornings)",
+    "description": "Walk beside a child during a riding session, helping them stay balanced and encouraging them through activities.",
+    "requirements": ["Age 16+", "Able to walk on sand for 1 hour", "Attend orientation"]
+  },
+  {
+    "id": "horse-leader",
+    "title": "Horse Leader",
+    "area": "children",
+    "commitment": "2–3 hours a week",
+    "description": "Lead the therapy horse calmly and safely while the instructor works with the rider.",
+    "requirements": ["Age 18+", "Some horse handling experience", "Attend orientation"]
+  },
+  {
+    "id": "stable-care",
+    "title": "Stable & Horse Care Helper",
+    "area": "horses",
+    "commitment": "Flexible — mornings or afternoons",
+    "description": "Feeding, grooming, mucking out and spending quiet time with our injured and retired horses.",
+    "requirements": ["Age 14+ (under 18 with a parent)", "Happy to get dirty!"]
+  },
+  {
+    "id": "events-helper",
+    "title": "Events & Fundraising Helper",
+    "area": "community",
+    "commitment": "Occasional — per event",
+    "description": "Help set up open days and fundraisers, welcome guests, run stalls and take photos.",
+    "requirements": ["Friendly and reliable"]
+  },
+  {
+    "id": "skilled",
+    "title": "Skilled Volunteer",
+    "area": "community",
+    "commitment": "Project-based",
+    "description": "Share professional skills: physiotherapy, veterinary, special education, photography, web, accounting or translation.",
+    "requirements": ["Relevant qualification or experience"]
+  }
+]

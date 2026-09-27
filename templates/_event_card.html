@@ -1,0 +1,17 @@
+<article class="event-card cat-{{ e.category }}">
+  <div class="event-date">
+    <span class="event-month">{{ e.day.strftime('%b') }}</span>
+    <span class="event-day">{{ e.day.day }}</span>
+  </div>
+  <div class="event-body">
+    <h3>{{ e.title }}</h3>
+    <p class="event-meta">{{ e.day.strftime('%A') }} · {{ e.start }}–{{ e.end }} · {{ e.location }}</p>
+    <p>{{ e.summary }}</p>
+    <p class="event-actions">
+      <a href="{{ url_for('event_ics', event_id=e.id) }}">Add to my calendar</a>
+      {% if e.volunteers_needed %}
+        · <a href="{{ url_for('volunteer') }}#signup">Volunteers needed, sign up</a>
+      {% endif %}
+    </p>
+  </div>
+</article>

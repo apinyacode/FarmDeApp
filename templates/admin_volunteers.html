@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Volunteer sign-ups · Admin{% endblock %}
+{% block content %}
+<section class="container section">
+  <h1>Volunteer sign-ups ({{ rows|length }})</h1>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Date</th><th>Name</th><th>Email</th><th>Phone</th><th>Role</th><th>Availability</th><th>Message</th></tr></thead>
+      <tbody>
+      {% for r in rows %}
+        <tr>
+          <td>{{ r.created_at[:10] }}</td><td>{{ r.name }}</td>
+          <td><a href="mailto:{{ r.email }}">{{ r.email }}</a></td>
+          <td>{{ r.phone }}</td><td>{{ r.role }}</td><td>{{ r.availability }}</td><td>{{ r.message }}</td>
+        </tr>
+      {% else %}
+        <tr><td colspan="7">No sign-ups yet.</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

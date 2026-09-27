@@ -1,0 +1,13 @@
+.git/
+.venv/
+**/__pycache__/
+**/*.pyc
+.pytest_cache/
+instance/
+cloudflared
+*.md
+Dockerfile
+.dockerignore
+deploy.sh
+start.sh
+start.bat
