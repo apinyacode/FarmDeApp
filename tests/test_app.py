@@ -216,3 +216,14 @@ def test_donate_page_shows_account_number(client):
 def test_big_sibling_section_can_be_hidden(client, monkeypatch):
     _with_site(monkeypatch, hidden=["section_sponsor"])
     assert 'id="sponsor"' not in client.get("/").get_data(as_text=True)
+
+
+def test_home_shows_ways_to_care_for_horses(client):
+    html = client.get("/").get_data(as_text=True)
+    assert 'id="horses"' in html and "Ways to care for our horses" in html
+    for title in ["Sponsor a horse", "Give to the Horse Care Fund", "Give feed and supplies", "Help at the stables"]:
+        assert title in html
+    assert 'href="/donate?fund=horses#fund-horses"' in html
+    assert 'href="/volunteer?role=stable-care#signup"' in html
+    # children's section comes before the horses' section
+    assert html.index('id="sponsor"') < html.index('id="horses"')

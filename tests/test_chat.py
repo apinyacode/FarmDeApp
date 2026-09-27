@@ -182,3 +182,8 @@ def test_line_webhook_off_without_keys(client, monkeypatch, replies):
 def test_knowledge_has_bank_account_and_big_sibling_campaign():
     k = chatbot.build_knowledge(today=date(2026, 9, 1))
     assert "218-3-69769-5" in k and "พี่บุญธรรม" in k
+
+
+def test_knowledge_has_ways_to_help_the_horses():
+    k = chatbot.build_knowledge(today=date(2026, 9, 1))
+    assert "Sponsor a horse" in k and "อุปการะม้า" in k and "/volunteer?role=stable-care#signup" in k

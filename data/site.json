@@ -273,5 +273,43 @@
         "alt": "A child in a riding helmet on a pony, led by a volunteer"
       }
     ]
+  },
+  "horse_care": {
+    "title": "Ways to care for our horses",
+    "title_th": "ร่วมดูแลม้าของเรา",
+    "ways": [
+      {
+        "icon": "horse",
+        "title": "Sponsor a horse",
+        "title_th": "อุปการะม้า",
+        "text": "Become a horse's sponsor with a regular monthly gift towards its feed, hoof care and vet visits. Message us to choose your horse.",
+        "button": "Choose a horse",
+        "link": "https://www.facebook.com/profile.php?id=61583808935783"
+      },
+      {
+        "icon": "heart",
+        "title": "Give to the Horse Care Fund",
+        "title_th": "บริจาคกองทุนดูแลม้า",
+        "text": "Make a one-off gift by Thai QR code or bank transfer. When you send us your slip, tell us it's for the horses.",
+        "button": "Donate",
+        "link": "/donate?fund=horses#fund-horses"
+      },
+      {
+        "icon": "gift",
+        "title": "Give feed and supplies",
+        "title_th": "บริจาคอาหารและอุปกรณ์",
+        "text": "Hay, feed and horse treats, grooming kits and saddles in good condition, or your time as a vet or farrier.",
+        "button": "Get in touch",
+        "link": "https://www.facebook.com/profile.php?id=61583808935783"
+      },
+      {
+        "icon": "hands",
+        "title": "Help at the stables",
+        "title_th": "อาสาดูแลม้า",
+        "text": "Feed, groom and spend quiet time with our retired horses as a Stable & Horse Care Helper, or join a Horse Health & Hoof Care Day.",
+        "button": "Volunteer",
+        "link": "/volunteer?role=stable-care#signup"
+      }
+    ]
   }
 }

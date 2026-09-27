@@ -89,6 +89,36 @@
 </section>
 {% endif %}
 
+{% if 'section_angels' not in hidden %}
+{% set hc = site.horse_care %}
+<section class="section horses" id="horses">
+  <div class="container">
+    <p class="horses-th" lang="th">{{ hc.title_th }}</p>
+    <h2 class="section-title">Meet our Guardian Angels</h2>
+    {% if 'angels_intro' not in hidden %}<p class="center section-intro angels-intro">{{ site.guardian_angels.intro }}</p>{% endif %}
+    <div class="angels-grid">
+      {% for photo in site.guardian_angels.photos %}
+        <img src="{{ url_for('static', filename='img/' ~ photo) }}" alt="One of our Guardian Angel horses" loading="lazy">
+      {% endfor %}
+    </div>
+    {% if hc %}
+    <h3 class="ways-title">{{ hc.title }}</h3>
+    <div class="ways">
+      {% for w in hc.ways %}
+      <article class="way">
+        <div class="program-icon icon-{{ w.icon }}" aria-hidden="true"></div>
+        <p class="way-th" lang="th">{{ w.title_th }}</p>
+        <h4>{{ w.title }}</h4>
+        <p>{{ w.text }}</p>
+        {% if w.link %}<a class="btn btn-small{% if loop.index == 2 %} btn-donate{% endif %}" href="{{ w.link }}"{% if w.link.startswith('http') %} target="_blank" rel="noopener"{% endif %}>{{ w.button }}</a>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
 {% if 'section_cards' not in hidden and 'cards' not in hidden %}
 <section class="container section">
   <div class="mission-grid">
@@ -120,19 +150,7 @@
   </div>
 </section>
 
-{% if 'section_angels' not in hidden %}
-<section class="container section">
-  <h2 class="section-title">Meet our Guardian Angels</h2>
-  {% if 'angels_intro' not in hidden %}<p class="center section-intro angels-intro">{{ site.guardian_angels.intro }}</p>{% endif %}
-  <div class="angels-grid">
-    {% for photo in site.guardian_angels.photos %}
-      <img src="{{ url_for('static', filename='img/' ~ photo) }}" alt="One of our Guardian Angel horses" loading="lazy">
-    {% endfor %}
-  </div>
-</section>
-{% endif %}
-
-<section class="section alt">
+<section class="section">
   <div class="container">
     <h2 class="section-title">Dream &middot; Hope &middot; Friends &middot; Love</h2>
     <div class="values-grid">
@@ -143,7 +161,8 @@
   </div>
 </section>
 
-<section class="container section">
+<section class="section alt">
+  <div class="container">
   <h2 class="section-title">Upcoming events</h2>
   {% if upcoming %}
     <div class="event-list">
@@ -153,6 +172,7 @@
   {% else %}
     <p class="center">New events are coming soon. Check back shortly!</p>
   {% endif %}
+  </div>
 </section>
 
 <section class="section donate-band">

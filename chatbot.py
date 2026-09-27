@@ -111,6 +111,11 @@ def build_knowledge(today=None):
     if bt.get("note"):
         add(f"- {bt['note']}")
     add("- Gifts in kind we welcome: " + "; ".join(d.get("in_kind", [])))
+    hc = site.get("horse_care")
+    if hc:
+        add(f"{hc['title'].upper()} ({hc['title_th']}):")
+        for w in hc["ways"]:
+            add(f"- {w['title']} ({w['title_th']}): {w['text']} Link: {w['link']}")
     sp = site.get("sponsor")
     if sp:
         add(f"- Campaign '{sp['title']}' ({sp['title_th']}): {sp['text_th']} {sp['text']}")
