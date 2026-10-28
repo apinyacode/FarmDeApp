@@ -37,16 +37,19 @@ entirely in English; transcribe those as written.
 
 A person will check your transcription line by line against the scan, so:
 - In `lines`, reproduce every handwritten line in order, keeping the writer's own line \
-breaks and spelling, even when it is wrong. Do not merge or split lines.
+breaks. Do not merge or split lines.
+- Correct spelling mistakes (including misspelled Pali/Dhamma terms and wrong tone \
+marks), and list every correction in `corrections` with what was actually written. \
+Only fix spelling: do not change word choice, grammar, or the writer's style, and do not \
+"correct" informal or polite spoken forms such as ค่ะ/คะ/เจ้าค่ะ unless clearly misspelled.
 - Wrap every word you cannot read with confidence like ⟦word?⟧, giving your best guess \
 inside. Use ⟦?⟧ when you cannot guess at all. Marking a word you were unsure of is much \
 better than a confident wrong reading.
 - Keep Thai digits as Thai digits and Arabic digits as Arabic digits.
 - Skip scanner marks, stamps and printed letterheads that are not part of the writing, \
 but mention them in `notes` if they matter.
-- In `question`, write the body as clean modern Thai: join the lines, fix obvious slips \
-of the pen, and spell Pali/Dhamma terms correctly. Do not add anything the writer did \
-not say.
+- In `question`, join the corrected body lines into one paragraph. Do not add anything \
+the writer did not say.
 
 You get two images: the full scanned page (for context and layout) and an enlarged crop \
 of the handwriting (read from this one). If the crop seems to be missing part of the \

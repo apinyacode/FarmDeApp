@@ -10,6 +10,7 @@ work/<pdf name>/reviewed/, never on top of Claude's original in ai/.
 import html
 import time
 
+import pandas as pd
 import streamlit as st
 
 from common import (
@@ -43,6 +44,7 @@ st.markdown(
     .line-preview { font-size: 1.15rem; line-height: 1.9; }
     .line-no { color: #888; display: inline-block; width: 2.2em; }
     mark { background: #ffe066; padding: 0 2px; border-radius: 3px; }
+    .fixed { text-decoration: underline 3px #2f9e44; text-underline-offset: 5px; cursor: help; }
     /* Keep the scan on screen while you scroll down through the text boxes. */
     div[data-testid="stHorizontalBlock"]:has(div[data-testid="stTabs"]) > div[data-testid="stColumn"]:first-child {
         position: sticky; top: 3.5rem; align-self: flex-start;
@@ -115,10 +117,13 @@ with left:
 
 with right:
     lines = data.get("lines", [])
+    corrections = data.get("corrections", [])
     flags = unsure_words(lines)
     info = [f"Confidence: **{data.get('confidence', '–')}**"]
     if flags:
-        info.append(f"Unsure words: **{len(flags)}** (highlighted)")
+        info.append(f"Unsure words: **{len(flags)}** (yellow)")
+    if corrections:
+        info.append(f"Spelling fixes: **{len(corrections)}** (green underline)")
     if data.get("continues_from_previous"):
         info.append("↩️ continues from previous page")
     if data.get("continues_to_next"):
@@ -126,18 +131,34 @@ with right:
     st.markdown(" · ".join(info))
 
     # Numbered, highlighted copy of the lines, to compare against the scan line by line.
-    with st.expander("Line-by-line preview", expanded=True):
+    with st.expander("Line-by-line preview (hover a green word to see how it was written)", expanded=True):
         rows = []
         for number, line in enumerate(lines, start=1):
             marked = UNSURE_PATTERN.sub(lambda m: f"<mark>{m.group(1)}</mark>", html.escape(line))
+            for fix in corrections:
+                if fix.get("line") == number and fix.get("corrected"):
+                    word = html.escape(fix["corrected"])
+                    tip = html.escape(f"written: {fix.get('as_written', '')}", quote=True)
+                    marked = marked.replace(word, f"<span class='fixed' title='{tip}'>{word}</span>", 1)
             rows.append(f"<span class='line-no'>{number}</span>{marked}")
         st.markdown(f"<div class='line-preview'>{'<br>'.join(rows) or '<i>(empty)</i>'}</div>",
                     unsafe_allow_html=True)
 
     # Each widget key includes the page name so the boxes refill when you change page.
     edited_lines = st.text_area(
-        "Lines as written on the paper (one per line). Remove the ⟦ ⟧ marks once a word is checked.",
+        "Lines, same line breaks as the paper, spelling corrected. Remove the ⟦ ⟧ marks once a word is checked.",
         "\n".join(lines), height=300, key=f"lines::{document}::{page}",
+    )
+    st.markdown("**Spelling fixes** (edit or delete a row if the fix is wrong; also change the line above)")
+    edited_fixes = st.data_editor(
+        pd.DataFrame(corrections, columns=["line", "as_written", "corrected"]),
+        column_config={
+            "line": st.column_config.NumberColumn("Line", min_value=1, step=1, width="small"),
+            "as_written": st.column_config.TextColumn("As written"),
+            "corrected": st.column_config.TextColumn("Corrected"),
+        },
+        column_order=["line", "as_written", "corrected"],
+        num_rows="dynamic", hide_index=True, width="stretch", key=f"fixes::{document}::{page}",
     )
     greeting = st.text_input("Greeting", data.get("greeting", ""), key=f"greeting::{document}::{page}")
     question = st.text_area("Question (clean version)", data.get("question", ""), height=160,
@@ -154,6 +175,13 @@ with right:
         new_lines = [line.rstrip() for line in edited_lines.splitlines()]
         write_json(doc_dir / "reviewed" / f"{page}.json", {
             "lines": new_lines,
+            "corrections": [
+                {"line": int(fix["line"]) if fix["line"] != "" else None,
+                 "as_written": str(fix["as_written"] or "").strip(),
+                 "corrected": str(fix["corrected"] or "").strip()}
+                for fix in edited_fixes.fillna("").to_dict("records")
+                if fix["as_written"] or fix["corrected"]
+            ],
             "greeting": greeting.strip(),
             "question": question.strip(),
             "closing": closing.strip(),

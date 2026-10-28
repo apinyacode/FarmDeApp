@@ -17,7 +17,7 @@ from docx.shared import Cm, Pt
 from common import best_version, list_pages, work_dir_for
 
 CSV_COLUMNS = ["page", "status", "confidence", "greeting", "question", "closing",
-               "lines", "notes", "continues_from_previous", "continues_to_next",
+               "lines", "spelling_fixes", "notes", "continues_from_previous", "continues_to_next",
                "reviewed_by", "reviewed_at"]
 
 
@@ -37,7 +37,9 @@ def main() -> None:
         if data is None or (args.approved_only and status != "approved"):
             continue
         rows.append({**data, "page": int(page.split("_")[1]), "status": status,
-                     "lines": "\n".join(data.get("lines", []))})
+                     "lines": "\n".join(data.get("lines", [])),
+                     "spelling_fixes": "; ".join(f"{fix['as_written']} → {fix['corrected']}"
+                                                 for fix in data.get("corrections", []))})
 
     # utf-8-sig adds a marker so Excel shows Thai correctly instead of garbled letters.
     csv_path = export_dir / f"{args.document}.csv"
@@ -60,6 +62,8 @@ def main() -> None:
         if row.get("question"):
             word.add_paragraph().add_run("Clean version: ").bold = True
             word.add_paragraph(" ".join(filter(None, [row.get("greeting"), row["question"], row.get("closing")])))
+        if row.get("spelling_fixes"):
+            word.add_paragraph(f"Spelling fixed (as written → corrected): {row['spelling_fixes']}")
         if row.get("notes"):
             word.add_paragraph(f"Notes: {row['notes']}")
         word.add_page_break()

@@ -25,18 +25,30 @@ WORK_DIR = ROOT / "work"
 UNSURE_PATTERN = re.compile(r"⟦(.+?)⟧")
 
 
+class Correction(BaseModel):
+    """One spelling mistake that was fixed, so a reviewer can see what the paper says."""
+
+    line: int = Field(description="Line number in `lines`, starting at 1.")
+    as_written: str = Field(description="The word exactly as the writer spelled it.")
+    corrected: str = Field(description="The correct spelling used in `lines`.")
+
+
 class PageTranscription(BaseModel):
     """What Claude must return for each page (enforced by structured outputs)."""
 
     lines: list[str] = Field(
-        description="Literal transcription, one entry per handwritten line, in the same "
-        "order and with the same line breaks as the paper. Keep the writer's own spelling. "
-        "Wrap any word you are not sure about like ⟦word?⟧."
+        description="Transcription, one entry per handwritten line, in the same order and with "
+        "the same line breaks as the paper. Spelling mistakes are corrected (each one listed in "
+        "`corrections`); wording is otherwise unchanged. Wrap any word you are not sure about "
+        "like ⟦word?⟧."
+    )
+    corrections: list[Correction] = Field(
+        description="Every spelling mistake you corrected in `lines`. Empty if none."
     )
     greeting: str = Field(description="Opening salutation, e.g. กราบนมัสการพระอาจารย์... Empty if none.")
     question: str = Field(
-        description="The body of the question as one clean paragraph: line breaks joined, "
-        "obvious spelling slips corrected, Pali/Dhamma terms spelled correctly."
+        description="The body of the question as one clean paragraph: the corrected lines "
+        "joined, without the greeting and closing."
     )
     closing: str = Field(description="Closing/thanks line, e.g. ขอบพระคุณเจ้าค่ะ. Empty if none.")
     continues_from_previous: bool = Field(

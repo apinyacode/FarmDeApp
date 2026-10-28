@@ -88,8 +88,11 @@ streamlit run step3_review_app.py
 Your browser opens at http://localhost:8501.
 
 - **Left:** the scan. Hover over it and click ⛶ for full screen; the *Full page* tab shows the whole sheet.
-- **Right:** a numbered line-by-line preview where **yellow words** are the ones Claude was unsure about,
-  followed by the editable boxes.
+- **Right:** a numbered line-by-line preview. **Yellow** = Claude was unsure of the word.
+  **Green underline** = a spelling mistake Claude corrected; hover over it to see how it was written.
+  Below that are the editable boxes and the *Spelling fixes* table.
+- If a "fix" is wrong (the writer was right, or Claude misread), change the word back in the
+  lines box and delete that row from the *Spelling fixes* table.
 - Fix the text, remove the `⟦ ⟧` marks around words you have checked, then press **✅ Approve**.
   **💾 Later** saves your edits but keeps the page in the "not approved" list.
 - The sidebar filter *Low/medium confidence first* lets you start with the hardest pages.
@@ -115,9 +118,10 @@ You get, in `work/questions_2560/export/`:
 
 | Field | Meaning |
 |---|---|
-| `lines` | Exactly what's on the paper, line by line, the writer's spelling kept. `⟦word?⟧` = Claude unsure. |
+| `lines` | The text line by line, same line breaks as the paper, **spelling corrected**. `⟦word?⟧` = Claude unsure. |
+| `corrections` | Every spelling fix: line number, what was written, what it was corrected to. |
 | `greeting` / `closing` | The opening salutation and the thanks at the end. |
-| `question` | The body as clean, correctly spelled Thai (lines joined, Pali terms fixed). |
+| `question` | The corrected body lines joined into one paragraph (no greeting/closing). |
 | `continues_from_previous` / `continues_to_next` | For questions that run over 2+ pages (e.g. pages marked ① ②). |
 | `notes` | Underlines, crossings-out, English words, anything odd. |
 | `confidence` | Claude's own rating: high / medium / low. |
