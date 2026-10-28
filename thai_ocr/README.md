@@ -16,6 +16,18 @@ This folder is separate from the FarmDeApp website code; nothing here touches th
 
 ---
 
+## Quick install on Linux
+
+One command downloads just this folder from GitHub, puts it in `~/thai_ocr`, and installs
+everything (needs `git`, and Python 3.10+ with `python3-venv`):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/apinyacode/FarmDeApp/claude/quirky-sagan-27izb0/thai_ocr/deploy_linux.sh | bash
+```
+
+Run the same command again later to update the scripts; `work/` and `input/` are kept.
+Then skip to **Running it** below (activate with `source ~/thai_ocr/.venv/bin/activate`).
+
 ## One-time setup
 
 1. **Install Python 3.10 or newer** (you probably already have it: `python --version`).
