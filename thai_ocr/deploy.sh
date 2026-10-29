@@ -71,10 +71,14 @@ if [ -d "$INSTALL_DIR" ]; then
   if [ "$WIPE" = yes ]; then
     backup="${INSTALL_DIR}_backup_$(date +%Y%m%d_%H%M%S)"
     mkdir -p "$backup"
-    for item in "${DATA[@]}"; do [ -e "$INSTALL_DIR/$item" ] && mv "$INSTALL_DIR/$item" "$backup/"; done
+    for item in "${DATA[@]}"; do
+      if [ -e "$INSTALL_DIR/$item" ]; then mv "$INSTALL_DIR/$item" "$backup/"; fi
+    done
     echo "==> Old data moved to $backup  (delete it yourself when you're sure)"
   else
-    for item in "${DATA[@]}"; do [ -e "$INSTALL_DIR/$item" ] && mv "$INSTALL_DIR/$item" "$INSTALL_DIR.new/"; done
+    for item in "${DATA[@]}"; do
+      if [ -e "$INSTALL_DIR/$item" ]; then mv "$INSTALL_DIR/$item" "$INSTALL_DIR.new/"; fi
+    done
     echo "==> Keeping your data: work/, input/, api_key.txt"
   fi
   echo "==> Deleting old copy (scripts + installed packages)"
