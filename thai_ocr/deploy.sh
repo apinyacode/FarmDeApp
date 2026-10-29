@@ -30,6 +30,9 @@ fi
 cleanup_copy() { [ -n "${DEPLOY_COPY:-}" ] && rm -f "$0"; true; }
 trap 'cleanup_copy; rm -rf "$INSTALL_DIR.new"' EXIT
 
+# The install folder gets deleted, so don't stand inside it.
+cd "$HOME"
+
 for tool in curl tar python3; do
   command -v "$tool" >/dev/null || { echo "Please install $tool first:  sudo apt install curl tar python3 python3-venv"; exit 1; }
 done
@@ -42,16 +45,25 @@ curl -fsSL "$TARBALL" | tar xz -C "$INSTALL_DIR.new" --strip-components=2 --wild
 
 # ---- 2. stop everything running from the install folder (review app, transcribing, ...)
 echo "==> Stopping running OCR programs"
+# Never stop this script or the terminal that started it.
+protected=" $$ "
+pid=$$
+while [ "$pid" -gt 1 ] 2>/dev/null; do
+  pid="$(awk '{print $4}' "/proc/$pid/stat" 2>/dev/null)" || break
+  protected="$protected$pid "
+done
+
 find_ours() {
-  # Processes whose working folder is the install folder and that are ours to stop
-  # (python/streamlit/ocr.sh) - never your own terminal that just happens to be there.
+  # Only programs started from the install folder: its own Python (.venv/bin/python,
+  # used by the review app and the transcribing steps) and ocr.sh itself.
   for proc in /proc/[0-9]*; do
     pid="${proc#/proc/}"
-    [ "$pid" = "$$" ] && continue
+    case "$protected" in *" $pid "*) continue ;; esac
     cwd="$(readlink "$proc/cwd" 2>/dev/null)" || continue
     case "$cwd" in "$INSTALL_DIR"|"$INSTALL_DIR"/*) ;; *) continue ;; esac
-    cmd="$(tr '\0' ' ' < "$proc/cmdline" 2>/dev/null)" || continue
-    case "$cmd" in *python*|*streamlit*|*ocr.sh*) echo "$pid" ;; esac
+    mapfile -d '' -t argv < "$proc/cmdline" 2>/dev/null || continue
+    case "${argv[0]:-}" in .venv/bin/python*|*/.venv/bin/python*) echo "$pid"; continue ;; esac
+    case "${argv[1]:-}" in ocr.sh|*/ocr.sh) echo "$pid" ;; esac
   done
 }
 pids="$(find_ours)"

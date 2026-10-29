@@ -18,12 +18,18 @@ This folder is separate from the FarmDeApp website code; nothing here touches th
 
 ## The simple way (Linux / Mac)
 
-**Download** (creates a `thai_ocr` folder where you are):
+**Install** (stops anything still running, deletes the old copy, downloads and installs
+fresh into `~/thai_ocr`; your `work/`, `input/` and saved API key are kept):
 
 ```bash
-curl -L https://github.com/apinyacode/FarmDeApp/archive/refs/heads/claude/quirky-sagan-27izb0.tar.gz | tar xz --strip-components=1 --wildcards '*/thai_ocr'
-cd thai_ocr
+curl -fsSLO https://raw.githubusercontent.com/apinyacode/FarmDeApp/claude/quirky-sagan-27izb0/thai_ocr/deploy.sh
+bash deploy.sh
+cd ~/thai_ocr
 ```
+
+Run `bash ~/thai_ocr/deploy.sh` any time to start fresh again.
+`bash ~/thai_ocr/deploy.sh --wipe-data` also starts with no data (the old data is moved to
+`~/thai_ocr_backup_<date>`, not deleted).
 
 **Run** (the first run installs everything and asks for your API key once):
 
