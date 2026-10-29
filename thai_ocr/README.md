@@ -16,19 +16,28 @@ This folder is separate from the FarmDeApp website code; nothing here touches th
 
 ---
 
-## Quick install on Linux
+## The simple way (Linux / Mac)
 
-One command downloads just this folder from GitHub, puts it in `~/thai_ocr`, and installs
-everything (needs `git`, and Python 3.10+ with `python3-venv`):
+**Download** (creates a `thai_ocr` folder where you are):
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/apinyacode/FarmDeApp/claude/quirky-sagan-27izb0/thai_ocr/deploy_linux.sh | bash
+curl -L https://github.com/apinyacode/FarmDeApp/archive/refs/heads/claude/quirky-sagan-27izb0.tar.gz | tar xz --strip-components=1 --wildcards '*/thai_ocr'
+cd thai_ocr
 ```
 
-Run the same command again later to update the scripts; `work/` and `input/` are kept.
-Then skip to **Running it** below (activate with `source ~/thai_ocr/.venv/bin/activate`).
+**Run** (the first run installs everything and asks for your API key once):
 
-## One-time setup
+```bash
+./ocr.sh transcribe ~/questions_2560.pdf --pages 1-3   # try 3 pages first
+./ocr.sh transcribe ~/questions_2560.pdf               # then all pages (done pages are skipped)
+./ocr.sh review                                        # open http://localhost:8501
+./ocr.sh export ~/questions_2560.pdf                   # CSV + Word in work/questions_2560/export/
+```
+
+Wrong API key? Delete `api_key.txt` and run again. The sections below explain each step
+in detail and how to run the Python scripts directly (e.g. on Windows).
+
+## Manual setup (Windows, or if you prefer)
 
 1. **Install Python 3.10 or newer** (you probably already have it: `python --version`).
 2. Open a terminal **in this `thai_ocr` folder** and create a virtual environment:
