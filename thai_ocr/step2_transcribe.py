@@ -157,7 +157,7 @@ def main() -> None:
     print(f"\nTranscribed {done} page(s), {failed} failed.")
     if failed:
         print("Run the same command again to retry the failed pages.")
-    print("Next: streamlit run step3_review_app.py")
+    print("Next: review the pages  (./ocr.sh review)")
 
 
 if __name__ == "__main__":
