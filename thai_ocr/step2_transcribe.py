@@ -29,7 +29,7 @@ FULL_PAGE_MAX_SIDE = 1400  # the full page is only for context, so a smaller cop
 SYSTEM_PROMPT = """You transcribe scanned handwritten Thai documents for a digital archive.
 
 The documents are question slips that lay practitioners wrote to a Buddhist meditation \
-teacher (Thai year 2560). They usually open with a salutation such as \
+teacher. They usually open with a salutation such as \
 "กราบนมัสการพระอาจารย์..." and close with thanks such as "ขอบพระคุณเจ้าค่ะ". They often \
 contain Pali and Dhamma vocabulary (e.g. สติปัฏฐาน, จิตตานุปัสสนา, กิเลส, สมาธิ, วิปัสสนา) and \
 names from the Pali canon (e.g. องคุลีมาล). Some slips contain English words or are \
