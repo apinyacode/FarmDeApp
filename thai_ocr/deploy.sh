@@ -43,7 +43,7 @@ rm -rf "$INSTALL_DIR.new"; mkdir -p "$INSTALL_DIR.new"
 curl -fsSL "$TARBALL" | tar xz -C "$INSTALL_DIR.new" --strip-components=2 --wildcards '*/thai_ocr' \
   || { echo "Download failed - nothing was changed."; exit 1; }
 
-# ---- 2. stop everything running from the install folder (review app, transcribing, ...)
+# ---- 2. stop everything running from the install folder (transcribing, ...)
 echo "==> Stopping running OCR programs"
 # Never stop this script or the terminal that started it.
 protected=" $$ "
@@ -55,7 +55,7 @@ done
 
 find_ours() {
   # Only programs started from the install folder: its own Python (.venv/bin/python,
-  # used by the review app and the transcribing steps) and ocr.sh itself.
+  # used by the transcribing steps) and ocr.sh itself.
   for proc in /proc/[0-9]*; do
     pid="${proc#/proc/}"
     case "$protected" in *" $pid "*) continue ;; esac
@@ -112,7 +112,7 @@ Done - fresh install in $INSTALL_DIR
 
   cd $INSTALL_DIR          (run this even if you were already there - the old folder is gone)
   ./ocr.sh transcribe input/yourfile.pdf
-  ./ocr.sh review
+  ./ocr.sh status
   ./ocr.sh export input/yourfile.pdf
 
 To start fresh again later:  bash $INSTALL_DIR/deploy.sh

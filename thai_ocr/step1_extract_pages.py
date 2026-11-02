@@ -1,5 +1,5 @@
 """Step 1: turn a scanned PDF into one image per page, plus a cropped image of
-just the handwriting.
+just the handwriting (saved in review/, next to the text files you will check).
 
 Usage:
     python step1_extract_pages.py path/to/file.pdf
@@ -68,18 +68,18 @@ def main() -> None:
 
     doc_dir = work_dir_for(args.pdf.stem)
     (doc_dir / "pages").mkdir(parents=True, exist_ok=True)
-    (doc_dir / "crops").mkdir(parents=True, exist_ok=True)
+    (doc_dir / "review").mkdir(parents=True, exist_ok=True)
 
     pdf = pdfium.PdfDocument(str(args.pdf))
     for index in range(len(pdf)):
         name = page_name(index + 1)
         page = pdf[index].render(scale=RENDER_DPI / 72).to_pil().convert("RGB")
         page.save(doc_dir / "pages" / f"{name}.jpg", quality=90)
-        crop_to_handwriting(page).save(doc_dir / "crops" / f"{name}.jpg", quality=92)
+        crop_to_handwriting(page).save(doc_dir / "review" / f"{name}.jpg", quality=92)
         print(f"  {name}  done")
 
     print(f"\n{len(pdf)} pages saved in {doc_dir}")
-    print("Next: open a few images in crops/ to check the cropping looks right,")
+    print("Next: open a few images in review/ to check the cropping looks right,")
     print(f'then run:  python step2_transcribe.py "{args.pdf.stem}"')
 
 

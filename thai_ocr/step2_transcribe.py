@@ -1,5 +1,6 @@
-"""Step 2: ask Claude to transcribe each page. Saves one JSON file per page in
-work/<pdf name>/ai/.
+"""Step 2: ask Claude to transcribe each page. For every page it writes
+work/<pdf name>/review/page_NNN_REVIEW.txt for a person to check (and keeps
+Claude's original answer in work/<pdf name>/ai/page_NNN.json).
 
 Usage:
     python step2_transcribe.py questions_2560                 # all pages not done yet
@@ -9,8 +10,9 @@ Usage:
 Needs an Anthropic API key:  set ANTHROPIC_API_KEY=...  (Windows)
                              export ANTHROPIC_API_KEY=...  (Mac/Linux)
 
-Pages that already have a JSON file are skipped, so if the script stops
-half-way you can just run it again.
+Pages that already have a result are skipped (free), so if the script stops
+half-way you can just run it again. Existing text files are never overwritten:
+to get a fresh text file for a page, delete its .txt file and run again.
 """
 
 import argparse
@@ -21,7 +23,8 @@ import time
 import anthropic
 from PIL import Image
 
-from common import PageTranscription, list_pages, page_name, work_dir_for, write_json
+from common import (PageTranscription, list_pages, page_name, read_json, render_review_text,
+                    review_files, work_dir_for, write_json)
 
 MODEL = "claude-opus-5-5"
 FULL_PAGE_MAX_SIDE = 1400  # the full page is only for context, so a smaller copy is enough
@@ -73,7 +76,7 @@ def image_block(image: Image.Image) -> dict:
 def transcribe_page(client: anthropic.Anthropic, doc_dir, page: str) -> dict:
     full_page = Image.open(doc_dir / "pages" / f"{page}.jpg")
     full_page.thumbnail((FULL_PAGE_MAX_SIDE, FULL_PAGE_MAX_SIDE))
-    crop = Image.open(doc_dir / "crops" / f"{page}.jpg")
+    crop = Image.open(doc_dir / "review" / f"{page}.jpg")
 
     response = client.beta.messages.parse(
         model=MODEL,
@@ -141,23 +144,33 @@ def main() -> None:
     for page in pages:
         out_path = doc_dir / "ai" / f"{page}.json"
         if out_path.exists() and not args.force:
+            result = read_json(out_path)
             print(f"  {page}  already done - skipping (use --force to redo)")
-            continue
-        try:
-            result = transcribe_page(client, doc_dir, page)
-        except (anthropic.APIError, RuntimeError) as error:
-            # One bad page should not stop the whole run; just re-run later for it.
-            print(f"  {page}  FAILED: {error}")
-            failed += 1
-            continue
-        write_json(out_path, result)
-        done += 1
-        print(f"  {page}  {result['confidence']:<6}  {result['lines'][0] if result['lines'] else ''}")
+        else:
+            try:
+                result = transcribe_page(client, doc_dir, page)
+            except (anthropic.APIError, RuntimeError) as error:
+                # One bad page should not stop the whole run; just re-run later for it.
+                print(f"  {page}  FAILED: {error}")
+                failed += 1
+                continue
+            write_json(out_path, result)
+            done += 1
+            print(f"  {page}  {result['confidence']:<6}  {result['lines'][0] if result['lines'] else ''}")
+
+        # The text file a person checks. Never overwrite one: it may hold their corrections.
+        existing = review_files(doc_dir).get(page)
+        if existing:
+            if args.force and out_path.exists():
+                print(f"           kept {existing[0].name} (delete it to get the new text)")
+        else:
+            (doc_dir / "review" / f"{page}_REVIEW.txt").write_text(
+                render_review_text(page, result), encoding="utf-8")
 
     print(f"\nTranscribed {done} page(s), {failed} failed.")
     if failed:
         print("Run the same command again to retry the failed pages.")
-    print("Next: review the pages  (./ocr.sh review)")
+    print(f"Next: check the files in {doc_dir / 'review'}")
 
 
 if __name__ == "__main__":

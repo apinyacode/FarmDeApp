@@ -2,9 +2,11 @@
 # Simple shell commands for the Thai handwriting OCR.
 #
 #   ./ocr.sh transcribe myfile.pdf     split the PDF and let Claude read every page
-#   ./ocr.sh review                    open the review app in your browser
-#   ./ocr.sh export myfile.pdf         make the CSV and Word files
+#   ./ocr.sh status                    how many pages are still _REVIEW and how many are _DONE
+#   ./ocr.sh export myfile.pdf         make the CSV and Word files from the text files
 #
+# To review: open work/<name>/review/, look at page_NNN.jpg next to page_NNN_REVIEW.txt,
+# fix the text, then rename the file to page_NNN_DONE.txt.
 # The first time, it installs what it needs and asks for your API key.
 
 set -euo pipefail
@@ -41,18 +43,22 @@ case "${1:-}" in
     load_key
     "$PY" step1_extract_pages.py "$2"
     "$PY" step2_transcribe.py "$(doc_name "$2")" "${@:3}"
-    echo; echo "Next:  ./ocr.sh review"
     ;;
-  review)
-    echo "Opening http://localhost:8501  (press Ctrl+C here to stop)"
-    "$PY" -m streamlit run step3_review_app.py
+  status)
+    shopt -s nullglob
+    printf '%-20s %8s %8s %8s\n' "DOCUMENT" "REVIEW" "DONE" "PAGES"
+    for dir in work/*/; do
+      name="$(basename "$dir")"
+      review=("$dir"review/page_*_REVIEW.txt); done_=("$dir"review/page_*_DONE.txt); pages=("$dir"pages/*.jpg)
+      printf '%-20s %8s %8s %8s\n' "$name" "${#review[@]}" "${#done_[@]}" "${#pages[@]}"
+    done
     ;;
   export)
-    [ -n "${2:-}" ] || { echo "Usage: ./ocr.sh export path/to/file.pdf [--approved-only]"; exit 1; }
-    "$PY" step4_export.py "$(doc_name "$2")" "${@:3}"
+    [ -n "${2:-}" ] || { echo "Usage: ./ocr.sh export path/to/file.pdf [--done-only]"; exit 1; }
+    "$PY" step3_export.py "$(doc_name "$2")" "${@:3}"
     ;;
   *)
-    sed -n '3,7p' "$0" | sed 's/^# \{0,1\}//'
+    sed -n '3,9p' "$0" | sed 's/^# \{0,1\}//'
     exit 1
     ;;
 esac
