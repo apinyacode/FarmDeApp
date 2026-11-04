@@ -1,6 +1,0 @@
-# Scans and transcriptions are private letters - never commit them.
-work/
-input/
-__pycache__/
-api_key.txt
-.venv/
